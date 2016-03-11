@@ -1,2 +1,2 @@
-antigen/
-!antigen/antigen.zsh
+/antigen
+!/antigen/antigen.zsh
