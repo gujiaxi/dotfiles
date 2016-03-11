@@ -1,0 +1,25 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'Lokaltog/vim-easymotion'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
+Plug 'ervandew/supertab'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'plasticboy/vim-markdown'
+Plug 'Raimondi/delimitMate'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'altercation/vim-colors-solarized'
+Plug 'thinca/vim-quickrun'
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
+
+call plug#end()

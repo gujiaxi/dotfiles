@@ -1,0 +1,15 @@
+"""""""""""""""""""""""""""
+" Vim settings by Isaac
+"""""""""""""""""""""""""""
+
+if filereadable(expand("~/.vim/basic.vim"))
+  source ~/.vim/basic.vim
+endif
+
+if filereadable(expand("~/.vim/plug.vim"))
+  source ~/.vim/plug.vim
+endif
+
+if filereadable(expand("~/.vim/plugged.vim"))
+  source ~/.vim/plugged.vim
+endif
