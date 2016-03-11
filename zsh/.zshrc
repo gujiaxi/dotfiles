@@ -16,8 +16,9 @@ antigen bundle tarruda/zsh-autosuggestions
 antigen bundle djui/alias-tips
 antigen bundle rimraf/k
 # Load the theme
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+# antigen bundle mafredri/zsh-async
+# antigen bundle sindresorhus/pure
+antigen theme amuse
 # done
 antigen apply
 
