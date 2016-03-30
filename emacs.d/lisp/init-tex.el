@@ -13,6 +13,11 @@
 (add-hook 'LaTeX-mode-hook 'flymake-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 
+;; auctex-latexmk
+(require-package 'auctex-latexmk)
+(load "auctex-latexmk-autoloads")
+(auctex-latexmk-setup)
+
 ;; ebib
 (require-package 'ebib)
 (load "ebib-autoloads")
