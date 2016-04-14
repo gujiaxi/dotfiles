@@ -24,10 +24,10 @@
          :exclude "todo.org"
          :with-toc t
          :html-head-include-default-style nil
-         :html-head "<link rel=\"stylesheet\" href=\"./css/org.css\" type=\"text/css\"/>"
+         :html-head "<link rel='stylesheet' href='./css/org.css' type='text/css'/>"
          :auto-sitemap t
-         :sitemap-title "Homepage"
-         :sitemap-filename "index"
+         :sitemap-title "Articles"
+         :sitemap-filename "sitemap"
          :sitemap-sort-files anti-chronologically
          :sitemap-file-entry-format "%d >> %t")
         ("css"
