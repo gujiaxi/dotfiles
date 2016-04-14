@@ -32,3 +32,5 @@ export PATH=$PATH:"$HOME/.gem/ruby/2.3.0/bin"
 # some aliases
 export EDITOR="vim"
 alias t="ydcv"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

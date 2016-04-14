@@ -17,6 +17,7 @@
 (require-package 'auctex-latexmk)
 (load "auctex-latexmk-autoloads")
 (auctex-latexmk-setup)
+(setq auctex-latexmk-inherit-TeX-PDF-mode t)
 
 ;; ebib
 (require-package 'ebib)
