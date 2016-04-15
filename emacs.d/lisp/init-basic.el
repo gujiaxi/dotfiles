@@ -3,7 +3,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; personal Infomation
-(setq user-full-name "Isaac G")
+(setq user-full-name "Isaac G.")
 (setq user-mail-address "imjiaxi@gmail.com")
 
 ;; set unicode encoding
