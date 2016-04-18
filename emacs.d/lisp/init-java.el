@@ -1,12 +1,9 @@
 ;;----------------------------------------------------------------------------
-;; dired conf
+;; java conf
 ;;----------------------------------------------------------------------------
 
-;; dired+
-(require-package 'dired+)
+;; jdee
+(require-package 'jdee)
+(load "jdee-autoloads")
 
-;; ranger
-(require-package 'ranger)
-(global-set-key (kbd "C-c r") 'ranger)
-
-(provide 'init-dired)
+(provide 'init-java)

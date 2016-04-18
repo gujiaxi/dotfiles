@@ -21,7 +21,7 @@
          :base-extension "org"
          :publishing-directory "~/.org/html/"
          :publishing-function org-html-publish-to-html
-         :exclude "todo.org\\|.*-p.org"
+         :exclude "^\\([^p]\\|p[^-]\\).*"
          :with-toc t
          :html-head-include-default-style nil
          :html-head "<link rel='stylesheet' href='./css/org.css' type='text/css'/>"
