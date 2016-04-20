@@ -12,8 +12,8 @@
 (require 'init-semantic)
 (require 'init-gnus)
 ;; third-party packages
-(require 'init-theme)
 (require 'init-interface)
+(require 'init-theme)
 (require 'init-evil)
 (require 'init-helm)
 (require 'init-company)

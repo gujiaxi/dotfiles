@@ -26,6 +26,6 @@
 ;; rainbow-mode
 (require-package 'rainbow-mode)
 (load "rainbow-mode-autoloads")
-(add-hook 'css-mode-hook 'rainbow-mode)
+(add-hook 'prog-mode-hook 'rainbow-mode)
 
 (provide 'init-web-mode)

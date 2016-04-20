@@ -2,6 +2,12 @@
 ;; theme conf
 ;;----------------------------------------------------------------------------
 
+;; powerline
+(require-package 'powerline)
+(load "powerline-autoloads")
+(powerline-default-theme)
+(setq powerline-default-separator nil)
+
 ;; theme-changer
 (require-package 'theme-changer)
 (load "theme-changer-autoloads")

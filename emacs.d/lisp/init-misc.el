@@ -25,6 +25,7 @@
 ;; quickrun
 (require-package 'quickrun)
 (load "quickrun-autoloads")
+(global-set-key (kbd "C-c q") 'quickrun)
 
 ;; htmlize
 (require-package 'htmlize)

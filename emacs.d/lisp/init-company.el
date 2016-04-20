@@ -28,4 +28,9 @@
 (load "company-auctex-autoloads")
 (company-auctex-init)
 
+;; company-anaconda
+(require-package 'company-anaconda)
+(load "company-anaconda-autoloads")
+(add-to-list 'company-backends 'company-anaconda)
+
 (provide 'init-company)

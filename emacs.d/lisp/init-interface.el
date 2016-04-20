@@ -2,21 +2,10 @@
 ;; interface conf
 ;;----------------------------------------------------------------------------
 
-;; beacon
-(require-package 'beacon)
-(load "beacon-autoloads")
-(beacon-mode t)
-
 ;; elscreen
 (require-package 'elscreen)
 (load "elscreen-autoloads")
 (elscreen-start)
-
-;; powerline
-(require-package 'powerline)
-(load "powerline-autoloads")
-(powerline-default-theme)
-(setq powerline-default-separator nil)
 
 ;; smooth-scrolling
 (require-package 'smooth-scrolling)
