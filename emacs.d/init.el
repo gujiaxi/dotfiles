@@ -21,6 +21,7 @@
 (require 'init-edit)
 (require 'init-git)
 (require 'init-tex)
+(require 'init-clang)
 (require 'init-java)
 (require 'init-python)
 (require 'init-markdown)

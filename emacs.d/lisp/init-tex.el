@@ -19,6 +19,16 @@
 (auctex-latexmk-setup)
 (setq auctex-latexmk-inherit-TeX-PDF-mode t)
 
+;; company-math
+(require-package 'company-math)
+(load "company-math-autoloads")
+(add-to-list 'company-backends 'company-math-symbols-unicode)
+
+;; company-auctex
+(require-package 'company-auctex)
+(load "company-auctex-autoloads")
+(company-auctex-init)
+
 ;; ebib
 (require-package 'ebib)
 (load "ebib-autoloads")
