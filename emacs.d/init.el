@@ -9,7 +9,7 @@
 (require 'init-flymake)
 (require 'init-flyspell)
 (require 'init-org)
-(require 'init-semantic)
+(require 'init-prog)
 (require 'init-gnus)
 ;; third-party packages
 (require 'init-interface)

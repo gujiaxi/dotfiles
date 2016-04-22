@@ -60,10 +60,6 @@
 (ido-mode)
 (ido-everywhere)
 
-;; electric [built-in]
-(electric-pair-mode t)
-(electric-indent-mode t)
-
 ;; hideshow [built-in]
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
