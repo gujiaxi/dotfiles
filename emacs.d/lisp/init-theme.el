@@ -2,12 +2,6 @@
 ;; theme conf
 ;;----------------------------------------------------------------------------
 
-;; powerline
-(require-package 'powerline)
-(load "powerline-autoloads")
-(powerline-default-theme)
-(setq powerline-default-separator nil)
-
 ;; solarized-theme
 (require-package 'solarized-theme)
 (load "solarized-theme-autoloads")
@@ -22,5 +16,11 @@
 (if (display-graphic-p)
     (change-theme 'solarized-light 'solarized-dark)
   (load-theme 'manoj-dark t))
+
+;; powerline
+(require-package 'powerline)
+(load "powerline-autoloads")
+(powerline-default-theme)
+(setq powerline-default-separator nil)
 
 (provide 'init-theme)

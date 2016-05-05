@@ -34,3 +34,6 @@ export EDITOR="vim"
 alias t="ydcv"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# impinj
+export PATH=$PATH:$HOME/impinj_etk:$HOME/impinj_etk/arm-toolchain/bin

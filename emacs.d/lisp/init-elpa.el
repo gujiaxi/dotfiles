@@ -4,8 +4,8 @@
 
 ;;; Package initialize
 (package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 
 ;;; On-demand installation of packages
 (defun require-package (package &optional min-version no-refresh)
