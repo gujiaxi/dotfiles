@@ -1,11 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jceb/vim-orgmode'
+Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'klen/python-mode'
 Plug 'kshenoy/vim-signature'
@@ -13,7 +13,9 @@ Plug 'luochen1990/rainbow'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'reedes/vim-lexical'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
@@ -25,5 +27,6 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
+Plug 'zenorocha/dracula-theme', { 'rtp': 'vim' }
 
 call plug#end()

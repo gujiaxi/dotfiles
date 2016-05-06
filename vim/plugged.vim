@@ -2,10 +2,6 @@
 " Plugin settings
 """"""""""""""""""
 
-" vim-colors-solarized
-set background=dark
-colorscheme solarized
-
 " supertab
 
 " tabular
@@ -28,13 +24,23 @@ let g:rainbow_active = 1
 " LaTeX-Box
 
 " vim-easymotion
-let g:EasyMotion_leader_key='<Leader>'
+let g:EasyMotion_leader_key = '<Leader>'
 
 " tagbar
 nmap <F5> :TagbarToggle<cr>
 
+" vim-startify
+
 " vim-indent-guides
 nmap <F4> :IndentGuidesToggle<cr>
+
+" vim-lexical
+augroup lexical
+    autocmd!
+    autocmd FileType plaintex call lexical#init()
+    autocmd FileType markdown call lexical#init()
+    autocmd FileType textile call lexical#init()
+augroup END
 
 " nerdtree
 nmap <F6> :NERDTreeToggle<cr>
@@ -47,14 +53,14 @@ let g:syntastic_check_on_wq = 0
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = '<TAB>'
-let g:UltiSnipsJumpForwardTrigger='<TAB>'
+let g:UltiSnipsJumpForwardTrigger = '<TAB>'
 
 " neocomplete.vim
-let g:neocomplete#enable_at_startup=1
-let g:neocomplete#enable_smart_case=1
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
 inoremap <expr><TAB>  pumvisible() ? '\<C-n>' : '\<TAB>'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -75,3 +81,6 @@ let g:vim_markdown_folding_disabled = 1
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" dracula-theme
+colorscheme dracula
