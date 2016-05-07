@@ -27,7 +27,7 @@ let g:rainbow_active = 1
 let g:EasyMotion_leader_key = '<Leader>'
 
 " tagbar
-nmap <F5> :TagbarToggle<cr>
+nmap <F7> :TagbarToggle<cr>
 
 " vim-startify
 
@@ -66,6 +66,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " vim-quickrun
+nmap <F5> :QuickRun<cr>
 
 " vim-commentary
 
