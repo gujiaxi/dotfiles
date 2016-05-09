@@ -38,8 +38,6 @@ nmap <F4> :IndentGuidesToggle<cr>
 augroup lexical
     autocmd!
     autocmd FileType plaintex call lexical#init()
-    autocmd FileType markdown call lexical#init()
-    autocmd FileType textile call lexical#init()
 augroup END
 
 " nerdtree

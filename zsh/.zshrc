@@ -26,14 +26,12 @@ antigen apply
 # custom settings
 ####################
 
-# ruby bin
-export PATH=$PATH:"$HOME/.gem/ruby/2.3.0/bin"
-
 # some aliases
 export EDITOR="vim"
 alias t="ydcv"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # impinj
 export PATH=$PATH:$HOME/impinj_etk:$HOME/impinj_etk/arm-toolchain/bin
+
+# rvm
+export PATH=$PATH:$HOME/bin
