@@ -4,8 +4,8 @@
 
 ;;; Package initialize
 (package-initialize)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 ;;; On-demand installation of packages
 (defun require-package (package &optional min-version no-refresh)
