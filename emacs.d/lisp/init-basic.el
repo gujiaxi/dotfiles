@@ -3,7 +3,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; personal Infomation
-(setq user-full-name "Isaac G.")
+(setq user-full-name "Isaac Gu")
 (setq user-mail-address "imjiaxi@gmail.com")
 
 ;; set unicode encoding
@@ -17,11 +17,17 @@
 (setq auto-save-default nil)
 (setq backup-inhibited t)
 
+;; version control
+(setq version-control t)
+
 ;; no startup message
 (setq inhibit-startup-message t)
 
 ;; handy fix
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; globally enable syntax highlight
+(global-font-lock-mode t)
 
 ;; indentation
 (setq-default indent-tabs-mode nil)
@@ -32,6 +38,9 @@
   (scroll-bar-mode 0)
   (tool-bar-mode 0)
   (menu-bar-mode 0))
+
+;; set scroll-margin
+(setq scroll-margin 5)
 
 ;; show parentheses
 (show-paren-mode t)
@@ -49,6 +58,16 @@
 ;; display time in mode line
 (display-time-mode t)
 (setq display-time-24hr-format t)
+(setq system-time-locale "C")
+
+;; set frame title
+(setq frame-title-format "emacs@%b")
+
+;; set a larger kill ring
+(setq kill-ring-max 200)
+
+;; avoid the mouse when typing
+(mouse-avoidance-mode 'animate)
 
 ;; set default font
 (when (member "Input" (font-family-list))
@@ -69,5 +88,11 @@
 ;; zone [built-in]
 (require 'zone)
 (zone-when-idle 600)
+
+;; recentf [built-in]
+(setq recentf-max-saved-items 200)
+
+;; saveplace [built-in]
+(setq save-place t)
 
 (provide 'init-basic)
