@@ -24,7 +24,7 @@
          :with-toc t
          :html-head-include-default-style nil
          :html-head-include-scripts nil
-         :html-head "<link rel='stylesheet' href='./css/org.css' type='text/css'/><meta name='viewport' content='width=device-width, initial-scale=1'>"
+         :html-head "<link rel='stylesheet' href='./css/org.css' type='text/css'/><meta name='viewport' content='width=device-width'>"
          :html-mathjax "path:\"https://cdn.mathjax.org/mathjax/latest/MathJax.js\" align:\"left\""
          :auto-sitemap t
          :sitemap-title "Articles"

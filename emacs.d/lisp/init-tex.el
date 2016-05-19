@@ -18,6 +18,7 @@
 (load "auctex-latexmk-autoloads")
 (auctex-latexmk-setup)
 (setq auctex-latexmk-inherit-TeX-PDF-mode t)
+(add-to-list 'TeX-command-list '("Make" "make" TeX-run-command nil t))
 
 ;; company-math
 (require-package 'company-math)

@@ -12,10 +12,10 @@
 ;; no ring-bell
 (setq ring-bell-function 'ignore)
 
-;; no backups and no auto-save
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq backup-inhibited t)
+;; backup and autosave
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq version-control t)
 
 ;; version control
 (setq version-control t)
