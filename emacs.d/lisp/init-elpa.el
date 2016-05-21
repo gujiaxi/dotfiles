@@ -2,12 +2,12 @@
 ;; Find and load the correct package.el
 ;;----------------------------------------------------------------------------
 
-;;; Package initialize
+;; Package initialize
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
-;;; On-demand installation of packages
+;; On-demand installation of packages
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
 If NO-REFRESH is non-nil, the available package lists will not be

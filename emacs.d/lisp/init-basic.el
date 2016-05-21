@@ -1,6 +1,6 @@
-;;----------------------------------------------------------------------------
+;;--------------------------------------------------------------------------
 ;; misc conf
-;;----------------------------------------------------------------------------
+;;--------------------------------------------------------------------------
 
 ;; personal Infomation
 (setq user-full-name "Isaac Gu")
@@ -15,10 +15,10 @@
 ;; backup and autosave
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-(setq version-control t)
 
 ;; version control
 (setq version-control t)
+(setq delete-old-versions t)
 
 ;; no startup message
 (setq inhibit-startup-message t)
@@ -32,6 +32,9 @@
 ;; indentation
 (setq-default indent-tabs-mode nil)
 (setq-default default-tab-width 4)
+
+;; deltet selection
+(delete-selection-mode t)
 
 ;; GUI related
 (when (display-graphic-p)
@@ -69,6 +72,9 @@
 ;; avoid the mouse when typing
 (mouse-avoidance-mode 'animate)
 
+;; confirm before quit
+(setq confirm-kill-emacs 'yes-or-no-p)
+
 ;; set default font
 (when (member "Input" (font-family-list))
   (progn
@@ -90,7 +96,11 @@
 (zone-when-idle 600)
 
 ;; recentf [built-in]
+(recentf-mode t)
 (setq recentf-max-saved-items 200)
+
+;; savehist
+(savehist-mode t)
 
 ;; saveplace [built-in]
 (setq save-place t)

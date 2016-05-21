@@ -2,6 +2,7 @@
 ;; Main conf
 ;;----------------------------------------------------------------------------
 
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-elpa)
 (require 'init-basic)
@@ -29,7 +30,7 @@
 (require 'init-dired)
 (require 'init-ess)
 (require 'init-bbdb)
-(require 'init-web-mode)
+(require 'init-web)
 (require 'init-projectile)
 (require 'init-misc)
 (require 'init-general)

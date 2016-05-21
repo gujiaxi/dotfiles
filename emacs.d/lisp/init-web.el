@@ -1,5 +1,5 @@
 ;;----------------------------------------------------------------------------
-;; web-mode conf
+;; web conf
 ;;----------------------------------------------------------------------------
 
 ;; web-mode
@@ -23,9 +23,14 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.xul?\\'" . web-mode))
 
+;; js2-mode
+(require-package 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-mode))
+
 ;; rainbow-mode
 (require-package 'rainbow-mode)
 (load "rainbow-mode-autoloads")
 (add-hook 'prog-mode-hook 'rainbow-mode)
 
-(provide 'init-web-mode)
+(provide 'init-web)

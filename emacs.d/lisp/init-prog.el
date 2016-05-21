@@ -15,4 +15,9 @@
 (electric-indent-mode t)
 (electric-layout-mode t)
 
+;; color-identifiers-mode
+(require-package 'color-identifiers-mode)
+(load "color-identifiers-mode-autoloads")
+(add-hook 'prog-mode-hook 'color-identifiers-mode)
+
 (provide 'init-prog)

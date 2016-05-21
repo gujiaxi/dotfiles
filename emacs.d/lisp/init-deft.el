@@ -6,7 +6,7 @@
 (require-package 'deft)
 (load "deft-autoloads")
 (setq deft-directory "~/.org/org")
-(setq deft-extensions '("org" "md"))
+(setq deft-extensions '("org" "md" "tex"))
 (setq deft-default-extension "org")
 (setq deft-auto-save-interval 0)
 (setq deft-use-filename-as-title t)

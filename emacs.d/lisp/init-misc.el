@@ -22,6 +22,10 @@
 (load "which-key-autoloads")
 (which-key-mode)
 
+;; info+
+(require-package 'info+)
+(load "info+-autoloads")
+
 ;; quickrun
 (require-package 'quickrun)
 (load "quickrun-autoloads")
