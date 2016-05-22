@@ -34,5 +34,7 @@
 (require 'init-projectile)
 (require 'init-misc)
 (require 'init-general)
+(require 'init-benchmark)
+
 
 (provide 'init)

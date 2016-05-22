@@ -2,6 +2,7 @@
 ;; edit conf
 ;;----------------------------------------------------------------------------
 
+
 ;; anzu
 (require-package 'anzu)
 (load "anzu-autoloads")
@@ -46,5 +47,11 @@
 (require-package 'yasnippet)
 (load "yasnippet-autoloads")
 (yas-global-mode t)
+
+;; color-identifiers-mode
+(require-package 'color-identifiers-mode)
+(load "color-identifiers-mode-autoloads")
+(add-hook 'prog-mode-hook 'color-identifiers-mode)
+
 
 (provide 'init-edit)

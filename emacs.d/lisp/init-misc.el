@@ -2,6 +2,7 @@
 ;; misc conf
 ;;----------------------------------------------------------------------------
 
+
 ;; flymake-cursor
 (require-package 'flymake-cursor)
 (load "flymake-cursor-autoloads")
@@ -34,5 +35,6 @@
 ;; htmlize
 (require-package 'htmlize)
 (load "htmlize-autoloads")
+
 
 (provide 'init-misc)
