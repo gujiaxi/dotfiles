@@ -3,6 +3,11 @@
 ;;----------------------------------------------------------------------------
 
 
+;; linum-relative
+(require-package 'linum-relative)
+(load "linum-relative-autoloads")
+(linum-relative-mode)
+
 ;; anzu
 (require-package 'anzu)
 (load "anzu-autoloads")

@@ -26,8 +26,8 @@
 ;; handy fix
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; globally enable syntax highlight
-(global-font-lock-mode t)
+;; enable syntax highlight
+(font-lock-mode t)
 
 ;; indentation
 (setq-default indent-tabs-mode nil)
@@ -55,8 +55,8 @@
 (setq auto-revert-mode t)
 
 ;; show line number and highlight line
-(global-linum-mode t)
-(global-hl-line-mode t)
+(linum-mode t)
+(hl-line-mode nil)
 
 ;; display time in mode line
 (display-time-mode t)

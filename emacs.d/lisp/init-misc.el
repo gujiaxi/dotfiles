@@ -1,6 +1,6 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; misc conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 
 
 ;; flymake-cursor
@@ -13,10 +13,11 @@
 (setq symon-delay 33)
 (symon-mode)
 
-;; highlight-indentation
-(require-package 'highlight-indentation)
-(load "highlight-indentation-autoloads")
-(add-hook 'prog-mode-hook 'highlight-indentation-current-column-mode)
+;; indent-guide
+(require-package 'indent-guide)
+(load "indent-guide-autoloads")
+(add-hook 'prog-mode-hook 'indent-guide-mode)
+(setq indent-guide-char "·")
 
 ;; which-key
 (require-package 'which-key)

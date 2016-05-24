@@ -7,8 +7,6 @@
 (require 'init-elpa)
 (require 'init-basic)
 ;; built-in packages
-(require 'init-flymake)
-(require 'init-flyspell)
 (require 'init-org)
 (require 'init-prog)
 (require 'init-gnus)

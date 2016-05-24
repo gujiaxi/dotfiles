@@ -12,10 +12,10 @@
 (load "evil-autoloads")
 (evil-mode t)
 
-;; evil-commentary
-(require-package 'evil-commentary)
-(load "evil-commentary-autoloads")
-(evil-commentary-mode)
+;; evil-nerd-commenter
+(require-package 'evil-nerd-commenter)
+(load "evil-nerd-commenter-autoloads")
+(evilnc-default-hotkeys)
 
 ;; evil-surround
 (require-package 'evil-surround)

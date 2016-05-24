@@ -40,6 +40,8 @@ augroup lexical
     autocmd FileType plaintex call lexical#init()
 augroup END
 
+" nerdcommenter
+
 " nerdtree
 nmap <F6> :NERDTreeToggle<cr>
 
@@ -68,8 +70,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " vim-quickrun
 nmap <F5> :QuickRun<cr>
 
-" vim-commentary
-
 " vim-fugitive
 
 " vim-speeddating
@@ -82,6 +82,8 @@ let g:vim_markdown_folding_disabled = 1
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" targets.vim
 
 " dracula-theme
 colorscheme dracula

@@ -3,9 +3,9 @@
 ;;----------------------------------------------------------------------------
 
 ;; elscreen
-(require-package 'elscreen)
-(load "elscreen-autoloads")
-(elscreen-start)
+;; (require-package 'elscreen)
+;; (load "elscreen-autoloads")
+;; (elscreen-start)
 
 ;; smooth-scrolling
 (require-package 'smooth-scrolling)

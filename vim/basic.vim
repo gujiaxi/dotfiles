@@ -27,6 +27,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show line number
 set number
+set relativenumber
 
 " Enable filetype plugins
 filetype plugin on
@@ -164,8 +165,8 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>

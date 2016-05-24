@@ -1,10 +1,21 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; theme conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
+
+
+;; powerline
+(require-package 'powerline)
+(load "powerline-autoloads")
+(powerline-default-theme)
+(setq powerline-default-separator nil)
+
+;; darktooth-theme
+(require-package 'darktooth-theme)
+(load "darktooth-theme-autoloads")
 
 ;; solarized-theme
-(require-package 'solarized-theme)
-(load "solarized-theme-autoloads")
+;; (require-package 'solarized-theme)
+;; (load "solarized-theme-autoloads")
 
 ;; theme-changer
 (require-package 'theme-changer)
@@ -14,13 +25,8 @@
 (setq calendar-latitude 39.91)
 (setq calendar-longitude 116.40)
 (if (display-graphic-p)
-    (change-theme 'solarized-light 'solarized-dark)
+    (change-theme 'darktooth 'darktooth)
   (load-theme 'manoj-dark t))
 
-;; powerline
-(require-package 'powerline)
-(load "powerline-autoloads")
-(powerline-default-theme)
-(setq powerline-default-separator nil)
 
 (provide 'init-theme)
