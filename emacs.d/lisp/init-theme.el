@@ -3,12 +3,6 @@
 ;;---------------------------------------------------------------------------
 
 
-;; powerline
-(require-package 'powerline)
-(load "powerline-autoloads")
-(powerline-default-theme)
-(setq powerline-default-separator nil)
-
 ;; darktooth-theme
 (require-package 'darktooth-theme)
 (load "darktooth-theme-autoloads")

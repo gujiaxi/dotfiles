@@ -11,8 +11,8 @@
 (require 'init-prog)
 (require 'init-gnus)
 ;; third-party packages
-(require 'init-interface)
 (require 'init-theme)
+(require 'init-interface)
 (require 'init-evil)
 (require 'init-helm)
 (require 'init-company)

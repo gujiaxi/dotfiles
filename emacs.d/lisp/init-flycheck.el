@@ -2,11 +2,6 @@
 ;; flycheck conf
 ;;----------------------------------------------------------------------------
 
-;; flycheck
-(require-package 'flycheck)
-(load "flycheck-autoloads")
-(add-hook 'prog-mode-hook 'flycheck-mode)
-
 ;; flymake
 (eval-after-load "flymake"
   '(progn
@@ -20,6 +15,11 @@
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
+
+;; flycheck
+(require-package 'flycheck)
+(load "flycheck-autoloads")
+(add-hook 'prog-mode-hook 'flycheck-mode)
 
 ;; langtool
 (require-package 'langtool)

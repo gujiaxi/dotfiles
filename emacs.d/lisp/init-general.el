@@ -20,10 +20,6 @@
                     "1" 'delete-other-windows
                     "u" 'winner-undo
                     "r" 'winner-redo
-                    "o" 'elscreen-create
-                    "x" 'elscreen-kill
-                    "n" 'elscreen-next
-                    "p" 'elscreen-previous
                     "s" 'avy-goto-char-2)
 
 (provide 'init-general)
