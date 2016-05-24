@@ -2,7 +2,8 @@
 ;; misc conf
 ;;--------------------------------------------------------------------------
 
-;; personal Infomation
+
+;; Personal Infomation
 (setq user-full-name "Isaac Gu")
 (setq user-mail-address "imjiaxi@gmail.com")
 
@@ -27,7 +28,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; enable syntax highlight
-(font-lock-mode t)
+(global-font-lock-mode t)
 
 ;; indentation
 (setq-default indent-tabs-mode nil)
@@ -55,7 +56,7 @@
 (setq auto-revert-mode t)
 
 ;; show line number and highlight line
-(linum-mode t)
+(global-linum-mode t)
 (hl-line-mode nil)
 
 ;; display time in mode line
@@ -104,5 +105,6 @@
 
 ;; saveplace [built-in]
 (setq save-place t)
+
 
 (provide 'init-basic)
