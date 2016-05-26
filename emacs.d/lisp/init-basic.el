@@ -14,8 +14,10 @@
 (setq ring-bell-function 'ignore)
 
 ;; backup and autosave
-(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+;; (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+;; (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq backup-directory-alist `((".*" . "~/.emac.d/tmp/")))
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/tmp/")))
 
 ;; version control
 (setq version-control t)
@@ -57,7 +59,7 @@
 
 ;; show line number and highlight line
 (global-linum-mode t)
-(hl-line-mode nil)
+(global-hl-line-mode t)
 
 ;; display time in mode line
 (display-time-mode t)
@@ -78,9 +80,8 @@
 
 ;; set default font
 (when (member "Input" (font-family-list))
-  (progn
-    (set-face-attribute 'default nil :font "Input-12")
-    (set-fontset-font "fontset-default" 'unicode "Microsoft YaHei")))
+  (progn (set-face-attribute 'default nil :font "Input-12")
+         (set-fontset-font "fontset-default" 'unicode "Microsoft YaHei")))
 
 ;; ido [built-in]
 (ido-mode)

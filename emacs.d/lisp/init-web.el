@@ -1,6 +1,7 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; web conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
+
 
 ;; web-mode
 (require-package 'web-mode)
@@ -31,6 +32,7 @@
 ;; rainbow-mode
 (require-package 'rainbow-mode)
 (load "rainbow-mode-autoloads")
-(add-hook 'prog-mode-hook 'rainbow-mode)
+(add-to-list 'auto-mode-alist '("\\.css\\'" . rainbow-mode))
+
 
 (provide 'init-web)

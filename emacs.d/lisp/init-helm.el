@@ -2,6 +2,7 @@
 ;; helm conf
 ;;----------------------------------------------------------------------------
 
+
 ;; helm
 (require-package 'helm)
 (require 'helm)
@@ -18,14 +19,21 @@
 (setq helm-locate-fuzzy-match t)
 (setq helm-lisp-fuzzy-completion t)
 (setq helm-M-x-fuzzy-match t)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (helm-mode t)
 
 ;; helm-make
 (require-package 'helm-make)
 (load "helm-make-autoloads")
+
+;; helm-bibtex
+(require-package 'helm-bibtex)
+(autoload 'helm-bibtex "helm-bibtex" "" t)
+(setq bibtex-completion-bibliography '("~/.org/org/rsc-ref.bib"))
+(setq bibtex-completion-notes-symbol "✎")
+(setq bibtex-completion-notes-path "~/.org/org/rsc-notes.org")
+(setq bibtex-completion-pdf-symbol "⌘")
+(setq bibtex-completion-library-path '("~/.org/pdf"))
+(setq bibtex-completion-cite-prompt-for-optional-arguments nil)
+
 
 (provide 'init-helm)

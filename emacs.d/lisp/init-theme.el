@@ -2,14 +2,8 @@
 ;; theme conf
 ;;---------------------------------------------------------------------------
 
-
-;; darktooth-theme
-(require-package 'darktooth-theme)
-(load "darktooth-theme-autoloads")
-
 ;; solarized-theme
-;; (require-package 'solarized-theme)
-;; (load "solarized-theme-autoloads")
+(require-package 'solarized-theme)
 
 ;; theme-changer
 (require-package 'theme-changer)
@@ -19,7 +13,7 @@
 (setq calendar-latitude 39.91)
 (setq calendar-longitude 116.40)
 (if (display-graphic-p)
-    (change-theme 'darktooth 'darktooth)
+    (change-theme 'solarized-light 'solarized-dark)
   (load-theme 'manoj-dark t))
 
 

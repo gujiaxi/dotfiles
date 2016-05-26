@@ -25,12 +25,6 @@
 (setq speedbar-show-unknown-files t)
 (setq speedbar-enable-update t)
 (setq sr-speedbar-auto-refresh t)
-(global-set-key [f6] 'sr-speedbar-toggle)
-
-;; yascroll
-(require-package 'yascroll)
-(load "yascroll-autoloads")
-(global-yascroll-bar-mode t)
 
 ;; nyan-mode
 (require-package 'nyan-mode)

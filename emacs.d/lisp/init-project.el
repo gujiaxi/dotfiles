@@ -1,5 +1,5 @@
 ;;----------------------------------------------------------------------------
-;; projectile conf
+;; project
 ;;----------------------------------------------------------------------------
 
 ;; projectile
@@ -7,4 +7,4 @@
 (load "projectile-autoloads")
 (add-hook 'prog-mode-hook 'projectile-mode)
 
-(provide 'init-projectile)
+(provide 'init-project)

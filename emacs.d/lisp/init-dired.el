@@ -13,6 +13,5 @@
 ;; ranger
 (require-package 'ranger)
 (load "ranger-autoloads")
-(global-set-key (kbd "C-c r") 'ranger)
 
 (provide 'init-dired)

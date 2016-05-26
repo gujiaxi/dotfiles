@@ -1,17 +1,22 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Org stuff configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;---------------------------------------------------------------------------
+;; Org conf
+;;---------------------------------------------------------------------------
 
+
+;; some org misc stuff
 (setq org-src-fontify-natively t)
 (setq org-html-validation-link nil)
 
+;; priority faces
+(setq org-priority-faces '((?A . (:foreground "red" :weight bold))
+                           (?B . (:foreground "orange"))
+                           (?C . (:foreground "yellow"))))
+
 ;; org-agenda
 (setq org-agenda-files '("~/.org/org/todo.org")) 
-(global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; org-capture
 (setq org-default-notes-file "~/.org/org/todo.org")
-(global-set-key (kbd "C-c t") 'org-capture)
 
 ;; org-publish
 (setq org-publish-project-alist

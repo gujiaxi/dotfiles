@@ -1,6 +1,7 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; TeX conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
+
 
 ;; auctex
 (require-package 'auctex)
@@ -36,5 +37,7 @@
 (evil-set-initial-state 'ebib-entry-mode 'emacs)
 (evil-set-initial-state 'ebib-index-mode 'emacs)
 (evil-set-initial-state 'ebib-log-mode 'emacs)
+(setq ebib-preload-bib-files '("~/.org/org/rsc-ref.bib"))
+
 
 (provide 'init-tex)

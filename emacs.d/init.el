@@ -1,6 +1,6 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; Main conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -17,7 +17,6 @@
 (require 'init-helm)
 (require 'init-company)
 (require 'init-flycheck)
-(require 'init-edit)
 (require 'init-git)
 (require 'init-tex)
 (require 'init-clang)
@@ -29,10 +28,9 @@
 (require 'init-ess)
 (require 'init-bbdb)
 (require 'init-web)
-(require 'init-projectile)
+(require 'init-project)
 (require 'init-misc)
-(require 'init-general)
-(require 'init-benchmark)
+(require 'init-keys)
 
 
 (provide 'init)

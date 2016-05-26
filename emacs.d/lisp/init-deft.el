@@ -12,6 +12,5 @@
 (setq deft-auto-save-interval nil)
 (setq deft-use-filename-as-title t)
 (setq deft-use-filter-string-for-filename t)
-(global-set-key (kbd "C-c d") 'deft)
 
 (provide 'init-deft)
