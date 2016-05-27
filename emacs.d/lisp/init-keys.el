@@ -15,32 +15,37 @@
                     "r" 'winner-redo
                     "s" 'avy-goto-char-2)
 
+;; bind-key
+(require-package 'bind-key)
+(load "bind-key-autoloads")
 ;; helm
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "M-s o") 'helm-occur)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(bind-key "M-x" 'helm-M-x)
+(bind-key "M-y" 'helm-show-kill-ring)
+(bind-key "M-s o" 'helm-occur)
+(bind-key "C-x b" 'helm-mini)
+(bind-key "C-x C-f" 'helm-find-files)
+(bind-key "C-x C-b" 'helm-buffers-list)
 ;; org
-(global-set-key (kbd "C-c t") 'org-capture)
-(global-set-key (kbd "C-c a") 'org-agenda)
-;; deft
-(global-set-key (kbd "C-c d") 'deft)
-;; ranger
-(global-set-key (kbd "C-c r") 'ranger)
+(bind-key "C-c a" 'org-agenda)
+(bind-key* "C-c c" 'org-capture)
 ;; helm-bibtex
-(global-set-key (kbd "C-c b") 'helm-bibtex)
-;; ebib
-(global-set-key (kbd "C-c e") 'ebib)
-;; sr-speedbar
-(global-set-key [f6] 'sr-speedbar-toggle)
+(bind-key "C-c b" 'helm-bibtex)
+;; deft
+(bind-key "C-c d" 'deft)
+;; grep
+(bind-key "C-c g" 'lgrep)
+;; magit
+(bind-key "C-c m" 'magit-status)
 ;; quickrun
-(global-set-key (kbd "C-c q") 'quickrun)
+(bind-key "C-c q" 'quickrun)
+;; ranger
+(bind-key "C-c r" 'ranger)
 ;; multiple-cursors
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(bind-key "C->" 'mc/mark-next-like-this)
 ;; expand-region
-(global-set-key (kbd "C-=") 'er/expand-region)
+(bind-key "C-=" 'er/expand-region)
+;; sr-speedbar
+(bind-key "<f6>" 'sr-speedbar-toggle)
 
 
 (provide 'init-keys)

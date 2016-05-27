@@ -14,10 +14,8 @@
 (setq ring-bell-function 'ignore)
 
 ;; backup and autosave
-;; (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
-;; (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-(setq backup-directory-alist `((".*" . "~/.emac.d/tmp/")))
-(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/tmp/")))
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 ;; version control
 (setq version-control t)
