@@ -20,14 +20,12 @@
 ;; company-irony
 (require-package 'company-irony)
 (load "company-irony-autoloads")
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-irony))
+(add-to-list 'company-backends 'company-irony)
 
 ;; company-c-headers
 (require-package 'company-c-headers)
 (load "company-c-headers-autoloads")
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-c-headers))
+(add-to-list 'company-backends 'company-c-headers)
 
 
 (provide 'init-clang)

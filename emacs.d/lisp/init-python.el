@@ -11,7 +11,6 @@
 ;; company-anaconda
 (require-package 'company-anaconda)
 (load "company-anaconda-autoloads")
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-anaconda))
+(add-to-list 'company-backends 'company-anaconda)
 
 (provide 'init-python)

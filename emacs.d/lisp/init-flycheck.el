@@ -3,11 +3,10 @@
 ;;----------------------------------------------------------------------------
 
 ;; flymake
-(eval-after-load "flymake"
-  '(progn
-     (defun flymake-get-tex-args (file-name)
-       (list "chktex" (list "-q" "-v0" file-name)))
-     (setq flymake-run-in-place nil)))
+(with-eval-after-load 'flymake
+  (defun flymake-get-tex-args (file-name)
+    (list "chktex" (list "-q" "-v0" file-name)))
+  (setq flymake-run-in-place nil))
 
 ;; flyspell
 (setq ispell-program-name "aspell")

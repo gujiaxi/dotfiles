@@ -7,7 +7,6 @@
 (require-package 'auctex)
 (load "auctex-autoloads")
 (setq TeX-parse-self t)
-(add-hook 'LaTeX-mode-hook 'company-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
@@ -25,8 +24,7 @@
 ;; company-math
 (require-package 'company-math)
 (load "company-math-autoloads")
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-math-symbols-unicode))
+(add-to-list 'company-backends 'company-math-symbols-unicode)
 
 ;; company-auctex
 (require-package 'company-auctex)
