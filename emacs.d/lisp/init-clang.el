@@ -1,6 +1,7 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; clang conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
+
 
 ;; rtags
 (require-package 'rtags)
@@ -19,11 +20,14 @@
 ;; company-irony
 (require-package 'company-irony)
 (load "company-irony-autoloads")
-(add-to-list 'company-backends 'company-irony)
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-irony))
 
 ;; company-c-headers
 (require-package 'company-c-headers)
 (load "company-c-headers-autoloads")
-(add-to-list 'company-backends 'company-c-headers)
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-c-headers))
+
 
 (provide 'init-clang)

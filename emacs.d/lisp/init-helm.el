@@ -29,6 +29,7 @@
 (setq bibtex-completion-notes-path "~/.org/org/research-notes.org")
 (setq bibtex-completion-pdf-symbol "⌘")
 (setq bibtex-completion-library-path '("~/.org/pdf"))
+(setq bibtex-completion-pdf-open-function (lambda (fpath) (call-process "SumatraPDF" nil 0 nil fpath)))
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 
 

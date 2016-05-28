@@ -18,7 +18,7 @@
 (require 'init-company)
 (require 'init-flycheck)
 (require 'init-git)
-;(require 'init-tex)
+(require 'init-tex)
 (require 'init-clang)
 (require 'init-java)
 (require 'init-python)

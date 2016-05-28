@@ -24,7 +24,6 @@
 (bind-key "M-s o" 'helm-occur)
 (bind-key "C-x b" 'helm-mini)
 (bind-key "C-x C-f" 'helm-find-files)
-(bind-key "C-x C-b" 'helm-buffers-list)
 ;; org
 (bind-key "C-c a" 'org-agenda)
 (bind-key* "C-c c" 'org-capture)

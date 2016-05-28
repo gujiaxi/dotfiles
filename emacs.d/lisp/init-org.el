@@ -1,13 +1,12 @@
-;;---------------------------------------------------------------------------
+;;--------------------------------------------------------------------------
 ;; Org conf
-;;---------------------------------------------------------------------------
+;;--------------------------------------------------------------------------
 
 
-;; some org misc stuff
+;; org
+(require 'org)
 (setq org-src-fontify-natively t)
 (setq org-html-validation-link nil)
-
-;; priority faces
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
                            (?B . (:foreground "orange"))
                            (?C . (:foreground "yellow"))))
@@ -17,6 +16,15 @@
 
 ;; org-capture
 (setq org-default-notes-file "~/.org/org/todo.org")
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/.org/org/todo.org" "Tasks")
+         "* TODO %?\n%U\n%a")
+        ("n" "Note" entry (file+headline "~/.org/org/notes.org" "Inbox")
+         "* %?\n%U\n%a")
+        ("j" "Journal" entry (file+datetree "~/.org/org/journal.org")
+         "* %?")
+        ("w" "Wish" entry (file+headline "~/.org/org/wish.org" "Wishlist")
+         "* WANT %?\n%U")))
 
 ;; org-publish
 (setq org-publish-project-alist
@@ -49,5 +57,6 @@
 
 ;; ox-latex
 (setq org-latex-pdf-process '("pdflatex %f" "bibtex %b" "pdflatex %f" "pdflatex %f"))
+
 
 (provide 'init-org)
