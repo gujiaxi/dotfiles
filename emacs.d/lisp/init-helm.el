@@ -32,5 +32,10 @@
 (setq bibtex-completion-pdf-open-function (lambda (fpath) (call-process "SumatraPDF" nil 0 nil fpath)))
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 
+;; helm-projectile
+(require-package 'helm-projectile)
+(load "helm-projectile-autoloads")
+(helm-projectile-on)
+
 
 (provide 'init-helm)

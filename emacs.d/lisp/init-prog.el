@@ -19,7 +19,7 @@
 ;; projectile
 (require-package 'projectile)
 (load "projectile-autoloads")
-(add-hook 'prog-mode-hook 'projectile-mode)
+(projectile-global-mode)
 
 ;; dumb-jump
 (require-package 'dumb-jump)

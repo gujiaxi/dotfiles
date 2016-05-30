@@ -22,9 +22,11 @@
         ("n" "Note" entry (file+headline "~/.org/org/notes.org" "Inbox")
          "* %?\n%U\n%a")
         ("j" "Journal" entry (file+datetree "~/.org/org/journal.org")
-         "* %?")
+         "* %?\n%U")
         ("w" "Wish" entry (file+headline "~/.org/org/wish.org" "Wishlist")
-         "* WANT %?\n%U")))
+         "* WANT %?\n%U")
+        ("p" "Public" plain (file "~/.org/org/p-tweets.org")
+         "** %?\n%U")))
 
 ;; org-publish
 (setq org-publish-project-alist
