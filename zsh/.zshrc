@@ -14,7 +14,7 @@ antigen bundle z
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle tarruda/zsh-autosuggestions
 antigen bundle djui/alias-tips
-antigen bundle rimraf/k
+antigen bundle supercrabtree/k
 # Load the theme
 # antigen bundle mafredri/zsh-async
 # antigen bundle sindresorhus/pure

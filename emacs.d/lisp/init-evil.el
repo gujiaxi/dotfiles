@@ -2,6 +2,7 @@
 ;; evil conf
 ;;----------------------------------------------------------------------------
 
+
 ;; ace-jump-mode
 (require-package 'ace-jump-mode)
 (load "ace-jump-mode-autoloads")
@@ -11,6 +12,9 @@
 (require-package 'evil)
 (load "evil-autoloads")
 (evil-mode t)
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'speedbar-mode 'emacs)
+(evil-set-initial-state 'deft-mode 'emacs)
 
 ;; evil-nerd-commenter
 (require-package 'evil-nerd-commenter)
@@ -31,5 +35,6 @@
 (require-package 'evil-search-highlight-persist)
 (load "evil-search-highlight-persist-autoloads")
 (global-evil-search-highlight-persist t)
+
 
 (provide 'init-evil)

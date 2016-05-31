@@ -26,7 +26,7 @@
         ("w" "Wish" entry (file+headline "~/.org/org/wish.org" "Wishlist")
          "* WANT %?\n%U")
         ("p" "Public" plain (file "~/.org/org/p-tweets.org")
-         "** %?\n%U")))
+         "*** %?\n%U\n-----")))
 
 ;; org-publish
 (setq org-publish-project-alist

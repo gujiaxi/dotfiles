@@ -37,8 +37,6 @@
 (bind-key "C-c m" 'magit-status)
 ;; quickrun
 (bind-key "C-c q" 'quickrun)
-;; ranger
-(bind-key "C-c r" 'ranger)
 ;; multiple-cursors
 (bind-key "C->" 'mc/mark-next-like-this)
 ;; expand-region
