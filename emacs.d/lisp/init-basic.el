@@ -55,9 +55,14 @@
 ;; automatically refresh buffer
 (setq auto-revert-mode t)
 
-;; show line number and highlight line
-(global-linum-mode t)
+;; highlight current line
 (global-hl-line-mode t)
+
+;; show line number
+(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'LaTeX-mode-hook 'linum-mode)
+(add-hook 'markdown-mode-hook 'linum-mode)
+(add-hook 'org-mode-hook 'linum-mode)
 
 ;; display time in mode line
 (display-time-mode t)

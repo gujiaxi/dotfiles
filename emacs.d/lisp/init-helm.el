@@ -17,9 +17,10 @@
 (setq helm-completion-in-region-fuzzy-match t)
 (helm-mode t)
 
-;; helm-make
-(require-package 'helm-make)
-(load "helm-make-autoloads")
+;; helm-descbinds
+(require-package 'helm-descbinds)
+(load "helm-descbinds-autoloads")
+(helm-descbinds-mode)
 
 ;; helm-bibtex
 (require-package 'helm-bibtex)

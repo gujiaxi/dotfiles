@@ -15,6 +15,8 @@
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (add-to-list 'company-backends 'company-files)
+;; turn company off in some specific modes
+(setq company-global-modes '(not eshell-mode))
 
 
 (provide 'init-company)

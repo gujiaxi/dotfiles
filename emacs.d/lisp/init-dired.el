@@ -11,7 +11,11 @@
 ;; dired+
 (require-package 'dired+)
 (load "dired+-autoloads")
-(diredp-toggle-find-file-reuse-dir t)
+;; (diredp-toggle-find-file-reuse-dir t)
+
+;; ranger
+(require-package 'ranger)
+(load "ranger-autoloads")
 
 
 (provide 'init-dired)

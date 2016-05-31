@@ -35,6 +35,8 @@
 (bind-key "C-c g" 'lgrep)
 ;; magit
 (bind-key "C-c m" 'magit-status)
+;; ranger
+(bind-key "C-c r" 'ranger)
 ;; quickrun
 (bind-key "C-c q" 'quickrun)
 ;; multiple-cursors
