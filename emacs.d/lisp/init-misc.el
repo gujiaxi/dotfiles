@@ -87,5 +87,8 @@
 (require-package 'htmlize)
 (load "htmlize-autoloads")
 
+;; tldr
+(require-package 'tldr)
+(load "tldr-autoloads")
 
 (provide 'init-misc)

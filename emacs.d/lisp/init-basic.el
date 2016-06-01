@@ -52,9 +52,6 @@
 ;; show which function current line belongs to
 (which-function-mode t)
 
-;; automatically refresh buffer
-(setq auto-revert-mode t)
-
 ;; highlight current line
 (global-hl-line-mode t)
 
@@ -102,10 +99,7 @@
 
 ;; recentf [built-in]
 (recentf-mode t)
-(setq recentf-max-saved-items 200)
-
-;; savehist
-(savehist-mode t)
+(setq recentf-max-saved-items 500)
 
 ;; saveplace [built-in]
 (setq save-place t)
