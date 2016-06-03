@@ -24,7 +24,10 @@ let g:rainbow_active = 1
 " LaTeX-Box
 
 " vim-easymotion
-let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase  = 1
+map <Leader> <Plug>(easymotion-prefix)
+nmap    s    <Plug>(easymotion-overwin-f2)
 
 " tagbar
 nmap <F7> :TagbarToggle<cr>

@@ -54,10 +54,6 @@
 (load "color-identifiers-mode-autoloads")
 (add-hook 'prog-mode-hook 'color-identifiers-mode)
 
-;; flymake-cursor
-(require-package 'flymake-cursor)
-(load "flymake-cursor-autoloads")
-
 ;; symon
 (require-package 'symon)
 (load "symon-autoloads")
@@ -87,8 +83,13 @@
 (require-package 'htmlize)
 (load "htmlize-autoloads")
 
-;; tldr
-(require-package 'tldr)
-(load "tldr-autoloads")
+;; wgrep
+(require-package 'wgrep)
+(load "wgrep-autoloads")
+
+;; bing-dict
+(require-package 'bing-dict)
+(load "bing-dict-autoloads")
+
 
 (provide 'init-misc)

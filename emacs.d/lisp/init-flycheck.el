@@ -1,12 +1,10 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; flycheck conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 
 ;; flymake
-(with-eval-after-load 'flymake
-  (defun flymake-get-tex-args (file-name)
-    (list "chktex" (list "-q" "-v0" file-name)))
-  (setq flymake-run-in-place nil))
+;; turn it off since flycheck is on
+(remove-hook 'LaTeX-mode-hook 'flymake-mode)
 
 ;; flyspell
 (setq ispell-program-name "aspell")
@@ -18,7 +16,7 @@
 ;; flycheck
 (require-package 'flycheck)
 (load "flycheck-autoloads")
-(add-hook 'prog-mode-hook 'flycheck-mode)
+(global-flycheck-mode)
 
 ;; langtool
 (require-package 'langtool)

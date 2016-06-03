@@ -7,6 +7,7 @@ Plug 'honza/vim-snippets'
 Plug 'jceb/vim-orgmode'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dracula/vim'
 Plug 'klen/python-mode'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
@@ -29,6 +30,5 @@ Plug 'tpope/vim-surround'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
-Plug 'zenorocha/dracula-theme', { 'rtp': 'vim' }
 
 call plug#end()

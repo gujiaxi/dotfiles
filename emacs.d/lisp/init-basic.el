@@ -13,6 +13,9 @@
 ;; no ring-bell
 (setq ring-bell-function 'ignore)
 
+;; no lockfile
+(setq create-lockfiles nil)
+
 ;; backup and autosave
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
@@ -87,6 +90,9 @@
 (ido-mode)
 (ido-everywhere)
 
+;; windmove [built-in]
+(windmove-default-keybindings)
+
 ;; hideshow [built-in]
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
@@ -99,10 +105,11 @@
 
 ;; recentf [built-in]
 (recentf-mode t)
-(setq recentf-max-saved-items 500)
+(setq recentf-max-saved-items 200)
 
 ;; saveplace [built-in]
-(setq save-place t)
+(require 'saveplace)
+(setq-default save-place t)
 
 
 (provide 'init-basic)

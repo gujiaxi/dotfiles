@@ -43,6 +43,8 @@
 (bind-key "C->" 'mc/mark-next-like-this)
 ;; expand-region
 (bind-key "C-=" 'er/expand-region)
+;; bing-dict
+(bind-key "C-c t" 'bing-dict-brief)
 ;; sr-speedbar
 (bind-key "<f6>" 'sr-speedbar-toggle)
 

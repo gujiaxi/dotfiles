@@ -1,6 +1,6 @@
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; evil conf
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 
 
 ;; ace-jump-mode
@@ -15,6 +15,7 @@
 (evil-set-initial-state 'dired-mode 'emacs)
 (evil-set-initial-state 'speedbar-mode 'emacs)
 (evil-set-initial-state 'deft-mode 'emacs)
+(evil-set-initial-state 'flycheck-error-list-mode 'emacs)
 
 ;; evil-nerd-commenter
 (require-package 'evil-nerd-commenter)
