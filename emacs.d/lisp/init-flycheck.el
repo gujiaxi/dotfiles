@@ -15,12 +15,10 @@
 
 ;; flycheck
 (require-package 'flycheck)
-(load "flycheck-autoloads")
 (global-flycheck-mode)
 
 ;; langtool
 (require-package 'langtool)
-(load "langtool-autoloads")
 (setq langtool-language-tool-jar "~/.tools/languagetool-commandline.jar")
 (setq langtool-default-language "en-US")
 

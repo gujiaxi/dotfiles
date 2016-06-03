@@ -5,7 +5,6 @@
 
 ;; general
 (require-package 'general)
-(load "general-autoloads")
 (general-define-key :states '(normal visual)
                     "j" 'evil-next-visual-line
                     "k" 'evil-previous-visual-line)
@@ -17,7 +16,6 @@
 
 ;; bind-key
 (require-package 'bind-key)
-(load "bind-key-autoloads")
 ;; helm
 (bind-key "M-x" 'helm-M-x)
 (bind-key "M-y" 'helm-show-kill-ring)

@@ -20,6 +20,7 @@
 (require 'init-tex)
 (require 'init-clang)
 (require 'init-java)
+(require 'init-ruby)
 (require 'init-python)
 (require 'init-markdown)
 (require 'init-flycheck)

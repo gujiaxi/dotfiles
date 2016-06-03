@@ -4,6 +4,5 @@
 
 ;; magit
 (require-package 'magit)
-(load "magit-autoloads")
 
 (provide 'init-git)

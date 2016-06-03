@@ -7,7 +7,6 @@
 
 ;; theme-changer
 (require-package 'theme-changer)
-(load "theme-changer-autoloads")
 (require 'theme-changer)
 (setq calendar-location-name "Beijing, China")
 (setq calendar-latitude 39.91)

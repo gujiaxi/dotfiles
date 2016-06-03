@@ -18,12 +18,10 @@
 
 ;; projectile
 (require-package 'projectile)
-(load "projectile-autoloads")
 (projectile-global-mode)
 
 ;; dumb-jump
 (require-package 'dumb-jump)
-(load "dumb-jump-autoloads")
 (add-hook 'prog-mode-hook 'dumb-jump-mode)
 
 

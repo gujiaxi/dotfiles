@@ -5,7 +5,6 @@
 
 ;; web-mode
 (require-package 'web-mode)
-(load "web-mode-autoloads")
 (setq web-mode-markup-indent-offset 2)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.wp\\'" . web-mode))
@@ -31,7 +30,6 @@
 
 ;; rainbow-mode
 (require-package 'rainbow-mode)
-(load "rainbow-mode-autoloads")
 (add-to-list 'auto-mode-alist '("\\.css\\'" . rainbow-mode))
 
 

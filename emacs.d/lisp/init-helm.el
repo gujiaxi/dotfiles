@@ -19,12 +19,10 @@
 
 ;; helm-descbinds
 (require-package 'helm-descbinds)
-(load "helm-descbinds-autoloads")
 (helm-descbinds-mode)
 
 ;; helm-bibtex
 (require-package 'helm-bibtex)
-(autoload 'helm-bibtex "helm-bibtex" "" t)
 (setq bibtex-completion-bibliography '("~/.org/misc/references.bib"))
 (setq bibtex-completion-notes-symbol "✎")
 (setq bibtex-completion-notes-path "~/.org/org/research-notes.org")
@@ -35,7 +33,6 @@
 
 ;; helm-projectile
 (require-package 'helm-projectile)
-(load "helm-projectile-autoloads")
 (helm-projectile-on)
 
 

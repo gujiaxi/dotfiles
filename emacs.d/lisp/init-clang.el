@@ -5,26 +5,22 @@
 
 ;; rtags
 (require-package 'rtags)
-(load "rtags-autoloads")
 (rtags-enable-standard-keybindings)
 (setq rtags-autostart-diagnostics t)
 (setq rtags-use-helm t)
 
 ;; irony-mode
 (require-package 'irony)
-(load "irony-autoloads")
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
 
 ;; company-irony
 (require-package 'company-irony)
-(load "company-irony-autoloads")
 (add-to-list 'company-backends 'company-irony)
 
 ;; company-c-headers
 (require-package 'company-c-headers)
-(load "company-c-headers-autoloads")
 (add-to-list 'company-backends 'company-c-headers)
 
 
