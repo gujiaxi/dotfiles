@@ -61,6 +61,7 @@
 ;; show line number
 (add-hook 'prog-mode-hook 'linum-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
+(add-hook 'bibtex-mode-hook 'linum-mode)
 (add-hook 'markdown-mode-hook 'linum-mode)
 (add-hook 'org-mode-hook 'linum-mode)
 

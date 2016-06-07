@@ -9,7 +9,6 @@
 
 ;; rich-minority
 (require-package 'rich-minority)
-(rich-minority-mode t)
 (setf rm-blacklist "")
 
 ;; smooth-scrolling

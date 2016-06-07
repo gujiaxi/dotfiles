@@ -21,6 +21,7 @@
 (require 'init-clang)
 (require 'init-java)
 (require 'init-ruby)
+(require 'init-haskell)
 (require 'init-python)
 (require 'init-markdown)
 (require 'init-flycheck)
