@@ -19,7 +19,6 @@ zgen save
 fi
 # END of Plug
 
-
 ####################
 # custom settings
 ####################
@@ -27,7 +26,5 @@ fi
 alias t="ydcv"
 # Set default editor
 export EDITOR="vim"
-# Add utils to PATH
-export PATH=$PATH:$HOME/bin
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
