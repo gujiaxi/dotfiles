@@ -397,20 +397,7 @@ function! s:reorg_rtp()
 endfunction
 
 function! s:doautocmd(...)
-  if exists('#'.join(a:000, '#'))
-    execute 'doautocmd' ((v:version > 703 || has('patch442')) ? '<nomodeline>' : '') join(a:000)
-  endif
-endfunction
-
-function! s:dobufread(names)
-  for name in a:names
-    let path = s:rtp(g:plugs[name]).'/**'
-    for dir in ['ftdetect', 'ftplugin']
-      if len(finddir(dir, path))
-        return s:doautocmd('BufRead')
-      endif
-    endfor
-  endfor
+  execute 'doautocmd' ((v:version > 703 || has('patch442')) ? '<nomodeline>' : '') join(a:000)
 endfunction
 
 function! plug#load(...)
@@ -428,7 +415,9 @@ function! plug#load(...)
   for name in a:000
     call s:lod([name], ['ftdetect', 'after/ftdetect', 'plugin', 'after/plugin'])
   endfor
-  call s:dobufread(a:000)
+  if exists('#BufRead')
+    doautocmd BufRead
+  endif
   return 1
 endfunction
 
@@ -464,7 +453,9 @@ function! s:lod(names, types, ...)
       endif
       call s:source(rtp, a:2)
     endif
-    call s:doautocmd('User', name)
+    if exists('#User#'.name)
+      call s:doautocmd('User', name)
+    endif
   endfor
 endfunction
 
@@ -472,19 +463,21 @@ function! s:lod_ft(pat, names)
   let syn = 'syntax/'.a:pat.'.vim'
   call s:lod(a:names, ['plugin', 'after/plugin'], syn, 'after/'.syn)
   execute 'autocmd! PlugLOD FileType' a:pat
-  call s:doautocmd('filetypeplugin', 'FileType')
-  call s:doautocmd('filetypeindent', 'FileType')
+  if exists('#filetypeplugin#FileType')
+    doautocmd filetypeplugin FileType
+  endif
+  if exists('#filetypeindent#FileType')
+    doautocmd filetypeindent FileType
+  endif
 endfunction
 
 function! s:lod_cmd(cmd, bang, l1, l2, args, names)
   call s:lod(a:names, ['ftdetect', 'after/ftdetect', 'plugin', 'after/plugin'])
-  call s:dobufread(a:names)
   execute printf('%s%s%s %s', (a:l1 == a:l2 ? '' : (a:l1.','.a:l2)), a:cmd, a:bang, a:args)
 endfunction
 
 function! s:lod_map(map, names, prefix)
   call s:lod(a:names, ['ftdetect', 'after/ftdetect', 'plugin', 'after/plugin'])
-  call s:dobufread(a:names)
   let extra = ''
   while 1
     let c = getchar(0)
@@ -493,13 +486,6 @@ function! s:lod_map(map, names, prefix)
     endif
     let extra .= nr2char(c)
   endwhile
-  if v:count
-    call feedkeys(v:count, 'n')
-  endif
-  call feedkeys('"'.v:register, 'n')
-  if mode(1) == 'no'
-    call feedkeys(v:operator)
-  endif
   call feedkeys(a:prefix . substitute(a:map, '^<Plug>', "\<Plug>", '') . extra)
 endfunction
 
@@ -860,14 +846,13 @@ function! s:names(...)
 endfunction
 
 function! s:check_ruby()
-  silent! ruby require 'thread'; VIM::command("let g:plug_ruby = '#{RUBY_VERSION}'")
-  if !exists('g:plug_ruby')
-    redraw!
-    return s:warn('echom', 'Warning: Ruby interface is broken')
+  silent! ruby require 'thread'; VIM::command('let g:plug_ruby = 1')
+  if get(g:, 'plug_ruby', 0)
+    unlet g:plug_ruby
+    return 1
   endif
-  let ruby_version = split(g:plug_ruby, '\.')
-  unlet g:plug_ruby
-  return s:version_requirement(ruby_version, [1, 8, 7])
+  redraw!
+  return s:warn('echom', 'Warning: Ruby interface is broken')
 endfunction
 
 function! s:update_impl(pull, force, args) abort

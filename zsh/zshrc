@@ -1,0 +1,30 @@
+####################
+# zplug settings
+####################
+
+source "$HOME/.zplug/init.zsh"
+# START of Plug
+zplug "plugins/z",    from:oh-my-zsh
+zplug "plugins/git",  from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "themes/amuse", from:oh-my-zsh
+zplug "zplug/zplug"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "tarruda/zsh-autosuggestions"
+zplug "djui/alias-tips"
+zplug "supercrabtree/k"
+# END of Plug
+zplug load --verbose
+
+
+####################
+# custom settings
+####################
+
+# some aliases
+export EDITOR="vim"
+alias t="ydcv"
+
+# rvm
+export PATH=$PATH:$HOME/bin
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
