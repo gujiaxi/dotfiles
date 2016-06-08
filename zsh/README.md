@@ -3,10 +3,10 @@ Zsh configurations by Isaac
 
 ## Install
 
-1. Install [zplug](https://github.com/zplug/zplug):
+1. Install [zgen](https://github.com/tarjoilija/zgen):
 
    ```
-   $ curl -sL get.zplug.sh | zsh
+   $ git clone https://github.com/tarjoilija/zgen.git ~/.zgen
    ```
 
 2. Make a soft link `.zshrc` from `zshrc` in this directory:
