@@ -12,12 +12,12 @@ Zsh configurations by Isaac
 2. Make a soft link `.zshrc` from `zshrc` in this directory:
 
    ```
-   $ ls -n <PATH-TO-ZSHRC> .zshrc
+   $ ln -s <PATH-TO-ZSHRC> .zshrc
    ```
 
 2. Install the needed plugins:
 
    ```
    $ zsh .zshrc
-   $ zplug install
+   $ zgen update
    ```
