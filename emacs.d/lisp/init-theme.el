@@ -13,7 +13,7 @@
 (setq calendar-longitude 116.40)
 (if (display-graphic-p)
     (change-theme 'solarized-light 'solarized-dark)
-  (load-theme 'manoj-dark t))
+  (load-theme 'tsdh-dark t))
 
 
 (provide 'init-theme)

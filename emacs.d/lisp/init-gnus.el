@@ -55,7 +55,5 @@
        "%1{%B%}"
        "%s\n"))
 
-;; set auth sources
-(add-hook 'after-init-hook '(lambda () (add-to-list 'auth-sources (concat user-emacs-directory ".authinfo.gpg"))))
 
 (provide 'init-gnus)

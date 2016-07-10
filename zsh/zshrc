@@ -26,5 +26,3 @@ fi
 alias t="ydcv"
 # Set default editor
 export EDITOR="vim"
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
