@@ -44,6 +44,7 @@ augroup lexical
 augroup END
 
 " nerdcommenter
+let g:NERDSpaceDelims = 1
 
 " nerdtree
 nmap <F6> :NERDTreeToggle<cr>
