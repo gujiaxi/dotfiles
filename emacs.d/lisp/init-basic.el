@@ -84,8 +84,9 @@
 
 ;; set default font
 (when (member "Input" (font-family-list))
-  (progn (set-face-attribute 'default nil :font "Input-12")
-         (set-fontset-font "fontset-default" 'unicode "Microsoft YaHei")))
+  (set-face-attribute 'default nil :font "Input-12"))
+(when (member "宋体" (font-family-list))
+  (set-fontset-font "fontset-default" 'unicode "宋体"))
 
 ;; ido [built-in]
 (ido-mode)

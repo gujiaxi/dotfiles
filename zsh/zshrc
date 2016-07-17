@@ -22,7 +22,7 @@ fi
 ####################
 # custom settings
 ####################
-# Some aliases
-alias t="ydcv"
 # Set default editor
 export EDITOR="vim"
+# Add ruby gems to PATH
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
