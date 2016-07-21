@@ -26,6 +26,7 @@
 (require 'init-markdown)
 (require 'init-flycheck)
 (require 'init-deft)
+(require 'init-ledger)
 (require 'init-dired)
 (require 'init-ess)
 (require 'init-bbdb)
