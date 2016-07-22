@@ -9,10 +9,11 @@
 ;; evil
 (require-package 'evil)
 (evil-mode t)
-(evil-set-initial-state 'dired-mode 'emacs)
-(evil-set-initial-state 'speedbar-mode 'emacs)
+(evil-set-initial-state 'calendar-mode 'emacs)
 (evil-set-initial-state 'deft-mode 'emacs)
+(evil-set-initial-state 'dired-mode 'emacs)
 (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
+(evil-set-initial-state 'speedbar-mode 'emacs)
 
 ;; evil-nerd-commenter
 (require-package 'evil-nerd-commenter)

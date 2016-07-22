@@ -6,6 +6,7 @@
 ;; linum-relative
 (require-package 'linum-relative)
 (linum-relative-mode)
+(setq linum-relative-current-symbol "")
 (set-face-attribute 'linum-relative-current-face nil
                     :foreground nil
                     :background nil)
