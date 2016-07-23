@@ -66,9 +66,6 @@
 ;; quickrun
 (require-package 'quickrun)
 
-;; htmlize
-(require-package 'htmlize)
-
 ;; wgrep
 (require-package 'wgrep)
 

@@ -5,6 +5,7 @@
 
 ;; org
 (require 'org)
+(setq org-confirm-babel-evaluate nil)
 (setq org-src-fontify-natively t)
 (setq org-html-validation-link nil)
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
@@ -28,6 +29,9 @@
         ("p" "Public" plain (file "~/.org/org/p-tweets.org")
          "*** %?\n%U\n-----")))
 
+;; htmlize
+(require-package 'htmlize)
+
 ;; org-publish
 (setq org-publish-project-alist
       '(("org"
@@ -44,6 +48,7 @@
          :html-mathjax "path:\"https://cdn.mathjax.org/mathjax/latest/MathJax.js\" align:\"left\""
          :html-doctype "html5"
          :html-html5-fancy t
+         :htmlized-source t
          :auto-sitemap t
          :sitemap-title "Articles"
          :sitemap-filename "sitemap"
@@ -60,5 +65,20 @@
 ;; ox-latex
 (setq org-latex-pdf-process '("pdflatex %f" "bibtex %b" "pdflatex %f" "pdflatex %f"))
 
+;; org-babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ditaa . t)
+   (emacs-lisp . t)
+   (gnuplot . t)
+   (haskell . t)
+   (latex . t)
+   (perl . t)
+   (plantuml . t)
+   (python . t)
+   (ruby . t)
+   (R . t)
+   (sh . t)))
 
-(provide 'init-org)
+
+ (provide 'init-org)
