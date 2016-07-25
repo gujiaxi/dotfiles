@@ -46,7 +46,7 @@
 ;; sr-speedbar
 (bind-key "<f6>" 'sr-speedbar-toggle)
 ;; evil
-(bind-key "<f5>" 'evil-make)
+(bind-key "<f9>" 'evil-make)
 
 
 (provide 'init-keys)
