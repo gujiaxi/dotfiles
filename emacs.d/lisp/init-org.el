@@ -13,20 +13,20 @@
                            (?C . (:foreground "yellow"))))
 
 ;; org-agenda
-(setq org-agenda-files '("~/.org/org/agenda.org")) 
+(setq org-agenda-files '("~/.efiles/org/agenda.org")) 
 
 ;; org-capture
-(setq org-default-notes-file "~/.org/org/agenda.org")
+(setq org-default-notes-file "~/.efiles/org/agenda.org")
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/.org/org/agenda.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/.efiles/org/agenda.org" "Tasks")
          "* TODO %?\n%U\n%a")
-        ("n" "Note" entry (file+headline "~/.org/org/notes.org" "Inbox")
+        ("n" "Note" entry (file+headline "~/.efiles/org/notes.org" "Inbox")
          "* %?\n%U\n%a")
-        ("j" "Journal" entry (file+datetree "~/.org/org/journal.org")
+        ("j" "Journal" entry (file+datetree "~/.efiles/org/journal.org")
          "* %?\n%U")
-        ("w" "Wish" entry (file+headline "~/.org/org/wish.org" "Wishlist")
+        ("w" "Wish" entry (file+headline "~/.efiles/org/wish.org" "Wishlist")
          "* WANT %?\n%U")
-        ("p" "Public" plain (file "~/.org/org/p-tweets.org")
+        ("p" "Public" plain (file "~/.efiles/org/p-tweets.org")
          "*** %?\n%U\n-----")))
 
 ;; htmlize
@@ -35,9 +35,9 @@
 ;; org-publish
 (setq org-publish-project-alist
       '(("org"
-         :base-directory "~/.org/org/"
+         :base-directory "~/.efiles/org/"
          :base-extension "org"
-         :publishing-directory "~/.org/html/"
+         :publishing-directory "~/.efiles/html/"
          :publishing-function org-html-publish-to-html
          :exclude "^\\([^p]\\|p[^-]\\).*"
          :include ("index.org")
@@ -55,9 +55,9 @@
          :sitemap-sort-files anti-chronologically
          :sitemap-file-entry-format "%d  »  %t")
         ("css"
-         :base-directory "~/.org/css/"
+         :base-directory "~/.efiles/css/"
          :base-extension "css"
-         :publishing-directory "~/.org/html/css/"
+         :publishing-directory "~/.efiles/html/css/"
          :publishing-function org-publish-attachment)
         ("website"
          :components ("org" "css"))))

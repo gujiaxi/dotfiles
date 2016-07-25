@@ -5,8 +5,8 @@
 
 ;; bbdb
 (require-package 'bbdb)
-(setq bbdb-file (concat user-emacs-directory ".bbdb"))
-(bbdb-initialize 'gnus 'message)
+(setq bbdb-file "~/.efiles/bbdb/contacts.bbdb")
+(bbdb-initialize 'gnus 'mail 'message 'anniv 'pgp)
 
 
 (provide 'init-bbdb)
