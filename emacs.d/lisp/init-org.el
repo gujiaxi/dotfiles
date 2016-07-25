@@ -13,12 +13,12 @@
                            (?C . (:foreground "yellow"))))
 
 ;; org-agenda
-(setq org-agenda-files '("~/.org/org/todo.org")) 
+(setq org-agenda-files '("~/.org/org/agenda.org")) 
 
 ;; org-capture
-(setq org-default-notes-file "~/.org/org/todo.org")
+(setq org-default-notes-file "~/.org/org/agenda.org")
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/.org/org/todo.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/.org/org/agenda.org" "Tasks")
          "* TODO %?\n%U\n%a")
         ("n" "Note" entry (file+headline "~/.org/org/notes.org" "Inbox")
          "* %?\n%U\n%a")
