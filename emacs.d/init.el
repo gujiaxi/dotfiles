@@ -10,6 +10,7 @@
 (require 'init-basic)
 ;; built-in packages
 (require 'init-org)
+(require 'init-calendar)
 (require 'init-prog)
 (require 'init-gnus)
 ;; third-party packages

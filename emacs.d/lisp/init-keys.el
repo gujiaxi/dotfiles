@@ -33,6 +33,8 @@
 (bind-key "C-c g" 'lgrep)
 ;; magit
 (bind-key "C-c m" 'magit-status)
+;; calendar
+(bind-key "C-c k" 'calendar)
 ;; ranger
 (bind-key "C-c r" 'ranger)
 ;; quickrun
@@ -46,7 +48,7 @@
 ;; sr-speedbar
 (bind-key "<f6>" 'sr-speedbar-toggle)
 ;; evil
-(bind-key "<f9>" 'evil-make)
+(bind-key "<f5>" 'evil-make)
 
 
 (provide 'init-keys)
