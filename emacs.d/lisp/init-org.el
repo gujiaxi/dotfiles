@@ -20,7 +20,7 @@
 (setq org-default-notes-file (concat org-directory "org/agenda.org"))
 (setq org-capture-templates
       '(("a" "Appt" entry (file+headline (concat org-directory "org/agenda.org" )"Appointments")
-         "* %?\nSCHEDULED: %t")
+         "* %?\n%t")
         ("t" "Task" entry (file+headline (concat org-directory "org/agenda.org" )"Tasks")
          "* TODO %?\n%U\n%a")
         ("n" "Note" entry (file+headline (concat org-directory "org/notes.org" )"Inbox")

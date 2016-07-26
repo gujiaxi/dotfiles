@@ -1,2 +1,2 @@
 # emacs.d
-Emacs Plugins
+Emacs Configuration
