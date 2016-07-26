@@ -13,20 +13,23 @@
                            (?C . (:foreground "yellow"))))
 
 ;; org-agenda
-(setq org-agenda-files '("~/.efiles/org/agenda.org")) 
+(setq org-agenda-files (list (concat org-directory "org/agenda.org"))) 
+(setq org-agenda-include-diary nil)
 
 ;; org-capture
-(setq org-default-notes-file "~/.efiles/org/agenda.org")
+(setq org-default-notes-file (concat org-directory "org/agenda.org"))
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/.efiles/org/agenda.org" "Tasks")
+      '(("a" "Appt" entry (file+headline (concat org-directory "org/agenda.org" )"Appointments")
+         "* %?\nSCHEDULED: %t")
+        ("t" "Task" entry (file+headline (concat org-directory "org/agenda.org" )"Tasks")
          "* TODO %?\n%U\n%a")
-        ("n" "Note" entry (file+headline "~/.efiles/org/notes.org" "Inbox")
+        ("n" "Note" entry (file+headline (concat org-directory "org/notes.org" )"Inbox")
          "* %?\n%U\n%a")
-        ("j" "Journal" entry (file+datetree "~/.efiles/org/journal.org")
+        ("j" "Journal" entry (file+datetree (concat org-directory "org/journal.org"))
          "* %?\n%U")
-        ("w" "Wish" entry (file+headline "~/.efiles/org/wish.org" "Wishlist")
+        ("w" "Wish" entry (file+headline (concat org-directory "org/wish.org" )"Wishlist")
          "* WANT %?\n%U")
-        ("p" "Public" plain (file "~/.efiles/org/p-tweets.org")
+        ("p" "Public" plain (file (concat org-directory "org/p-tweets.org"))
          "*** %?\n%U\n-----")))
 
 ;; htmlize
@@ -34,10 +37,10 @@
 
 ;; org-publish
 (setq org-publish-project-alist
-      '(("org"
-         :base-directory "~/.efiles/org/"
+      `(("org"
+         :base-directory ,(concat org-directory "org/")
          :base-extension "org"
-         :publishing-directory "~/.efiles/html/"
+         :publishing-directory ,(concat org-directory "html/")
          :publishing-function org-html-publish-to-html
          :exclude "^\\([^p]\\|p[^-]\\).*"
          :include ("index.org")
@@ -55,9 +58,9 @@
          :sitemap-sort-files anti-chronologically
          :sitemap-file-entry-format "%d  »  %t")
         ("css"
-         :base-directory "~/.efiles/css/"
+         :base-directory ,(concat org-directory "css/")
          :base-extension "css"
-         :publishing-directory "~/.efiles/html/css/"
+         :publishing-directory ,(concat org-directory "html/css/")
          :publishing-function org-publish-attachment)
         ("website"
          :components ("org" "css"))))

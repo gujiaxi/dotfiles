@@ -23,11 +23,11 @@
 
 ;; helm-bibtex
 (require-package 'helm-bibtex)
-(setq bibtex-completion-bibliography '("~/.efiles/misc/references.bib"))
+(setq bibtex-completion-bibliography (list (concat org-directory "misc/references.bib")))
 (setq bibtex-completion-notes-symbol "✎")
-(setq bibtex-completion-notes-path "~/.efiles/org/research-notes.org")
+(setq bibtex-completion-notes-path (concat org-directory "org/research-notes.org"))
 (setq bibtex-completion-pdf-symbol "⌘")
-(setq bibtex-completion-library-path '("~/.efiles/pdf"))
+(setq bibtex-completion-library-path (list (concat org-directory "pdf")))
 (setq bibtex-completion-pdf-open-function (lambda (fpath) (call-process "SumatraPDF" nil 0 nil fpath)))
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 

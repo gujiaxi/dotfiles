@@ -4,7 +4,7 @@
 
 ;; deft
 (require-package 'deft)
-(setq deft-directory "~/.efiles/org")
+(setq deft-directory (concat org-directory "org"))
 (setq deft-extensions '("org" "md" "tex"))
 (setq deft-default-extension "org")
 (setq deft-recursive t)

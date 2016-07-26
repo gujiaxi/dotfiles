@@ -8,6 +8,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-elpa)
 (require 'init-basic)
+(require 'init-header)
 ;; built-in packages
 (require 'init-org)
 (require 'init-calendar)

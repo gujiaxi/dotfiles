@@ -9,10 +9,10 @@
 (setq calendar-longitude 116.40)
 (setq mark-diary-entries-in-calendar t)
 (setq mark-holidays-in-calendar t)
-(setq cal-html-directory "~/.efiles/calendar")
+(setq cal-html-directory (concat org-directory "calendar"))
 
 ;; diary
-(setq diary-file "~/.efiles/calendar/diary")
+(setq diary-file (concat org-directory "org/diary.org"))
 
 
 (provide 'init-calendar)
