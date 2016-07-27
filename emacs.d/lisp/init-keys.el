@@ -46,7 +46,7 @@
 ;; bing-dict
 (bind-key "C-c t" 'bing-dict-brief)
 ;; sr-speedbar
-(bind-key "<f6>" 'sr-speedbar-toggle)
+(bind-key "<f9>" 'sr-speedbar-toggle)
 ;; evil
 (bind-key "<f5>" 'evil-make)
 

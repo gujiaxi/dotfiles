@@ -47,7 +47,7 @@ augroup END
 let g:NERDSpaceDelims = 1
 
 " nerdtree
-nmap <F6> :NERDTreeToggle<cr>
+nmap <F9> :NERDTreeToggle<cr>
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
