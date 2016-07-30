@@ -22,9 +22,6 @@
 (require-package 'aggressive-indent)
 (global-aggressive-indent-mode t)
 
-;; expand-region
-(require-package 'expand-region)
-
 ;; multiple-cursors
 (require-package 'multiple-cursors)
 
@@ -46,6 +43,12 @@
 (require-package 'color-identifiers-mode)
 (add-hook 'prog-mode-hook 'color-identifiers-mode)
 
+;; sr-speedbar
+(require-package 'sr-speedbar)
+(setq speedbar-show-unknown-files t)
+(setq speedbar-enable-update t)
+(setq sr-speedbar-auto-refresh t)
+
 ;; symon
 (require-package 'symon)
 (setq symon-delay 33)
@@ -60,11 +63,16 @@
 (require-package 'which-key)
 (which-key-mode)
 
-;; info+
-(require-package 'info+)
-
 ;; quickrun
 (require-package 'quickrun)
+
+;; smooth-scrolling
+(require-package 'smooth-scrolling)
+(smooth-scrolling-mode t)
+
+;; nyan-mode
+(require-package 'nyan-mode)
+(nyan-mode t)
 
 ;; wgrep
 (require-package 'wgrep)

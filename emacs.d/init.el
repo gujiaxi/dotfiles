@@ -15,7 +15,6 @@
 (require 'init-prog)
 (require 'init-gnus)
 ;; third-party packages
-(require 'init-theme)
 (require 'init-interface)
 (require 'init-evil)
 (require 'init-helm)
@@ -25,7 +24,6 @@
 (require 'init-clang)
 (require 'init-java)
 (require 'init-ruby)
-(require 'init-haskell)
 (require 'init-python)
 (require 'init-markdown)
 (require 'init-flycheck)
