@@ -29,7 +29,7 @@
          "* %?\n%U")
         ("w" "Wish" entry (file+headline (concat org-directory "org/wish.org" )"Wishlist")
          "* WANT %?\n%U")
-        ("p" "Public" plain (file (concat org-directory "org/p-tweets.org"))
+        ("p" "Publish" plain (file (concat org-directory "org/p-tweets.org"))
          "*** %?\n%U\n-----")))
 
 ;; htmlize
