@@ -89,8 +89,8 @@
   (set-fontset-font "fontset-default" 'unicode "微软雅黑"))
 
 ;; ido [built-in]
-(ido-mode)
-(ido-everywhere)
+(ido-mode t)
+(ido-everywhere t)
 
 ;; windmove [built-in]
 (windmove-default-keybindings)

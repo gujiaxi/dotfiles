@@ -7,6 +7,7 @@
 (require-package 'helm)
 (require 'helm)
 (require 'helm-config)
+(helm-mode t)
 (helm-autoresize-mode t)
 (helm-adaptive-mode t)
 (helm-push-mark-mode t)
@@ -15,7 +16,11 @@
 (setq helm-ff-file-name-history-use-recentf t)
 (setq helm-mode-fuzzy-match t)
 (setq helm-completion-in-region-fuzzy-match t)
-(helm-mode t)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "M-s o") 'helm-occur)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; helm-bibtex
 (require-package 'helm-bibtex)

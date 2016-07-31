@@ -16,12 +16,6 @@
 
 ;; bind-key
 (require-package 'bind-key)
-;; helm
-(bind-key "M-x" 'helm-M-x)
-(bind-key "M-y" 'helm-show-kill-ring)
-(bind-key "M-s o" 'helm-occur)
-(bind-key "C-x b" 'helm-mini)
-(bind-key "C-x C-f" 'helm-find-files)
 ;; org
 (bind-key "C-c a" 'org-agenda)
 (bind-key* "C-c c" 'org-capture)

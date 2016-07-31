@@ -3,9 +3,6 @@
 ;;---------------------------------------------------------------------------
 
 
-;; ace-jump-mode
-(require-package 'ace-jump-mode)
-
 ;; evil
 (require-package 'evil)
 (evil-mode t)
