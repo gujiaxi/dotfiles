@@ -4,7 +4,7 @@
 
 
 ;; Personal Infomation
-(setq user-full-name "Isaac Gu")
+(setq user-full-name "Jiaxi Gu")
 (setq user-mail-address "imjiaxi@gmail.com")
 
 ;; set unicode encoding
@@ -87,6 +87,7 @@
   (set-face-attribute 'default nil :font "Input-12"))
 (when (member "微软雅黑" (font-family-list))
   (set-fontset-font "fontset-default" 'unicode "微软雅黑"))
+
 
 ;; ido [built-in]
 (ido-mode t)
