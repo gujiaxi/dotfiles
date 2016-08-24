@@ -21,6 +21,9 @@
 (require-package 'aggressive-indent)
 (global-aggressive-indent-mode t)
 
+;; expand-region
+(require-package 'expand-region)
+
 ;; multiple-cursors
 (require-package 'multiple-cursors)
 
