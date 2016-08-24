@@ -88,6 +88,9 @@
 (when (member "微软雅黑" (font-family-list))
   (set-fontset-font "fontset-default" 'unicode "微软雅黑"))
 
+;; custom directory
+(setq org-directory "~/Dropbox/Documents/Emacs Files/")
+(setq custom-file (concat user-emacs-directory "lisp/init-custom.el"))
 
 ;; ido [built-in]
 (ido-mode t)
