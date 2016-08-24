@@ -58,12 +58,17 @@
          :sitemap-sort-files anti-chronologically
          :sitemap-file-entry-format "%d  »  %t")
         ("css"
-         :base-directory ,(concat org-directory "css/")
+         :base-directory ,(concat org-directory "misc/")
          :base-extension "css"
          :publishing-directory ,(concat org-directory "html/css/")
          :publishing-function org-publish-attachment)
+        ("js"
+         :base-directory ,(concat org-directory "misc/")
+         :base-extension "js"
+         :publishing-directory ,(concat org-directory "html/js/")
+         :publishing-function org-publish-attachment)
         ("website"
-         :components ("org" "css"))))
+         :components ("org" "css" "js"))))
 
 ;; ox-latex
 (setq org-latex-pdf-process '("pdflatex %f" "bibtex %b" "pdflatex %f" "pdflatex %f"))

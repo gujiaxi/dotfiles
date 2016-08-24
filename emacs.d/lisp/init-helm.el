@@ -24,7 +24,7 @@
 
 ;; helm-bibtex
 (require-package 'helm-bibtex)
-(setq bibtex-completion-bibliography (list (concat org-directory "misc/references.bib")))
+(setq bibtex-completion-bibliography (list (concat org-directory "org/references.bib")))
 (setq bibtex-completion-notes-symbol "✎")
 (setq bibtex-completion-notes-path (concat org-directory "org/research-notes.org"))
 (setq bibtex-completion-pdf-symbol "⌘")
