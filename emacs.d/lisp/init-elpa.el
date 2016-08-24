@@ -3,7 +3,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; Package initialize
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 ;; On-demand installation of packages
