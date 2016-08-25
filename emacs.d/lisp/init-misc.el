@@ -7,8 +7,7 @@
 (require-package 'linum-relative)
 (linum-relative-mode)
 (setq linum-relative-current-symbol "0")
-(custom-set-faces
- '(linum-relative-current-face ((t (:inherit linum :foreground nil :background nil :weight bold)))))
+(set-face-attribute 'linum-relative-current-face nil :weight 'bold)
 
 ;; anzu
 (require-package 'anzu)
