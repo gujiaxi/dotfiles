@@ -48,6 +48,7 @@
 (require-package 'sr-speedbar)
 (setq speedbar-show-unknown-files t)
 (setq speedbar-enable-update t)
+(setq sr-speedbar-skip-other-window-p t)
 (setq sr-speedbar-auto-refresh t)
 
 ;; symon
