@@ -59,7 +59,7 @@
 ;; indent-guide
 (require-package 'indent-guide)
 (add-hook 'prog-mode-hook 'indent-guide-mode)
-(setq indent-guide-char "·")
+(setq indent-guide-char "¦")
 
 ;; which-key
 (require-package 'which-key)

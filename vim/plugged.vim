@@ -14,6 +14,9 @@
 
 " ctrlp.vim
 
+" dracula-theme
+colorscheme dracula
+
 " python-mode
 
 " vim-signature
@@ -88,6 +91,3 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " targets.vim
-
-" dracula-theme
-colorscheme dracula
