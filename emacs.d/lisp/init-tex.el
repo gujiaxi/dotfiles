@@ -18,6 +18,16 @@
 (auctex-latexmk-setup)
 (setq auctex-latexmk-inherit-TeX-PDF-mode t)
 
+;; ebib
+(require-package 'ebib)
+(setq ebib-index-display-fields '(title))
+(setq ebib-file-search-dirs (list (concat org-directory "pdf")))
+(setq ebib-bib-search-dirs (list (concat org-directory "org")))
+(setq ebib-notes-directory (concat org-directory "org"))
+(setq ebib-preload-bib-files '("references.bib"))
+(add-to-list 'evil-emacs-state-modes 'ebib-index-mode)
+(add-to-list 'evil-emacs-state-modes 'ebib-entry-mode)
+
 ;; company-math
 (require-package 'company-math)
 (add-to-list 'company-backends 'company-math-symbols-unicode)

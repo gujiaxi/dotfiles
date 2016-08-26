@@ -33,15 +33,5 @@
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 (setq bibtex-completion-notes-template-one-file "\n* ${author} (${year}): ${title}\n:PROPERTIES:\n:Custom_ID: ${=key=}\n:END:\n")
 
-;; ebib
-(require-package 'ebib)
-(setq ebib-index-display-fields '(title))
-(setq ebib-file-search-dirs (list (concat org-directory "pdf")))
-(setq ebib-bib-search-dirs (list (concat org-directory "org")))
-(setq ebib-notes-directory (concat org-directory "org"))
-(setq ebib-preload-bib-files '("references.bib"))
-(add-to-list 'evil-emacs-state-modes 'ebib-index-mode)
-(add-to-list 'evil-emacs-state-modes 'ebib-entry-mode)
-
 
 (provide 'init-helm)
