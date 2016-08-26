@@ -107,7 +107,7 @@
 
 ;; zone [built-in]
 (require 'zone)
-(zone-when-idle 600)
+(zone-when-idle 18000)
 
 ;; recentf [built-in]
 (recentf-mode t)
