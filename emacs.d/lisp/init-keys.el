@@ -23,6 +23,8 @@
 (bind-key "C-c b" 'helm-bibtex)
 ;; deft
 (bind-key "C-c d" 'deft)
+;; ebib
+(bind-key "C-c e" 'ebib)
 ;; grep
 (bind-key "C-c g" 'lgrep)
 ;; magit
@@ -43,6 +45,8 @@
 (bind-key "<f9>" 'sr-speedbar-toggle)
 ;; evil
 (bind-key "<f5>" 'evil-make)
+;; compile [built-in]
+(bind-key "<f6>" 'compile)
 
 
 (provide 'init-keys)
