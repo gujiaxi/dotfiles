@@ -5,9 +5,11 @@
 
 ;; org
 (require 'org)
-(setq org-confirm-babel-evaluate nil)
 (setq org-src-fontify-natively t)
+(setq org-confirm-babel-evaluate nil)
 (setq org-html-validation-link nil)
+(setq org-export-html-style-include-scripts nil)
+(setq org-export-html-style-include-default nil)
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
                            (?B . (:foreground "orange"))
                            (?C . (:foreground "yellow"))))
