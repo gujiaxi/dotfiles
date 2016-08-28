@@ -1,7 +1,10 @@
-;;---------------------------------------------------------------------------
-;; Main conf
-;;---------------------------------------------------------------------------
+;;; init.el --- The main config for Emacs
 
+;;; Commentary:
+;;
+;; First-load initial file for Emacs.
+
+;;; Code:
 
 (package-initialize)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -35,5 +38,6 @@
 (require 'init-misc)
 (require 'init-keys)
 
-
 (provide 'init)
+
+;;; init.el ends here
