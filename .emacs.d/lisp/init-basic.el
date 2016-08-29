@@ -93,7 +93,7 @@
 
 ;; custom directory
 (setq org-directory "~/Dropbox/Documents/Emacs Files/")
-(setq custom-file (concat user-emacs-directory "lisp/init-custom.el"))
+(setq custom-file (concat user-emacs-directory "custom.el"))
 
 ;; ido [built-in]
 (ido-mode t)

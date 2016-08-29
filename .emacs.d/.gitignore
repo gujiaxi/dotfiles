@@ -1,5 +1,6 @@
 /*
 !.gitignore
-!init.el
 !README.md
+!init.el
+!custom.el
 !lisp
