@@ -82,6 +82,9 @@
 ;; confirm before quit
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+;; suppress warnings
+(setq find-file-suppress-same-file-warnings t)
+
 ;; set default font
 (when (member "Input" (font-family-list))
   (set-face-attribute 'default nil :font "Input-12"))

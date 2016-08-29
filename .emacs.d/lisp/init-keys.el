@@ -19,8 +19,6 @@
 ;; org
 (bind-key "C-c a" 'org-agenda)
 (bind-key* "C-c c" 'org-capture)
-;; helm-bibtex
-(bind-key "C-c b" 'helm-bibtex)
 ;; deft
 (bind-key "C-c d" 'deft)
 ;; ebib
