@@ -30,7 +30,7 @@
 (require-package 'smartparens)
 (require 'smartparens-config)
 (smartparens-global-mode t)
-(show-smartparens-global-mode t)
+(sp-use-smartparens-bindings)
 
 ;; rainbow-delimiters
 (require-package 'rainbow-delimiters)
