@@ -82,5 +82,9 @@
 ;; bing-dict
 (require-package 'bing-dict)
 
+;; zone-rainbow
+(require-package 'zone-rainbow)
+(eval-after-load "zone" (setq zone-programs (vconcat zone-programs [zone-pgm-rainbow])))
+
 
 (provide 'init-misc)
