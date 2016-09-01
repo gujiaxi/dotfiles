@@ -26,6 +26,12 @@
 ;; multiple-cursors
 (require-package 'multiple-cursors)
 
+;; smartparens
+(require-package 'smartparens)
+(require 'smartparens-config)
+(smartparens-global-mode t)
+(sp-use-smartparens-bindings)
+
 ;; rainbow-delimiters
 (require-package 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
