@@ -14,14 +14,11 @@
     (change-theme 'solarized-light 'solarized-dark)
   (load-theme 'tsdh-dark t))
 
-;; powerline
-(require-package 'powerline)
-(setq powerline-default-separator 'utf-8)
-(powerline-default-theme)
-
-;; undisplay minor mode names in mode-line
-(defun clear-minor-mode-alist (&rest _) (setq minor-mode-alist nil))
-(add-hook 'after-load-functions 'clear-minor-mode-alist)
+;; smart-mode-line
+(require-package 'smart-mode-line)
+(setq rm-blacklist ".*")
+(setq sml/no-confirm-load-theme t)
+(sml/setup)
 
 
 (provide 'init-interface)
