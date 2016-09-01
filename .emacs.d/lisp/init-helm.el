@@ -21,6 +21,7 @@
 (global-set-key (kbd "M-s o") 'helm-occur)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(add-to-list 'helm-boring-buffer-regexp-list "^\\*.*\\*")
 
 ;; helm-bibtex
 (require-package 'helm-bibtex)
