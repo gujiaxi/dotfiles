@@ -5,6 +5,7 @@
 
 ;; solarized-theme
 (require-package 'solarized-theme)
+(setq solarized-high-contrast-mode-line t)
 
 ;; theme-changer
 (require-package 'theme-changer)
@@ -13,14 +14,14 @@
     (change-theme 'solarized-light 'solarized-dark)
   (load-theme 'tsdh-dark t))
 
-;; smart-mode-line
-(require-package 'smart-mode-line)
-(setq sml/no-confirm-load-theme t)
-(sml/setup)
+;; powerline
+(require-package 'powerline)
+(setq powerline-default-separator 'utf-8)
+(powerline-default-theme)
 
-;; rich-minority
-(require-package 'rich-minority)
-(setf rm-blacklist "")
+;; undisplay minor mode names in mode-line
+(defun clear-minor-mode-alist (&rest _) (setq minor-mode-alist nil))
+(add-hook 'after-load-functions 'clear-minor-mode-alist)
 
 
 (provide 'init-interface)
