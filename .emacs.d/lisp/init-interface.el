@@ -5,7 +5,6 @@
 
 ;; solarized-theme
 (require-package 'solarized-theme)
-(setq x-underline-at-descent-line t)
 
 ;; theme-changer
 (require-package 'theme-changer)
