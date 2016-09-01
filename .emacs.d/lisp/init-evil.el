@@ -10,6 +10,7 @@
 (evil-set-initial-state 'deft-mode 'emacs)
 (evil-set-initial-state 'dired-mode 'emacs)
 (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
+(evil-set-initial-state 'help-mode 'emacs)
 (evil-set-initial-state 'speedbar-mode 'emacs)
 
 ;; evil-nerd-commenter

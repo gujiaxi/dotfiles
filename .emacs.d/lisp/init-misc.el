@@ -6,7 +6,7 @@
 ;; linum-relative
 (require-package 'linum-relative)
 (linum-relative-mode)
-(setq linum-relative-current-symbol "0")
+(setq linum-relative-current-symbol "")
 (set-face-attribute 'linum-relative-current-face nil :weight 'bold)
 
 ;; anzu
@@ -26,12 +26,6 @@
 ;; multiple-cursors
 (require-package 'multiple-cursors)
 
-;; smartparens
-(require-package 'smartparens)
-(require 'smartparens-config)
-(smartparens-global-mode t)
-(sp-use-smartparens-bindings)
-
 ;; rainbow-delimiters
 (require-package 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -50,6 +44,10 @@
 (setq speedbar-enable-update t)
 (setq sr-speedbar-skip-other-window-p t)
 (setq sr-speedbar-auto-refresh t)
+
+;; eyebrowse
+(require-package 'eyebrowse)
+(eyebrowse-mode t)
 
 ;; symon
 (require-package 'symon)

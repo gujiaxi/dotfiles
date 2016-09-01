@@ -58,13 +58,6 @@
 ;; highlight current line
 (global-hl-line-mode t)
 
-;; show line number
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'LaTeX-mode-hook 'linum-mode)
-(add-hook 'bibtex-mode-hook 'linum-mode)
-(add-hook 'markdown-mode-hook 'linum-mode)
-(add-hook 'org-mode-hook 'linum-mode)
-
 ;; display time in mode line
 (display-time-mode t)
 (setq display-time-24hr-format t)
@@ -78,6 +71,9 @@
 
 ;; avoid the mouse when typing
 (mouse-avoidance-mode 'animate)
+
+;; suppress adding newline
+(setq mode-require-final-newline nil)
 
 ;; confirm before quit
 (setq confirm-kill-emacs 'yes-or-no-p)
@@ -119,6 +115,14 @@
 ;; saveplace [built-in]
 (require 'saveplace)
 (setq-default save-place t)
+
+;; linum [built-in]
+(setq linum-delay t)
+(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'LaTeX-mode-hook 'linum-mode)
+(add-hook 'bibtex-mode-hook 'linum-mode)
+(add-hook 'markdown-mode-hook 'linum-mode)
+(add-hook 'org-mode-hook 'linum-mode)
 
 
 (provide 'init-basic)
