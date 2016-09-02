@@ -6,7 +6,7 @@
 ;; linum-relative
 (require-package 'linum-relative)
 (linum-relative-mode)
-(setq linum-relative-current-symbol "->")
+(setq linum-relative-current-symbol "0")
 
 ;; anzu
 (require-package 'anzu)
