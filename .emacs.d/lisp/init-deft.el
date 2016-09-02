@@ -13,4 +13,4 @@
 (setq deft-use-filter-string-for-filename t)
 
 
-(provide 'init-deft)
+;;; init-deft ends here

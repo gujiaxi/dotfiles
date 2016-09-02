@@ -33,4 +33,4 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . rainbow-mode))
 
 
-(provide 'init-web)
+;;; init-web.el ends here

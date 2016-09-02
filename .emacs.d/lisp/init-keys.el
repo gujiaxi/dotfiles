@@ -3,19 +3,14 @@
 ;;---------------------------------------------------------------------------
 
 
-;; general
-(require-package 'general)
-(general-define-key :states '(normal visual)
-                    "j" 'evil-next-visual-line
-                    "k" 'evil-previous-visual-line)
-(general-define-key :states '(normal)
-                    :prefix ","
-                    "u" 'winner-undo
-                    "r" 'winner-redo
-                    "s" 'avy-goto-char-2)
-
 ;; bind-key
 (require-package 'bind-key)
+;; evil
+(bind-key "<f5>" 'evil-make)
+(bind-keys :map evil-normal-state-map
+           (", u" . winner-undo)
+           (", r" . winner-redo)
+           (", s" . avy-goto-char-2))
 ;; org
 (bind-key "C-c a" 'org-agenda)
 (bind-key* "C-c c" 'org-capture)
@@ -41,10 +36,8 @@
 (bind-key "C-c t" 'bing-dict-brief)
 ;; sr-speedbar
 (bind-key "<f9>" 'sr-speedbar-toggle)
-;; evil
-(bind-key "<f5>" 'evil-make)
 ;; compile [built-in]
 (bind-key "<f6>" 'compile)
 
 
-(provide 'init-keys)
+;;; init-keys.el ends here

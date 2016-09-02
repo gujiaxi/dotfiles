@@ -90,4 +90,4 @@
 (eval-after-load "zone" (setq zone-programs (vconcat zone-programs [zone-pgm-rainbow])))
 
 
-(provide 'init-misc)
+;;; init-misc.el ends here

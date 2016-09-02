@@ -34,9 +34,6 @@
         ("p" "Publish" plain (file (concat org-directory "org/p-tweets.org"))
          "*** %?\n%U\n-----")))
 
-;; htmlize
-(require-package 'htmlize)
-
 ;; org-publish
 (setq org-publish-project-alist
       `(("org"
@@ -90,5 +87,8 @@
    (R . t)
    (sh . t)))
 
+;; htmlize
+(require-package 'htmlize)
 
-(provide 'init-org)
+
+;;; init-org.el ends here

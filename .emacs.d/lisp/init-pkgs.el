@@ -1,6 +1,11 @@
-;;---------------------------------------------------------------------------
-;; Find and load the correct package.el
-;;---------------------------------------------------------------------------
+;;; init-pkgs.el --- Initialize package setting.
+
+;;; Commentary:
+;;
+;; Set package archives and define a function for on-demand package
+;; installation
+
+;;; Code:
 
 
 ;; Package sources
@@ -12,8 +17,7 @@
   "Install given PACKAGE, optionally requiring MIN-VERSION.
 If NO-REFRESH is non-nil, the available package lists will not be
 re-downloaded in order to locate PACKAGE."
-  (if (package-installed-p package min-version)
-      t
+  (if (package-installed-p package min-version) t
     (if (or (assoc package package-archive-contents) no-refresh)
         (if (boundp 'package-selected-packages)
             ;; Record this as a package the user installed explicitly
@@ -24,4 +28,4 @@ re-downloaded in order to locate PACKAGE."
         (require-package package min-version t)))))
 
 
-(provide 'init-elpa)
+;;; init-pkgs.el ends here

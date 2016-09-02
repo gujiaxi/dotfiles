@@ -10,6 +10,7 @@
 
 ;; zenburn-theme
 (require-package 'zenburn-theme)
+(set-face-attribute 'fringe nil :background 'unspecified)
 
 ;; theme-changer
 (require-package 'theme-changer)
@@ -25,4 +26,4 @@
 (sml/setup)
 
 
-(provide 'init-interface)
+;;; init-interface.el ends here

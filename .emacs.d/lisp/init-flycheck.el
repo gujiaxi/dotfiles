@@ -4,7 +4,6 @@
 
 
 ;; flymake
-;; turn it off since flycheck is on
 (remove-hook 'LaTeX-mode-hook 'flymake-mode)
 
 ;; flyspell
@@ -16,7 +15,9 @@
 
 ;; flycheck
 (require-package 'flycheck)
-(global-flycheck-mode)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+;; turn flymake off since flycheck is on
+(remove-hook 'LaTeX-mode-hook 'flymake-mode)
 
 
-(provide 'init-flycheck)
+;;; init-flycheck.el ends here

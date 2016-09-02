@@ -27,4 +27,4 @@
 (company-auctex-init)
 
 
-(provide 'init-tex)
+;;; init-tex.el ends here

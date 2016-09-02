@@ -4,6 +4,7 @@
 
 
 ;; cedet [built-in]
+(require-package 'cedet)
 (semantic-mode t)
 (global-semantic-idle-scheduler-mode t)
 (global-semantic-idle-completions-mode t)
@@ -12,6 +13,7 @@
 (global-semantic-show-unmatched-syntax-mode t)
 
 ;; electric [built-in]
+(require-package 'electric)
 (electric-pair-mode t)
 (electric-indent-mode t)
 (electric-layout-mode t)
@@ -25,4 +27,4 @@
 (add-hook 'prog-mode-hook 'dumb-jump-mode)
 
 
-(provide 'init-prog)
+;;; init-prog.el ends here

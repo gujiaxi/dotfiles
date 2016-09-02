@@ -5,7 +5,6 @@
 
 ;; helm
 (require-package 'helm)
-(require 'helm)
 (require 'helm-config)
 (helm-mode t)
 (helm-autoresize-mode t)
@@ -34,4 +33,4 @@
 (setq bibtex-completion-notes-template-one-file "\n* ${title} (${year})\n:PROPERTIES:\n:Custom_ID: ${=key=}\n:END:\n")
 
 
-(provide 'init-helm)
+;;; init-helm.el ends here

@@ -1,6 +1,11 @@
-;;--------------------------------------------------------------------------
-;; misc conf
-;;--------------------------------------------------------------------------
+;;; init-basic.el --- Some basic configurations.
+
+;;; Commentary:
+;;
+;; This is a general-purpose configuration without any third-party
+;; packages.
+
+;;; Code:
 
 
 ;; Personal Infomation
@@ -8,10 +13,10 @@
 (setq user-mail-address "imjiaxi@gmail.com")
 
 ;; set unicode encoding
-(set-language-environment 'utf-8)
-
-;; no ring-bell
-(setq ring-bell-function 'ignore)
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
 
 ;; no lockfile
 (setq create-lockfiles nil)
@@ -27,7 +32,19 @@
 ;; no startup message
 (setq inhibit-startup-message t)
 
-;; handy fix
+;; no ring-bell
+(setq ring-bell-function 'ignore)
+
+;; nice frame
+(when (display-graphic-p)
+  (scroll-bar-mode 0)
+  (tool-bar-mode 0)
+  (menu-bar-mode 0))
+
+;; nice scrolling
+(setq scroll-margin 5)
+
+;; enable y/n answers
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; enable syntax highlight
@@ -40,17 +57,11 @@
 ;; deltet selection
 (delete-selection-mode t)
 
-;; GUI related
-(when (display-graphic-p)
-  (scroll-bar-mode 0)
-  (tool-bar-mode 0)
-  (menu-bar-mode 0))
+;; auto revert external changes
+(global-auto-revert-mode t)
 
-;; set scroll-margin
-(setq scroll-margin 5)
-
-;; show parentheses
-(show-paren-mode t)
+;; always load newest byte code
+(setq load-prefer-newer t)
 
 ;; show which function current line belongs to
 (which-function-mode t)
@@ -64,12 +75,12 @@
 (setq system-time-locale "C")
 
 ;; set frame title
-(setq frame-title-format "emacs@%b")
+(setq frame-title-format "%b")
 
 ;; set a larger kill ring
 (setq kill-ring-max 200)
 
-;; avoid the mouse when typing
+;; dodge the mouse from cursor
 (mouse-avoidance-mode 'animate)
 
 ;; suppress adding newline
@@ -91,38 +102,5 @@
 (setq org-directory "~/Dropbox/Documents/Emacs Files/")
 (setq custom-file (concat user-emacs-directory "custom.el"))
 
-;; ido [built-in]
-(ido-mode t)
-(ido-everywhere t)
 
-;; windmove [built-in]
-(windmove-default-keybindings)
-
-;; hideshow [built-in]
-(add-hook 'prog-mode-hook 'hs-minor-mode)
-
-;; winner [built-in]
-(winner-mode t)
-
-;; zone [built-in]
-(require 'zone)
-(zone-when-idle 18000)
-
-;; recentf [built-in]
-(recentf-mode t)
-(setq recentf-max-saved-items 200)
-
-;; saveplace [built-in]
-(require 'saveplace)
-(setq-default save-place t)
-
-;; linum [built-in]
-(setq linum-delay t)
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'LaTeX-mode-hook 'linum-mode)
-(add-hook 'bibtex-mode-hook 'linum-mode)
-(add-hook 'markdown-mode-hook 'linum-mode)
-(add-hook 'org-mode-hook 'linum-mode)
-
-
-(provide 'init-basic)
+;;; init-basic.el ends here
