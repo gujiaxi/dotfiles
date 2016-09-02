@@ -30,7 +30,7 @@
 
 ;; zone [built-in]
 (require-package 'zone)
-(autoload 'zone-when-idle "zone.el" nil t)
+(autoload 'zone-when-idle "zone" nil t)
 (zone-when-idle 18000)
 
 ;; saveplace [built-in]
