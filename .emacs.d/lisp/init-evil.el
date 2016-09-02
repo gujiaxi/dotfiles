@@ -32,4 +32,5 @@
 (global-evil-search-highlight-persist t)
 
 
+(provide 'init-evil)
 ;;; init-evil.el ends here

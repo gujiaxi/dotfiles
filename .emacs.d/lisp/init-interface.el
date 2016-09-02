@@ -26,4 +26,5 @@
 (sml/setup)
 
 
+(provide 'init-interface)
 ;;; init-interface.el ends here

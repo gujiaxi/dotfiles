@@ -18,4 +18,5 @@
 (add-to-list 'company-backends 'company-c-headers)
 
 
+(provide 'init-clang)
 ;;; init-clang.el ends here

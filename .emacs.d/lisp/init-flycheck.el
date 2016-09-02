@@ -20,4 +20,5 @@
 (remove-hook 'LaTeX-mode-hook 'flymake-mode)
 
 
+(provide 'init-flycheck)
 ;;; init-flycheck.el ends here

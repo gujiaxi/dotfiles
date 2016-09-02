@@ -9,4 +9,5 @@
 (setq markdown-command "pandoc -c http://kevinburke.bitbucket.org/markdowncss/markdown.css")
 
 
+(provide 'init-markdown)
 ;;; init-markdown.el ends here

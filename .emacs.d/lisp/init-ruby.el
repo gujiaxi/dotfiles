@@ -9,4 +9,5 @@
 (add-to-list 'company-backends 'company-robe)
 
 
+(provide 'init-ruby)
 ;;; init-ruby.el ends here

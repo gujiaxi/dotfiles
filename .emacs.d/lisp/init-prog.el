@@ -27,4 +27,5 @@
 (add-hook 'prog-mode-hook 'dumb-jump-mode)
 
 
+(provide 'init-prog)
 ;;; init-prog.el ends here

@@ -103,4 +103,5 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 
 
+(provide 'init-basic)
 ;;; init-basic.el ends here

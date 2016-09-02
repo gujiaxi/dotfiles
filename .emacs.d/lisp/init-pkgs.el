@@ -28,4 +28,5 @@ re-downloaded in order to locate PACKAGE."
         (require-package package min-version t)))))
 
 
+(provide 'init-pkgs)
 ;;; init-pkgs.el ends here

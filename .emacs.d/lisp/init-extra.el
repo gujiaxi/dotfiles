@@ -55,4 +55,5 @@
 (add-hook 'org-mode-hook 'linum-mode)
 
 
+(provide 'init-extra)
 ;;; init-extra.el ends here

@@ -9,4 +9,5 @@
 (bbdb-initialize 'gnus 'mail 'message 'anniv 'pgp)
 
 
+(provide 'init-bbdb)
 ;;; init-bbdb.el ends here

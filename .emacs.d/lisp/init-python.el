@@ -13,4 +13,5 @@
 (add-to-list 'company-backends 'company-anaconda)
 
 
+(provide 'init-python)
 ;;; init-python.el ends here

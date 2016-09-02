@@ -33,4 +33,5 @@
 (setq bibtex-completion-notes-template-one-file "\n* ${title} (${year})\n:PROPERTIES:\n:Custom_ID: ${=key=}\n:END:\n")
 
 
+(provide 'init-helm)
 ;;; init-helm.el ends here

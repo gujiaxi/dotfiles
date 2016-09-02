@@ -7,4 +7,5 @@
 (require-package 'jdee)
 
 
+(provide 'init-java)
 ;;; init-java.el ends here

@@ -53,4 +53,5 @@
        "%s\n"))
 
 
+(provide 'init-gnus)
 ;;; init-gnus.el ends here

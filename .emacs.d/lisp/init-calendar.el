@@ -15,4 +15,5 @@
 (setq diary-file (concat org-directory "org/diary.org"))
 
 
+(provide 'init-calendar)
 ;;; init-calendar.el ends here

@@ -10,4 +10,5 @@
 (setq ess-ask-for-ess-directory nil)
 
 
+(provide 'init-ess)
 ;;; init-ess.el ends here

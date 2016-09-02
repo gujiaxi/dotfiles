@@ -13,4 +13,5 @@
 (require-package 'ranger)
 
 
+(provide 'init-dired)
 ;;; init-dired.el ends here

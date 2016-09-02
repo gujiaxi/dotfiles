@@ -40,4 +40,5 @@
 (bind-key "<f6>" 'compile)
 
 
+(provide 'init-keys)
 ;;; init-keys.el ends here
