@@ -14,10 +14,13 @@
 (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
 (evil-set-initial-state 'help-mode 'emacs)
 (evil-set-initial-state 'speedbar-mode 'emacs)
+(global-set-key (kbd "<f5>") 'evil-make)
 
 ;; evil-nerd-commenter
 (require-package 'evil-nerd-commenter)
-(evilnc-default-hotkeys)
+(global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+(with-eval-after-load "evil"
+  (define-key evil-normal-state-map (kbd ",ci") 'evilnc-comment-or-uncomment-lines))
 
 ;; evil-surround
 (require-package 'evil-surround)

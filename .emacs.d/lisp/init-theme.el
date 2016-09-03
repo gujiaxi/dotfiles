@@ -1,5 +1,5 @@
 ;;---------------------------------------------------------------------------
-;; interface conf
+;; theme conf
 ;;---------------------------------------------------------------------------
 
 
@@ -14,7 +14,7 @@
 
 ;; theme-changer
 (require-package 'theme-changer)
-(require 'theme-changer)
+(autoload 'change-theme "theme-changer" nil nil)
 (if (display-graphic-p)
     (change-theme 'solarized-light 'solarized-dark)
   (load-theme 'zenburn t))
@@ -26,5 +26,5 @@
 (sml/setup)
 
 
-(provide 'init-interface)
-;;; init-interface.el ends here
+(provide 'init-theme)
+;;; init-theme.el ends here

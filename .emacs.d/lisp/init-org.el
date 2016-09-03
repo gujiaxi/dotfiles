@@ -4,7 +4,6 @@
 
 
 ;; org
-(require 'org)
 (setq org-src-fontify-natively t)
 (setq org-confirm-babel-evaluate nil)
 (setq org-html-validation-link nil)
@@ -89,7 +88,6 @@
 
 ;; htmlize
 (require-package 'htmlize)
-
 
 (provide 'init-org)
 ;;; init-org.el ends here

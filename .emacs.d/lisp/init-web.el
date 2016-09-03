@@ -5,7 +5,6 @@
 
 ;; web-mode
 (require-package 'web-mode)
-(setq web-mode-markup-indent-offset 2)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.wp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
@@ -22,6 +21,8 @@
 (add-to-list 'auto-mode-alist '("\\.ftl\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.xul?\\'" . web-mode))
+(with-eval-after-load "web-mode"
+  (setq web-mode-markup-indent-offset 2))
 
 ;; js2-mode
 (require-package 'js2-mode)

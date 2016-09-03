@@ -1,14 +1,15 @@
 ;;---------------------------------------------------------------------------
-;; ess conf
+;; r-lang conf
 ;;---------------------------------------------------------------------------
 
 
 ;; ess
 (require-package 'ess)
 (add-to-list 'auto-mode-alist '("\\.[rR]\\'" . R-mode))
-(setq ess-eval-visibly nil)
-(setq ess-ask-for-ess-directory nil)
+(with-eval-after-load "ess"
+  (setq ess-eval-visibly nil)
+  (setq ess-ask-for-ess-directory nil))
 
 
-(provide 'init-ess)
-;;; init-ess.el ends here
+(provide 'init-r)
+;;; init-r.el ends here

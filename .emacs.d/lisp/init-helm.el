@@ -31,6 +31,7 @@
 (setq bibtex-completion-pdf-open-function (lambda (fpath) (call-process "SumatraPDF" nil 0 nil fpath)))
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 (setq bibtex-completion-notes-template-one-file "\n* ${title} (${year})\n:PROPERTIES:\n:Custom_ID: ${=key=}\n:END:\n")
+(global-set-key (kbd "C-c b") 'helm-bibtex)
 
 
 (provide 'init-helm)
