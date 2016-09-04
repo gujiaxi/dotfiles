@@ -5,15 +5,17 @@
 
 ;; evil
 (require-package 'evil)
+;; Enable evil mode
 (evil-mode t)
+;; Move cursor across visual lines
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-(evil-set-initial-state 'calendar-mode 'emacs)
-(evil-set-initial-state 'deft-mode 'emacs)
-(evil-set-initial-state 'dired-mode 'emacs)
-(evil-set-initial-state 'flycheck-error-list-mode 'emacs)
-(evil-set-initial-state 'help-mode 'emacs)
-(evil-set-initial-state 'speedbar-mode 'emacs)
+;; Fallback to emacs-state for some modes
+(mapc (lambda (mode-name) (evil-set-initial-state mode-name 'emacs))
+      '(calendar-mode deft-mode dired-mode flycheck-error-list-mode
+        help-mode speedbar-mode))
+;; Key bindings
+(define-key evil-emacs-state-map (kbd "C-w") 'evil-window-map)
 (global-set-key (kbd "<f5>") 'evil-make)
 
 ;; evil-nerd-commenter

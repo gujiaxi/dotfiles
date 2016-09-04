@@ -5,13 +5,14 @@
 
 ;; auctex
 (require-package 'auctex)
-(setq TeX-parse-self t)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'TeX-fold-mode)
 (add-hook 'LaTeX-mode-hook 'flycheck-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
 
 ;; auctex-latexmk
 (require-package 'auctex-latexmk)

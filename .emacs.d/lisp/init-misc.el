@@ -109,6 +109,10 @@
   (setq bbdb-file (concat org-directory "bbdb/contacts.bbdb"))
   (bbdb-initialize 'gnus 'mail 'message 'anniv 'pgp))
 
+;; csv-mode
+(require-package 'csv-mode)
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+
 ;; bing-dict
 (require-package 'bing-dict)
 (global-set-key (kbd "C-c t") 'bing-dict-brief)
