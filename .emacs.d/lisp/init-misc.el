@@ -7,7 +7,7 @@
 ;;; Code:
 
 
-;;;-- built-in packages
+;; --- built-in packages ---
 
 ;; calendar [built-in]
 (require-package 'calendar)
@@ -100,6 +100,8 @@
 ;; avy
 (require-package 'avy)
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
+;; prevent it bound externally
+(add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-'"))))
 
 ;; bbdb
 (require-package 'bbdb)
@@ -109,7 +111,7 @@
 
 ;; bing-dict
 (require-package 'bing-dict)
-(global-set-key (kbd "C-c b") 'bing-dict-brief)
+(global-set-key (kbd "C-c t") 'bing-dict-brief)
 
 ;; color-identifiers-mode
 (require-package 'color-identifiers-mode)

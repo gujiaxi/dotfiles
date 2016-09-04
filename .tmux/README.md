@@ -7,18 +7,20 @@ Tmux Plugin Manager ([tpm](https://github.com/tmux-plugins/tpm)) is required.
 
 1. Install tpm:
 
-   ```
-   $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+   ``` sh
+   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
    ```
 
 2. Create a soft link to `tmux.conf` in this directory:
 
-   ```
-   $ ln -s <PATH_TO_TMUX.CONF> ~/.tmux.conf
+   ``` sh
+   git clone https://github.com/gujiaxi/dotfiles
+   cp dotfiles/.tmux ~/.tmux
+   ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
    ```
 
 3. Reload Tmux environment:
 
-   ```
-   $ tmux source ~/.tmux.conf
+   ``` sh
+   tmux source ~/.tmux.conf
    ```

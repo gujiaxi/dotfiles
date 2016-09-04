@@ -2,67 +2,71 @@
 " Plugin settings
 """"""""""""""""""
 
-" supertab
+" ervandew/supertab
 
-" tabular
+" godlygeek/tabular
 
-" vim-index-search
+" henrik/vim-index-search
 
-" vim-snippets
+" honza/vim-snippets
 
-" vim-orgmode
+" jiangmiao/auto-pairs
 
-" ctrlp.vim
+" ctrlpvim/ctrlp.vim
 
-" dracula-theme
+" dracula/vim
 colorscheme dracula
 
-" python-mode
+" klen/python-mode
 
-" vim-signature
+" kshenoy/vim-signature
 
-" rainbow
+" luochen1990/rainbow
 let g:rainbow_active = 1
 
-" LaTeX-Box
+" LaTeX-Box-Team/LaTeX-Box
 
-" vim-easymotion
+" Lokaltog/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
-map <Leader> <Plug>(easymotion-prefix)
-nmap    s    <Plug>(easymotion-overwin-f2)
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
 
-" tagbar
+" majutsushi/tagbar
 nmap <F7> :TagbarToggle<cr>
 
-" vim-startify
+" mhinz/vim-startify
 
-" vim-indent-guides
+" mileszs/ack.vim
+
+" nathanaelkane/vim-indent-guides
 nmap <F4> :IndentGuidesToggle<cr>
 
-" vim-lexical
+" plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
+" reedes/vim-lexical
 augroup lexical
     autocmd!
     autocmd FileType plaintex call lexical#init()
 augroup END
 
-" nerdcommenter
+" scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
 
-" nerdtree
+" scrooloose/nerdtree
 nmap <F9> :NERDTreeToggle<cr>
 
-" syntastic
+" scrooloose/syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" ultisnips
+" SirVer/ultisnips
 let g:UltiSnipsExpandTrigger = '<TAB>'
 let g:UltiSnipsJumpForwardTrigger = '<TAB>'
 
-" neocomplete.vim
+" Shougo/neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 inoremap <expr><TAB>  pumvisible() ? '\<C-n>' : '\<TAB>'
@@ -72,22 +76,17 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" vim-multiple-cursors
+" terryma/vim-multiple-cursors
 
-" vim-quickrun
+" thinca/vim-quickrun
 nmap <F5> :QuickRun<cr>
 
-" vim-fugitive
+" tpope/vim-fugitive
 
-" vim-speeddating
+" tpope/vim-surround
 
-" vim-surround
-
-" vim-markdown
-let g:vim_markdown_folding_disabled = 1
-
-" vim-airline
+" vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" targets.vim
+" wellle/targets.vim

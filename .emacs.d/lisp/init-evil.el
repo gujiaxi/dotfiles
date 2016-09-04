@@ -20,7 +20,7 @@
 (require-package 'evil-nerd-commenter)
 (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
 (with-eval-after-load "evil"
-  (define-key evil-normal-state-map (kbd ",ci") 'evilnc-comment-or-uncomment-lines))
+  (define-key evil-normal-state-map (kbd ", c SPC") 'evilnc-comment-or-uncomment-lines))
 
 ;; evil-surround
 (require-package 'evil-surround)
