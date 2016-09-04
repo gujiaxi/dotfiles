@@ -12,6 +12,8 @@
 (setq helm-mode-fuzzy-match t)
 (setq helm-completion-in-region-fuzzy-match t)
 (with-eval-after-load "helm"
+  (require 'helm-config)
+  (helm-mode)
   (helm-autoresize-mode t)
   (helm-adaptive-mode t)
   (helm-push-mark-mode t))
