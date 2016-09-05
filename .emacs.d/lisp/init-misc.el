@@ -45,11 +45,9 @@
 
 ;; linum [built-in]
 (require-package 'linum)
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'LaTeX-mode-hook 'linum-mode)
-(add-hook 'bibtex-mode-hook 'linum-mode)
-(add-hook 'markdown-mode-hook 'linum-mode)
-(add-hook 'org-mode-hook 'linum-mode)
+(mapc (lambda (hook) (add-hook hook 'linum-mode))
+      '(bibtex-mode-hook LaTeX-mode-hook markdown-mode-hook
+                         org-mode-hook prog-mode-hook text-mode-hook))
 
 ;; org [built-in]
 (require-package 'org)
@@ -71,7 +69,7 @@
 
 ;; saveplace [built-in]
 (require-package 'saveplace)
-(setq-default save-place t)
+(save-place-mode t)
 
 ;; windmove [built-in]
 (require-package 'windmove)
