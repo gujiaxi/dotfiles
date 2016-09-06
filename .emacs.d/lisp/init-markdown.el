@@ -1,6 +1,10 @@
-;;---------------------------------------------------------------------------
-;; markdown conf
-;;---------------------------------------------------------------------------
+;; init-markdown.el --- Markdown configs
+
+;;; Commentary:
+;;
+;; For editting markdown fifles
+
+;;; Code:
 
 
 ;; markdown-mode

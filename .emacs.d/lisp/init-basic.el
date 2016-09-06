@@ -9,7 +9,7 @@
 
 
 ;; Personal Infomation
-(setq user-full-name "Jiaxi Gu")
+(setq user-full-name "Ku Chia-hsi")
 (setq user-mail-address "imjiaxi@gmail.com")
 
 ;; set unicode encoding
@@ -22,12 +22,13 @@
 (setq create-lockfiles nil)
 
 ;; backup and autosave
-(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-
-;; version control
+(setq backup-directory-alist `((".*" . ,(concat user-emacs-directory "etc/backup"))))
 (setq version-control t)
 (setq delete-old-versions t)
+
+;; auto-save
+(setq auto-save-list-file-prefix (concat user-emacs-directory "etc/auto-save/.saves-"))
+(setq auto-save-file-name-transforms `((".*" ,(concat user-emacs-directory "etc/auto-save") t)))
 
 ;; no startup message
 (setq inhibit-startup-message t)

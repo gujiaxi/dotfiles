@@ -9,6 +9,10 @@
 
 ;; --- built-in packages ---
 
+;; bookmark [built-in]
+(require-package 'bookmark)
+(setq bookmark-default-file (concat user-emacs-directory "etc/bookmarks"))
+
 ;; calendar [built-in]
 (require-package 'calendar)
 (setq calendar-location-name "Beijing, China")
@@ -24,11 +28,27 @@
 (require-package 'compile)
 (global-set-key (kbd "<f6>") 'compile)
 
+;; dabbrev [built-in]
+(require-package 'dabbrev)
+(setq abbrev-file-name (concat user-emacs-directory "etc/abbrev_defs"))
+
+;; dired [built-in]
+(setq dired-recursive-deletes 'always)
+(setq dired-recursive-copies 'always)
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;; electric [built-in]
 (require-package 'electric)
 (electric-pair-mode t)
 (electric-indent-mode t)
 (electric-layout-mode t)
+
+;; flyspell [built-in]
+(require-package 'flyspell)
+(setq ispell-program-name "aspell")
+(ispell-change-dictionary "american" t)
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'markdown-mode-hook 'flyspell-mode)
 
 ;; grep [built-in]
 (require-package 'grep)
@@ -40,6 +60,7 @@
 
 ;; ido [built-in]
 (require-package 'ido)
+(setq ido-save-directory-list-file (concat user-emacs-directory "etc/ido.last"))
 (ido-mode t)
 (ido-everywhere t)
 
@@ -60,16 +81,25 @@
 
 ;; savehist [built-in]
 (require-package 'savehist)
+(setq savehist-file (concat user-emacs-directory "etc/history"))
 (savehist-mode t)
 
 ;; recentf [built-in]
 (require-package 'recentf)
 (setq recentf-max-saved-items 500)
+(setq recentf-save-file (concat user-emacs-directory "etc/recentf"))
 (recentf-mode t)
 
 ;; saveplace [built-in]
 (require-package 'saveplace)
+(setq save-place-file (concat user-emacs-directory "etc/places"))
 (save-place-mode t)
+
+;; tramp [built-in]
+(require-package 'tramp)
+(setq tramp-backup-directory-alist backup-directory-alist)
+(with-eval-after-load "tramp-cache"
+  (setq tramp-persistency-file-name (concat user-emacs-directory "etc/tramp")))
 
 ;; windmove [built-in]
 (require-package 'windmove)
@@ -146,12 +176,6 @@
 (require-package 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-;; flyspell
-(setq ispell-program-name "aspell")
-(ispell-change-dictionary "american" t)
-(add-hook 'org-mode-hook 'flyspell-mode)
-(add-hook 'markdown-mode-hook 'flyspell-mode)
-
 ;; indent-guide
 (require-package 'indent-guide)
 (add-hook 'prog-mode-hook 'indent-guide-mode)
@@ -180,6 +204,8 @@
 
 ;; projectile
 (require-package 'projectile)
+(setq projectile-cache-file (concat user-emacs-directory "etc/projectile/projectile.cache"))
+(setq projectile-known-projects-file (concat user-emacs-directory "etc/projectile/projectile-bookmarks.eld"))
 (projectile-global-mode)
 
 ;; quickrun
@@ -192,9 +218,7 @@
 
 ;; ranger
 (require-package 'ranger)
-(setq dired-recursive-deletes 'always)
-(setq dired-recursive-copies 'always)
-(put 'dired-find-alternate-file 'disabled nil)
+(setq ranger-minimal t)
 (global-set-key (kbd "C-c r") 'ranger)
 
 ;; smartparens
@@ -226,6 +250,7 @@
 
 ;; yasnippet
 (require-package 'yasnippet)
+(setq yas-snippet-dirs `(,(concat user-emacs-directory "etc/snippets") yas-installed-snippets-dir))
 (yas-global-mode t)
 
 ;; wgrep

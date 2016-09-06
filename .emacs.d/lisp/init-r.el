@@ -1,6 +1,11 @@
-;;---------------------------------------------------------------------------
-;; r-lang conf
-;;---------------------------------------------------------------------------
+;; init-r.el --- R language settings
+
+;;; Commentary:
+;;
+;; R language settings for providing an efficient R programming
+;; environment
+
+;;; Code:
 
 
 ;; ess

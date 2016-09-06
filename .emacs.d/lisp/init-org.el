@@ -1,6 +1,11 @@
-;;--------------------------------------------------------------------------
-;; Org conf
-;;--------------------------------------------------------------------------
+;; init-org.el --- Org-mode settings
+
+;;; Commentary:
+;;
+;; In this file, many features of org such as org-agenda and
+;; org-publish are involved.
+
+;;; Code:
 
 
 ;; org

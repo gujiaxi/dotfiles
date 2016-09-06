@@ -1,6 +1,10 @@
-;;---------------------------------------------------------------------------
-;; company conf
-;;---------------------------------------------------------------------------
+;; init-company.el --- Use company package for code completion
+
+;;; Commentary:
+;;
+;; Use `company' package and its relevant packages
+
+;;; Code:
 
 
 ;; company

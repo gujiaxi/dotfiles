@@ -1,6 +1,10 @@
-;;---------------------------------------------------------------------------
-;; helm conf
-;;---------------------------------------------------------------------------
+;; init-helm.el --- Helm (related) package settings
+
+;;; Commentary:
+;;
+;; Use helm for handy Emacs experience
+
+;;; Code:
 
 
 ;; helm
@@ -11,6 +15,7 @@
 (setq helm-follow-mode-persistent t)
 (setq helm-mode-fuzzy-match t)
 (setq helm-completion-in-region-fuzzy-match t)
+(setq helm-adaptive-history-file (concat user-emacs-directory "etc/helm-adaptive-history"))
 (with-eval-after-load "helm"
   (require 'helm-config)
   (helm-mode)

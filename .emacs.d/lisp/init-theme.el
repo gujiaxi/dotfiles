@@ -1,6 +1,10 @@
-;;---------------------------------------------------------------------------
-;; theme conf
-;;---------------------------------------------------------------------------
+;; init-theme.el --- Emacs theme and mode-line tweak
+
+;;; Commentary:
+;;
+;; Adopt a fancy color theme and polish the mode-line
+
+;;; Code:
 
 
 ;; solarized-theme

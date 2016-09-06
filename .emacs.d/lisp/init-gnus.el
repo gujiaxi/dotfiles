@@ -1,6 +1,11 @@
-;;----------------------------------------------------------------------------
-;; Gnus conf
-;;----------------------------------------------------------------------------
+;; init-gnus.el --- Gnus settings
+
+;;; Commentary:
+;;
+;; Use Gnus for news reading and email operations.
+
+;;; Code:
+
 
 ;; mail path
 (gnus-agentize)

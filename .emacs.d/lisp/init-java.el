@@ -1,6 +1,10 @@
-;;---------------------------------------------------------------------------
-;; java conf
-;;---------------------------------------------------------------------------
+;; init-java.el --- Java environment settings
+
+;;; Commentary:
+;;
+;; Some tweaks for providing an efficient Java Environment
+
+;;; Code:
 
 
 ;; jdee
