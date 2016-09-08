@@ -15,8 +15,8 @@
 (setq org-export-html-style-include-scripts nil)
 (setq org-export-html-style-include-default nil)
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
-                           (?B . (:foreground "orange"))
-                           (?C . (:foreground "yellow"))))
+                           (?B . (:foreground "orange" :weight bold))
+                           (?C . (:foreground "yellow" :wegith bold))))
 
 ;; org-agenda
 (setq org-agenda-files (list (concat org-directory "org/agenda.org"))) 

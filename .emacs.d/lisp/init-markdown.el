@@ -10,8 +10,7 @@
 ;; markdown-mode
 (require-package 'markdown-mode)
 (setq markdown-enable-math t)
-(setq markdown-command
-      "pandoc -c http://kevinburke.bitbucket.org/markdowncss/markdown.css")
+(setq markdown-command "pandoc --mathjax -c http://tilde.works/~isaac/assets/md.css")
 
 
 (provide 'init-markdown)

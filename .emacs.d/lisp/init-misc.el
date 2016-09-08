@@ -250,7 +250,6 @@
 
 ;; yasnippet
 (require-package 'yasnippet)
-(setq yas-snippet-dirs `(,(concat user-emacs-directory "etc/snippets") yas-installed-snippets-dir))
 (yas-global-mode t)
 
 ;; wgrep

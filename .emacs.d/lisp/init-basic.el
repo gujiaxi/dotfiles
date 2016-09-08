@@ -100,7 +100,7 @@
   (set-fontset-font "fontset-default" 'unicode "微软雅黑"))
 
 ;; custom directory
-(setq org-directory "~/Dropbox/Documents/Emacs Files/")
+(setq org-directory "~/Dropbox/Documents/EmacsFiles/")
 (setq custom-file (concat user-emacs-directory "custom.el"))
 
 
