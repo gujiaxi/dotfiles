@@ -13,7 +13,7 @@ Zsh configurations by Isaac
 
    ``` sh
    git clone https://github.com/gujiaxi/dotfiles
-   cp dotfiles/.zsh/zshrc ~/.zshrc
+   cp dotfiles/.zsh/.zshrc ~/.zshrc
    ```
 
 2. Install the needed plugins:

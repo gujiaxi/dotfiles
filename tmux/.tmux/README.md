@@ -10,7 +10,7 @@ Tmux Plugin Manager ([tpm](https://github.com/tmux-plugins/tpm)) is required.
    ``` sh
    git clone https://github.com/gujiaxi/dotfiles dotfiles
    cp -r dotfiles/.tmux ~/.tmux
-   ln -s ~/.tmux/tmux.conf ~/.tmux.conf
+   ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
    ```
 
 2. Install tpm:
