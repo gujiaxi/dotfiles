@@ -1,20 +1,31 @@
-# zplug init
-export ZPLUG_HOME=$HOME/.zsh/.zplug
-source $ZPLUG_HOME/init.zsh
-# plugin list
-zplug "themes/amuse", from:oh-my-zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "lib/functions", from:oh-my-zsh
-zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "plugins/emacs", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/z", from:oh-my-zsh
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "tarruda/zsh-autosuggestions"
-zplug "djui/alias-tips"
-zplug "supercrabtree/k"
-zplug "zplug/zplug"
-# load plugins
-zplug load
+####################
+# zgen settings
+####################
+export ZGEN_DIR=$HOME/.zsh/.zgen
+source $ZGEN_DIR/zgen.zsh
+# START of Plug
+if ! zgen saved; then
+zgen oh-my-zsh
+zgen oh-my-zsh themes/amuse
+zgen oh-my-zsh plugins/colored-man-pages
+zgen oh-my-zsh plugins/common-aliases
+zgen oh-my-zsh plugins/emacs
+zgen oh-my-zsh plugins/git
+zgen oh-my-zsh plugins/sudo
+zgen oh-my-zsh plugins/tmux
+zgen oh-my-zsh plugins/z
+zgen load      zsh-users/zsh-syntax-highlighting
+zgen load      tarruda/zsh-autosuggestions
+zgen load      djui/alias-tips
+zgen load      supercrabtree/k
+zgen save
+fi
+# END of Plug
+
+####################
+# custom settings
+####################
+# Set default editor
+export EDITOR="vim"
+# Add ruby gems to PATH
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
