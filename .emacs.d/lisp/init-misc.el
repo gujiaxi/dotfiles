@@ -43,6 +43,10 @@
 (electric-indent-mode t)
 (electric-layout-mode t)
 
+;; eshell [built-in]
+(require-package 'eshell)
+(setq eshell-directory-name (concat user-emacs-directory "etc/eshell"))
+
 ;; flyspell [built-in]
 (require-package 'flyspell)
 (setq ispell-program-name "aspell")

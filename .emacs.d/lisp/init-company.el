@@ -25,10 +25,6 @@
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 
-;; company-emoji
-(require-package 'company-emoji)
-(add-to-list 'company-backends 'company-emoji)
-
 
 (provide 'init-company)
 ;;; init-company.el ends here

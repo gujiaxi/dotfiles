@@ -33,6 +33,7 @@
 
 ;; evil-surround
 (require-package 'evil-surround)
+(load "evil-surround-autoloads")
 (global-evil-surround-mode t)
 
 ;; evil-matchit

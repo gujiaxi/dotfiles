@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: doc
+# key: doc_
+# --
+#+TITLE: $1
+#+STARTUP: hidestars indent content
+#+OPTIONS: toc:nil num:nil ^:{}
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://tilde.works/~isaac/assets/org.css" />
+
+$2
