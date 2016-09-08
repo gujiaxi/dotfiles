@@ -2,7 +2,7 @@
 
 A set of configuration files managed by [Stow](http://www.gnu.org/software/stow/).
 
-# Get started
+## Get started
 
 ```
 stow (GNU Stow)
