@@ -4,6 +4,7 @@ source $ZPLUG_HOME/init.zsh
 # plugin list
 zplug "themes/amuse", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "lib/functions", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/emacs", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
