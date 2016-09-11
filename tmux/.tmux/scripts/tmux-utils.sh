@@ -1,7 +1,4 @@
-#!/bin/bash
-
-# exit the script if any statement returns a non-true return value
-set -e
+#!/usr/bin/env bash
 
 maximize_pane() {
   tmux -q -L swap-pane-test -f /dev/null new-session -d \; new-window \; new-window \; swap-pane -t :1 \; kill-session || { tmux display 'your tmux version has a buggy swap-pane command - see ticket #108, fixed in upstream commit 78e783e'; exit; }
@@ -43,6 +40,5 @@ toggle_mouse() {
        bind-key -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M" \;\
        display "mouse: $new"
 }
-
 
 $@
