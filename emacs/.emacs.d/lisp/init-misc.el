@@ -49,8 +49,6 @@
 
 ;; flyspell [built-in]
 (require-package 'flyspell)
-(setq ispell-program-name "aspell")
-(ispell-change-dictionary "american" t)
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 
@@ -61,6 +59,11 @@
 ;; hideshow [built-in]
 (require-package 'hideshow)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
+
+;; ispell [built-in]
+(require-package 'ispell)
+(setq ispell-program-name "aspell")
+(ispell-change-dictionary "american" t)
 
 ;; ido [built-in]
 (require-package 'ido)

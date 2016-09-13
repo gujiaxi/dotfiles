@@ -32,7 +32,7 @@
         ("n" "Note" entry (file+headline (concat org-directory "org/notes.org" )"Inbox")
          "* %?\n%U\n%a")
         ("j" "Journal" entry (file+datetree (concat org-directory "org/journal.org"))
-         "* %?\n%U")
+         "* %?\n")
         ("w" "Wish" entry (file+headline (concat org-directory "org/wish.org" )"Wishlist")
          "* WANT %?\n%U")
         ("p" "Publish" plain (file (concat org-directory "org/p-tweets.org"))
