@@ -13,7 +13,7 @@ zgen oh-my-zsh plugins/git
 zgen oh-my-zsh plugins/sudo
 zgen oh-my-zsh plugins/tmux
 zgen oh-my-zsh plugins/z
-zgen load      gujiaxi/thunder thunder
+zgen load      nksoff/muslim muslim
 zgen load      zsh-users/zsh-syntax-highlighting
 zgen load      tarruda/zsh-autosuggestions
 zgen load      djui/alias-tips
