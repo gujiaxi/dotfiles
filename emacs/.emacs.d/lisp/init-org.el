@@ -14,6 +14,7 @@
 (setq org-html-validation-link nil)
 (setq org-export-html-style-include-scripts nil)
 (setq org-export-html-style-include-default nil)
+(setq org-startup-with-inline-images t)
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
                            (?B . (:foreground "orange" :weight bold))
                            (?C . (:foreground "yellow" :wegith bold))))
