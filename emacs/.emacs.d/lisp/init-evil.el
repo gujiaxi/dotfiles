@@ -14,7 +14,9 @@
 (evil-mode t)
 ;; Move cursor across visual lines
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+(define-key evil-visual-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+(define-key evil-visual-state-map (kbd "k") 'evil-previous-visual-line)
 ;; Fallback to emacs-state for some modes
 (mapc (lambda (mode) (evil-set-initial-state mode 'emacs))
       '(calendar-mode comint-mode completion-mode deft-mode
