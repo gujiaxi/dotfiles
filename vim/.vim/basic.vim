@@ -59,6 +59,9 @@ set hid
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
+" No end of line
+set noeol
+
 " Ignore case when searching
 set ignorecase
 

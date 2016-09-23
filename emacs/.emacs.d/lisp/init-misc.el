@@ -251,6 +251,12 @@
 (setq symon-delay 33)
 (symon-mode)
 
+;; undo-tree
+(require-package 'undo-tree)
+
+;; wgrep
+(require-package 'wgrep)
+
 ;; which-key
 (require-package 'which-key)
 (which-key-mode)
@@ -258,9 +264,6 @@
 ;; yasnippet
 (require-package 'yasnippet)
 (yas-global-mode t)
-
-;; wgrep
-(require-package 'wgrep)
 
 
 (provide 'init-misc)
