@@ -2,6 +2,7 @@
 # zgen settings
 ####################
 export ZGEN_DIR=$HOME/.zsh/.zgen
+export ZGEN_INIT=$HOME/.zgen_init
 source $ZGEN_DIR/zgen.zsh
 # START of Plug
 if ! zgen saved; then
