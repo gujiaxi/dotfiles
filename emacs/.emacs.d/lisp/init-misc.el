@@ -9,6 +9,9 @@
 
 ;; --- built-in packages ---
 
+;; custom keys
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+
 ;; bookmark [built-in]
 (require-package 'bookmark)
 (setq bookmark-default-file (concat user-emacs-directory "etc/bookmarks"))

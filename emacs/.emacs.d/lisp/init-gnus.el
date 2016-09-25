@@ -7,17 +7,8 @@
 ;;; Code:
 
 
-;; mail path
-(gnus-agentize)
-(setq gnus-use-dribble-file nil)
-(setq gnus-default-directory "~/Documents/Gnus")
-(setq gnus-home-directory "~/Documents/Gnus")
-(setq message-directory "~/Documents/Gnus/Mail")
-(setq gnus-directory "~/Documents/Gnus/News")
-(setq nnfolder-directory "~/Documents/Gnus/Mail/archive")
-
-;; set nntp
-(setq gnus-select-method '(nntp "news.gmane.org"))
+;; no news groups
+(setq gnus-select-method '(nnml ""))
 
 ;; ask encryption password only once
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
@@ -56,6 +47,47 @@
        "  " "%3{│%}"
        " " "%1{%B%}"
        "%s\n"))
+
+;; directories
+(gnus-agentize)
+(setq gnus-use-dribble-file nil)
+(setq gnus-startup-file (concat user-emacs-directory "etc/gnus/.newsrc"))
+(setq gnus-default-directory (concat user-emacs-directory "etc/gnus/"))
+(setq gnus-home-directory (concat user-emacs-directory "etc/gnus/"))
+(setq gnus-dribble-directory (concat user-emacs-directory "etc/gnus/"))
+(setq gnus-directory (concat user-emacs-directory "etc/gnus/news/"))
+(setq gnus-article-save-directory (concat user-emacs-directory "etc/gnus/news/"))
+(setq gnus-kill-files-directory (concat user-emacs-directory "etc/gnus/news/"))
+(setq gnus-agent-directory (concat user-emacs-directory "etc/gnus/news/agent/"))
+(setq gnus-cache-directory (concat user-emacs-directory "etc/gnus/news/cache/"))
+(setq gnus-cache-active-file (concat user-emacs-directory "etc/gnus/news/cache/active"))
+(setq message-directory (concat user-emacs-directory "etc/gnus/mail/"))
+(setq message-auto-save-directory (concat user-emacs-directory "etc/gnus/mail/drafts"))
+(setq mail-source-directory (concat user-emacs-directory "etc/gnus/mail/incoming"))
+(setq nnfolder-directory (concat user-emacs-directory "etc/gnus/mail/archive/"))
+(setq nnmail-message-id-cache-file (concat user-emacs-directory "etc/gnus/.nnmail-cache"))
+(setq nntp-marks-directory (concat user-emacs-directory "etc/gnus/news/marks/"))
+(setq mml-default-directory (concat user-emacs-directory "etc/gnus/attachments/"))
+
+;; email configs
+(setq gnus-permanently-visible-groups "INBOX")
+(setq gnus-activate-level 1)
+(setq gnus-show-threads t)
+(setq gnus-use-full-window nil)
+(setq message-confirm-send t)
+(setq message-from-style 'angles)
+
+;; gpg
+(setq mm-verify-option 'always)
+(setq mm-decrypt-option 'always)
+(setq mm-encrypt-option 'guided)
+
+;; misc
+(setq gnus-inhibit-startup-message t)
+(setq gnus-novice-user nil)
+(setq gnus-expert-user t)
+(setq gnus-use-dribble-file nil)
+(setq gnus-always-read-dribble-file nil)
 
 
 (provide 'init-gnus)
