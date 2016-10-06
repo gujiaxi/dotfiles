@@ -20,7 +20,7 @@
 ;; enable file name completion
 (add-to-list 'company-backends 'company-files)
 ;; turn company off in some specific modes
-(setq company-global-modes '(not eshell-mode))
+(setq company-global-modes '(not comint-mode eshell-mode org-mode))
 ;; nice key strokes for selecting
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)

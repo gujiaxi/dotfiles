@@ -9,9 +9,6 @@
 
 ;; --- built-in packages ---
 
-;; custom keys
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
-
 ;; bookmark [built-in]
 (require-package 'bookmark)
 (setq bookmark-default-file (concat user-emacs-directory "etc/bookmarks"))
@@ -186,6 +183,12 @@
 (require-package 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
+;; highlight-thing
+(require-package 'highlight-thing)
+(add-hook 'prog-mode-hook 'highlight-thing-mode)
+(setq highlight-thing-delay-seconds 1.0)
+(setq highlight-thing-case-sensitive-p t)
+
 ;; indent-guide
 (require-package 'indent-guide)
 (add-hook 'prog-mode-hook 'indent-guide-mode)
@@ -228,7 +231,6 @@
 
 ;; ranger
 (require-package 'ranger)
-(setq ranger-minimal t)
 (global-set-key (kbd "C-c r") 'ranger)
 
 ;; smartparens
@@ -267,6 +269,11 @@
 ;; yasnippet
 (require-package 'yasnippet)
 (yas-global-mode t)
+
+
+;; --- key-bidndings ---
+
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
 
 
 (provide 'init-misc)
