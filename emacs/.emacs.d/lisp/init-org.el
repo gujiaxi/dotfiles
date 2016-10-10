@@ -58,7 +58,7 @@
          :htmlized-source t
          :auto-sitemap t
          :sitemap-title "Articles"
-         :sitemap-filename "sitemap"
+         :sitemap-filename "sitemap.org"
          :sitemap-sort-files anti-chronologically
          :sitemap-file-entry-format "%d  »  %t")
         ("css"
