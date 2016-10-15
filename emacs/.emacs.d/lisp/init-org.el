@@ -40,6 +40,7 @@
          "*** %?\n%U\n-----")))
 
 ;; org-publish
+(setq org-publish-timestamp-directory (concat user-emacs-directory "etc/org-timestamps/"))
 (setq org-publish-project-alist
       `(("org"
          :base-directory ,(concat org-directory "org/")
