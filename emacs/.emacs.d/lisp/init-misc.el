@@ -62,8 +62,9 @@
 
 ;; ispell [built-in]
 (require-package 'ispell)
-(setq ispell-program-name "aspell")
-(ispell-change-dictionary "american" t)
+(setenv "DICTIONARY" "en_US")
+(setq isepell-program-name "hunspell")
+(setq ispell-personal-dictionary (concat user-emacs-directory "etc/ispell/hunspell_en_US"))
 
 ;; ido [built-in]
 (require-package 'ido)
