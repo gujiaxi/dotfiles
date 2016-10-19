@@ -40,6 +40,11 @@
          "*** %?\n%U\n-----")))
 
 ;; org-publish
+(defun org-html-publish-index ()
+  "Generate 'index.html'."
+  (let ((index-org (concat org-directory "org/index.org"))
+        (export-dir (concat org-directory "html")))
+    (org-html-publish-to-html nil index-org export-dir)))
 (setq org-publish-timestamp-directory (concat user-emacs-directory "etc/org-timestamps/"))
 (setq org-publish-project-alist
       `(("org"
@@ -48,7 +53,7 @@
          :publishing-directory ,(concat org-directory "html/")
          :publishing-function org-html-publish-to-html
          :exclude "^\\([^p]\\|p[^-]\\).*"
-         :include ("index.org")
+         :completion-function org-html-publish-index
          :html-head-include-default-style nil
          :html-head-include-scripts nil
          :html-head "<link rel='stylesheet' href='./css/org.css' type='text/css'/>"
