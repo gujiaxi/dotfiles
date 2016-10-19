@@ -58,7 +58,7 @@
          :html-html5-fancy t
          :htmlized-source t
          :auto-sitemap t
-         :sitemap-title "Articles"
+         :sitemap-title ""
          :sitemap-filename "sitemap.org"
          :sitemap-sort-files anti-chronologically
          :sitemap-file-entry-format "%d  »  %t")
