@@ -84,6 +84,7 @@
 (setq org-latex-pdf-process '("pdflatex %f" "bibtex %b" "pdflatex %f" "pdflatex %f"))
 
 ;; org-babel
+(setq org-src-preserve-indentation t)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((ditaa . t)
@@ -91,6 +92,7 @@
    (gnuplot . t)
    (haskell . t)
    (latex . t)
+   (ledger . t)
    (perl . t)
    (plantuml . t)
    (python . t)
