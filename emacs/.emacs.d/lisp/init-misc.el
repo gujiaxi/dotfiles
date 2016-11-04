@@ -139,12 +139,6 @@
 ;; prevent it bound externally
 (add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-'"))))
 
-;; bbdb
-(require-package 'bbdb)
-(with-eval-after-load "bbdb"
-  (setq bbdb-file (concat org-directory "bbdb/contacts.bbdb"))
-  (bbdb-initialize 'gnus 'mail 'message 'anniv 'pgp))
-
 ;; csv-mode
 (require-package 'csv-mode)
 (add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
@@ -183,6 +177,9 @@
 ;; flycheck
 (require-package 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
+
+;; haskell-mode
+(require-package 'haskell-mode)
 
 ;; highlight-thing
 (require-package 'highlight-thing)

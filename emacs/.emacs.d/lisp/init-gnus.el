@@ -16,7 +16,7 @@
 ;; receive email via imap
 (setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\”]\”[#’()]")
 (add-to-list 'gnus-secondary-select-methods
-             '(nnimap "imap.gmail.com"
+             '(nnimap "Gmail"
                       (nnimap-address "imap.gmail.com")
                       (nnimap-server-port 993)
                       (nnimap-stream ssl)))

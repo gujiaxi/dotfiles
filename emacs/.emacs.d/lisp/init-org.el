@@ -56,7 +56,7 @@
          :completion-function org-html-publish-index
          :html-head-include-default-style nil
          :html-head-include-scripts nil
-         :html-head "<link rel='stylesheet' href='./css/org.css' type='text/css'/>"
+         :html-head "<link rel='stylesheet' href='static/org.css' type='text/css'/>"
          :html-head-extra "<meta name='viewport' content='width=device-width'>"
          :html-mathjax "path:\"https://cdn.mathjax.org/mathjax/latest/MathJax.js\" align:\"left\""
          :html-doctype "html5"
@@ -67,18 +67,13 @@
          :sitemap-filename "sitemap.org"
          :sitemap-sort-files anti-chronologically
          :sitemap-file-entry-format "%d  »  %t")
-        ("css"
-         :base-directory ,(concat org-directory "misc/")
-         :base-extension "css"
-         :publishing-directory ,(concat org-directory "html/css/")
-         :publishing-function org-publish-attachment)
-        ("js"
-         :base-directory ,(concat org-directory "misc/")
-         :base-extension "js"
-         :publishing-directory ,(concat org-directory "html/js/")
+        ("static"
+         :base-directory ,(concat org-directory "static/")
+         :base-extension "css\\|js\\|pdf"
+         :publishing-directory ,(concat org-directory "html/static/")
          :publishing-function org-publish-attachment)
         ("website"
-         :components ("org" "css" "js"))))
+         :components ("org" "static"))))
 
 ;; ox-latex
 (setq org-latex-pdf-process '("pdflatex %f" "bibtex %b" "pdflatex %f" "pdflatex %f"))
