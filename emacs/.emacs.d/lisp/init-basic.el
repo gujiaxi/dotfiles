@@ -9,7 +9,7 @@
 
 
 ;; Personal Infomation
-(setq user-full-name "Ku Chia-hsi")
+(setq user-full-name "Jiaxi Gu")
 (setq user-mail-address "imjiaxi@gmail.com")
 
 ;; set unicode encoding
@@ -80,6 +80,9 @@
 
 ;; set a larger kill ring
 (setq kill-ring-max 200)
+
+;; use system clipboard
+(setq save-interprogram-paste-before-kill t)
 
 ;; dodge the mouse from cursor
 (mouse-avoidance-mode 'animate)

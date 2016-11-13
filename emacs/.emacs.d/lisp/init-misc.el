@@ -213,6 +213,10 @@
 (require-package 'nyan-mode)
 (nyan-mode t)
 
+;; persistent-scratch
+(require-package 'persistent-scratch)
+(persistent-scratch-setup-default)
+
 ;; projectile
 (require-package 'projectile)
 (setq projectile-cache-file (concat user-emacs-directory "etc/projectile/projectile.cache"))

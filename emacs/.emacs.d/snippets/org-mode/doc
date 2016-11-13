@@ -5,6 +5,6 @@
 #+TITLE: $1
 #+STARTUP: hidestars indent content align inlineimages
 #+OPTIONS: toc:nil num:nil ^:{}
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://tilde.works/~isaac/assets/org.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://tilde.works/~isaac/static/org.css" />
 
 $2

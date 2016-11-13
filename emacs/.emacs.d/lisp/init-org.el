@@ -11,7 +11,6 @@
 ;; org
 (setq org-src-fontify-natively t)
 (setq org-confirm-babel-evaluate nil)
-(setq org-html-validation-link nil)
 (setq org-export-html-style-include-scripts nil)
 (setq org-export-html-style-include-default nil)
 (setq org-startup-with-inline-images t)
@@ -97,6 +96,10 @@
 
 ;; htmlize
 (require-package 'htmlize)
+
+;; postamble
+(setq org-html-postamble t)
+(setq org-html-postamble-format '(("en" "© <a class='author' href='https://twitter.com/gujiaxi'>%a</a> / <span class='date'>%C</span>")))
 
 (provide 'init-org)
 ;;; init-org.el ends here
