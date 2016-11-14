@@ -15,7 +15,7 @@
 (setq org-export-html-style-include-default nil)
 (setq org-startup-with-inline-images t)
 (setq org-html-preamble t)
-(setq org-html-preamble-format '(("en" "")))
+(setq org-html-preamble-format '(("en" "<div></div>")))
 (setq org-html-postamble t)
 (setq org-html-postamble-format '(("en" "<hr>&copy; %a / %C")))
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
@@ -29,17 +29,17 @@
 ;; org-capture
 (setq org-default-notes-file (concat org-directory "org/agenda.org"))
 (setq org-capture-templates
-      '(("a" "Appt" entry (file+headline (concat org-directory "org/agenda.org" )"Appointments")
+      '(("a" "Appt" entry (file+headline "org/agenda.org" "Appointments")
          "* %?\n%t")
-        ("t" "Task" entry (file+headline (concat org-directory "org/agenda.org" )"Tasks")
+        ("t" "Task" entry (file+headline "org/agenda.org" "Tasks")
          "* TODO %?\n%U\n%a")
-        ("n" "Note" entry (file+headline (concat org-directory "org/notes.org" )"Inbox")
+        ("n" "Note" entry (file+headline "org/notes.org" "Inbox")
          "* %?\n%U\n%a")
-        ("j" "Journal" entry (file+datetree (concat org-directory "org/journal.org"))
+        ("j" "Journal" entry (file+datetree "org/journal.org")
          "* %?\n")
-        ("w" "Wish" entry (file+headline (concat org-directory "org/wish.org" )"Wishlist")
+        ("w" "Wish" entry (file+headline "org/wish.org" "Wishlist")
          "* WANT %?\n%U")
-        ("p" "Publish" plain (file (concat org-directory "org/p-tweets.org"))
+        ("p" "Publish" plain (file "org/p-tweets.org")
          "*** %?\n%U\n-----")))
 
 ;; org-publish
