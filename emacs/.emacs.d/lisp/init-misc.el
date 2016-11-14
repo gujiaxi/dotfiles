@@ -98,6 +98,10 @@
 (setq recentf-save-file (concat user-emacs-directory "etc/recentf"))
 (recentf-mode t)
 
+;; reftex [built-in]
+(require-package 'reftex)
+(setq reftex-plug-into-AUCTeX t)
+
 ;; saveplace [built-in]
 (require-package 'saveplace)
 (setq save-place-file (concat user-emacs-directory "etc/places"))
@@ -215,6 +219,7 @@
 
 ;; persistent-scratch
 (require-package 'persistent-scratch)
+(setq persistent-scratch-save-file (concat user-emacs-directory "etc/persistent-scratch"))
 (persistent-scratch-setup-default)
 
 ;; projectile
