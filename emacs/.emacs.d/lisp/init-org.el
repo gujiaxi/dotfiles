@@ -14,10 +14,8 @@
 (setq org-export-html-style-include-scripts nil)
 (setq org-export-html-style-include-default nil)
 (setq org-startup-with-inline-images t)
-(setq org-html-preamble t)
-(setq org-html-preamble-format '(("en" "<div></div>")))
 (setq org-html-postamble t)
-(setq org-html-postamble-format '(("en" "<hr>&copy; %a / %C")))
+(setq org-html-postamble-format '(("en" "&copy; %a / %C")))
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
                            (?B . (:foreground "orange" :weight bold))
                            (?C . (:foreground "yellow" :wegith bold))))
@@ -59,9 +57,10 @@
          :completion-function org-html-publish-index
          :html-head-include-default-style nil
          :html-head-include-scripts nil
+         :html-preamble "<nav><a href='/'>↩</a></nav>"
          :html-head "<link rel='stylesheet' href='static/org.css' type='text/css'/>"
          :html-head-extra "<meta name='viewport' content='width=device-width'>"
-         :html-mathjax "path:\"https://cdn.mathjax.org/mathjax/latest/MathJax.js\" align:\"left\""
+         :html-mathjax "path:https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"
          :html-doctype "html5"
          :html-html5-fancy t
          :htmlized-source t
@@ -85,7 +84,8 @@
 (setq org-src-preserve-indentation t)
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((ditaa . t)
+ '((calc . t)
+   (ditaa . t)
    (emacs-lisp . t)
    (gnuplot . t)
    (haskell . t)
