@@ -10,11 +10,10 @@
 ;; solarized-theme
 (require-package 'solarized-theme)
 (setq solarized-emphasize-indicators nil)
-(setq x-underline-at-descent-line t)
+(setq solarized-high-contrast-mode-line t)
 
 ;; zenburn-theme
 (require-package 'zenburn-theme)
-(set-face-attribute 'fringe nil :background 'unspecified)
 
 ;; theme-changer
 (require-package 'theme-changer)
@@ -23,11 +22,9 @@
     (change-theme 'solarized-light 'solarized-dark)
   (load-theme 'zenburn t))
 
-;; smart-mode-line
-(require-package 'smart-mode-line)
-(setq rm-blacklist ".*")
-(setq sml/no-confirm-load-theme t)
-(sml/setup)
+;; powerline
+(require-package 'powerline)
+(powerline-default-theme)
 
 
 (provide 'init-theme)
