@@ -101,6 +101,7 @@
 ;; reftex [built-in]
 (require-package 'reftex)
 (setq reftex-plug-into-AUCTeX t)
+(setq reftex-default-bibliography (list (concat org-directory "org/bib/main.bib")))
 
 ;; saveplace [built-in]
 (require-package 'saveplace)

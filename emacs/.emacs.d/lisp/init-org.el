@@ -57,7 +57,7 @@
          :completion-function org-html-publish-index
          :html-head-include-default-style nil
          :html-head-include-scripts nil
-         :html-preamble "<nav><a href='/'>↩</a></nav>"
+         :html-preamble "<nav><a href='/'>&#8617;</a></nav>"
          :html-head "<link rel='stylesheet' href='static/org.css' type='text/css'/>"
          :html-head-extra "<meta name='viewport' content='width=device-width'>"
          :html-mathjax "path:https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"
