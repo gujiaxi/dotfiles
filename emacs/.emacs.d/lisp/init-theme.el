@@ -10,7 +10,6 @@
 ;; solarized-theme
 (require-package 'solarized-theme)
 (setq solarized-emphasize-indicators nil)
-(setq solarized-high-contrast-mode-line t)
 
 ;; zenburn-theme
 (require-package 'zenburn-theme)
@@ -25,6 +24,7 @@
 ;; powerline
 (require-package 'powerline)
 (powerline-default-theme)
+(setq powerline-default-separator 'utf-8)
 
 
 (provide 'init-theme)

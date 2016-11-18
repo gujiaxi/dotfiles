@@ -22,14 +22,12 @@
                       (nnimap-stream ssl)))
 
 ;; send email via smtp
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "imjiaxi@gmail.com" nil))
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587)
+(setq message-send-mail-function 'smtpmail-send-it)
+(setq smtpmail-default-smtp-server "smtp.gmail.com")
+(setq smtpmail-smtp-service 587)
 
 ;; more attractive summary view
+(setq gnus-thread-sort-functions '((not gnus-thread-sort-by-date)))
 (setq gnus-summary-display-arrow t)
 (when window-system
   (setq gnus-sum-thread-tree-indent "  ")
