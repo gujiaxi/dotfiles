@@ -7,28 +7,20 @@
 ;;; Code:
 
 
-;; no news groups
-(setq gnus-select-method '(nnml ""))
-
-;; ask encryption password only once
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
-
-;; receive email via imap
-(setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\”]\”[#’()]")
-(add-to-list 'gnus-secondary-select-methods
-             '(nnimap "Gmail"
-                      (nnimap-address "imap.gmail.com")
-                      (nnimap-server-port 993)
-                      (nnimap-stream ssl)))
-
-;; send email via smtp
+;; I do not read any news groups
+;; so I use it only for emails
+;; receive email via IMAP
+(setq gnus-select-method
+      '(nnimap ""
+               (nnimap-address "imap.gmail.com")
+               (nnimap-server-port 993)
+               (nnimap-stream ssl)))
+;; send email via SMTP
 (setq message-send-mail-function 'smtpmail-send-it)
-(setq smtpmail-default-smtp-server "smtp.gmail.com")
+(setq smtpmail-smtp-server "smtp.gmail.com")
 (setq smtpmail-smtp-service 587)
 
 ;; more attractive summary view
-(setq gnus-thread-sort-functions '((not gnus-thread-sort-by-date)))
-(setq gnus-summary-display-arrow t)
 (when window-system
   (setq gnus-sum-thread-tree-indent "  ")
   (setq gnus-sum-thread-tree-root "") ;; "● ")
@@ -67,25 +59,34 @@
 (setq nntp-marks-directory (concat user-emacs-directory "etc/gnus/news/marks/"))
 (setq mml-default-directory (concat user-emacs-directory "etc/gnus/attachments/"))
 
-;; email configs
-(setq gnus-permanently-visible-groups "INBOX")
-(setq gnus-activate-level 1)
-(setq gnus-show-threads t)
-(setq gnus-use-full-window nil)
-(setq message-confirm-send t)
-(setq message-from-style 'angles)
-
 ;; gpg
 (setq mm-verify-option 'always)
 (setq mm-decrypt-option 'always)
 (setq mm-encrypt-option 'guided)
 
 ;; misc
+(setq gnus-permanently-visible-groups "INBOX")
+(setq gnus-show-threads t)
+(setq gnus-thread-sort-functions '((not gnus-thread-sort-by-date)))
+(setq gnus-summary-display-arrow t)
+(setq gnus-activate-level 1)
+(setq gnus-use-full-window nil)
+(setq message-confirm-send t)
+(setq message-from-style 'angles)
 (setq gnus-inhibit-startup-message t)
 (setq gnus-novice-user nil)
 (setq gnus-expert-user t)
+(setq gnus-interactive-exit t)
+(setq gnus-asynchronous t)
 (setq gnus-use-dribble-file nil)
 (setq gnus-always-read-dribble-file nil)
+(setq gnus-preserve-marks nil)
+
+;; type `B m' to move entries
+(setq gnus-move-split-methods
+      '((".*" "INBOX")
+        (".*" "[Gmail]/All Mail")
+        (".*" "[Gmail]/Trash")))
 
 
 (provide 'init-gnus)
