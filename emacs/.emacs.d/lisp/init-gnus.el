@@ -66,13 +66,12 @@
 
 ;; misc
 (setq gnus-permanently-visible-groups "INBOX")
+(setq gnus-message-archive-group nil)
 (setq gnus-show-threads t)
 (setq gnus-thread-sort-functions '((not gnus-thread-sort-by-date)))
 (setq gnus-summary-display-arrow t)
 (setq gnus-activate-level 1)
 (setq gnus-use-full-window nil)
-(setq message-confirm-send t)
-(setq message-from-style 'angles)
 (setq gnus-inhibit-startup-message t)
 (setq gnus-novice-user nil)
 (setq gnus-expert-user t)
@@ -81,12 +80,19 @@
 (setq gnus-use-dribble-file nil)
 (setq gnus-always-read-dribble-file nil)
 (setq gnus-preserve-marks nil)
+(setq message-confirm-send t)
+(setq message-from-style 'angles)
+(setq message-signature "Regards,\nJiaxi Gu\n0x3F938F7B")
 
 ;; type `B m' to move entries
 (setq gnus-move-split-methods
       '((".*" "INBOX")
         (".*" "[Gmail]/All Mail")
         (".*" "[Gmail]/Trash")))
+
+;; bbdb
+(require-package 'bbdb)
+(add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
 
 
 (provide 'init-gnus)

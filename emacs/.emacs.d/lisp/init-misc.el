@@ -55,6 +55,7 @@
 (require-package 'flyspell)
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
+(add-hook 'message-mode-hook 'flyspell-mode)
 
 ;; grep [built-in]
 (require-package 'grep)
@@ -117,6 +118,10 @@
 (setq tramp-backup-directory-alist backup-directory-alist)
 (with-eval-after-load "tramp-cache"
   (setq tramp-persistency-file-name (concat user-emacs-directory "etc/tramp")))
+
+;; url [built-in]
+(require-package 'url)
+(setq url-configuration-directory (concat user-emacs-directory "etc/url"))
 
 ;; windmove [built-in]
 (require-package 'windmove)
