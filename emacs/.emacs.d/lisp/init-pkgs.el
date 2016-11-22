@@ -11,6 +11,7 @@
 ;; Package sources
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("ielpa" . "https://gujiaxi.github.io/ielpa/"))
 
 ;; On-demand package installation
 (defun require-package (package &optional min-version no-refresh)

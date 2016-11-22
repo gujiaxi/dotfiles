@@ -19,11 +19,13 @@
 (define-key evil-visual-state-map (kbd "k") 'evil-previous-visual-line)
 ;; Fallback to emacs-state for some modes
 (mapc (lambda (my-mode) (evil-set-initial-state my-mode 'emacs))
-      (list 'calendar-mode 'comint-mode 'completion-mode 'deft-mode
-            'dired-mode 'eshell-mode 'eww-mode 'eww-bookmark-mode
-            'flycheck-error-list-mode 'help-mode 'inferior-ess-mode
-            'inferior-python-mode 'profiler-report-mode 'quickrun/mode
-            'shell-mode 'speedbar-mode 'special-mode 'TeX-output-mode))
+      (list 'calendar-mode 'comint-mode 'completion-mode
+            'deft-mode 'dired-mode 'eshell-mode 'eww-mode
+            'eww-bookmark-mode 'flycheck-error-list-mode
+            'help-mode 'inferior-ess-mode 'inferior-python-mode
+            'newsticker-treeview-mode 'profiler-report-mode
+            'quickrun/mode 'shell-mode 'speedbar-mode
+            'special-mode 'TeX-output-mode))
 
 ;; Key bindings
 (define-key evil-emacs-state-map (kbd "C-w") 'evil-window-map)

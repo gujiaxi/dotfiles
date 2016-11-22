@@ -24,9 +24,26 @@
 (setq diary-file (concat org-directory "org/diary.org"))
 (global-set-key (kbd "C-c k") 'calendar)
 
+;; cedet [built-in]
+(require-package 'cedet)
+(add-hook 'c-mode-hook 'semantic-mode)
+(add-hook 'c++-mode-hook 'semantic-mode)
+(add-hook 'objc-mode-hook 'semantic-mode)
+(with-eval-after-load "semantic"
+  (setq semanticdb-default-save-directory (concat user-emacs-directory "etc/semanticdb"))
+  (global-semantic-idle-scheduler-mode t)
+  (global-semantic-idle-completions-mode t)
+  (global-semantic-decoration-mode t)
+  (global-semantic-highlight-func-mode t)
+  (global-semantic-show-unmatched-syntax-mode t))
+
 ;; compile [built-in]
 (require-package 'compile)
 (global-set-key (kbd "<f6>") 'compile)
+
+;; css-mode [built-in]
+(require-package 'css-mode)
+(setq css-indent-offset 2)
 
 ;; dabbrev [built-in]
 (require-package 'dabbrev)
@@ -50,6 +67,10 @@
 ;; eshell [built-in]
 (require-package 'eshell)
 (setq eshell-directory-name (concat user-emacs-directory "etc/eshell"))
+
+;; eww [built-in]
+(require-package 'eww)
+(setq eww-bookmarks-directory (concat user-emacs-directory "etc"))
 
 ;; flyspell [built-in]
 (require-package 'flyspell)
@@ -82,6 +103,14 @@
 (mapc (lambda (hook) (add-hook hook 'linum-mode))
       '(bibtex-mode-hook LaTeX-mode-hook markdown-mode-hook
                          org-mode-hook prog-mode-hook text-mode-hook))
+
+;; newsticker [built-in]
+(require-package 'newsticker)
+(setq newsticker-dir (concat user-emacs-directory "etc/newsticker"))
+(setq newsticker-url-list-defaults nil)
+(setq newsticker-retrieval-interval 0)
+(setq newsticker-url-list '(("Hacker News" "https://fulltextrssfeed.com/hnrss.org/newest?points=200" nil nil nil)
+                            ("一天世界" "https://blog.yitianshijie.net/feed/" nil nil nil)))
 
 ;; org [built-in]
 (require-package 'org)
@@ -139,6 +168,12 @@
 
 ;;; --- third-party packages ---
 
+;; anaconda-mode
+(require-package 'anaconda-mode)
+(setq anaconda-mode-installation-directory (concat user-emacs-directory "etc/anaconda-mode"))
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+
 ;; anzu
 (require-package 'anzu)
 (global-anzu-mode t)
@@ -165,6 +200,14 @@
 (require-package 'color-identifiers-mode)
 (add-hook 'prog-mode-hook 'color-identifiers-mode)
 
+;; company-anaconda
+(require-package 'company-anaconda)
+(add-to-list 'company-backends 'company-anaconda)
+
+;; company-irony
+(require-package 'company-irony)
+(add-to-list 'company-backends 'company-irony)
+
 ;; deft
 (require-package 'deft)
 (setq deft-directory (concat org-directory "org"))
@@ -188,6 +231,14 @@
 (require-package 'eyebrowse)
 (eyebrowse-mode t)
 
+;; ess
+(require-package 'ess)
+(add-to-list 'auto-mode-alist '("\\.[rR]\\'" . R-mode))
+(with-eval-after-load "ess"
+  (setq ess-ask-for-ess-directory nil)
+  (setq ess-eval-visibly nil)
+  (setq ess-history-file nil))
+
 ;; flycheck
 (require-package 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
@@ -206,6 +257,22 @@
 (add-hook 'prog-mode-hook 'indent-guide-mode)
 (setq indent-guide-char "¦")
 
+;; irony
+(require-package 'irony)
+(setq irony-user-dir (concat user-emacs-directory "etc/irony"))
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+;; jdee
+(require-package 'jdee)
+
+;; js2-mode
+(require-package 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-mode))
+(setq js2-basic-offset 2)
+
 ;; ledger-mode
 (require-package 'ledger-mode)
 (add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
@@ -218,6 +285,11 @@
 ;; magit
 (require-package 'magit)
 (global-set-key (kbd "C-c m") 'magit-status)
+
+;; markdown-mode
+(require-package 'markdown-mode)
+(setq markdown-enable-math t)
+(setq markdown-command "pandoc --mathjax -c http://tilde.works/~isaac/assets/md.css")
 
 ;; multiple-cursors
 (require-package 'multiple-cursors)
@@ -246,9 +318,18 @@
 (require-package 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; rainbow-mode
+(require-package 'rainbow-mode)
+(add-hook 'css-mode-hook 'rainbow-mode)
+
 ;; ranger
 (require-package 'ranger)
 (global-set-key (kbd "C-c r") 'ranger)
+
+;; robe
+(require-package 'robe)
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-to-list 'company-backends 'company-robe)
 
 ;; smartparens
 (require-package 'smartparens)
@@ -275,6 +356,28 @@
 
 ;; undo-tree
 (require-package 'undo-tree)
+
+;; web-mode
+(require-package 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.wp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.module\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.inc\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ftl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.xul?\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
 
 ;; wgrep
 (require-package 'wgrep)

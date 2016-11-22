@@ -13,20 +13,12 @@
 ;; --- rough settings ---
 (require 'init-basic)
 (require 'init-pkgs)
-(require 'init-misc)
-(require 'init-theme)
-;; --- core packages ---
+;; --- load packages ---
 (require 'init-evil)
 (require 'init-helm)
 (require 'init-company)
-;; --- program languages ---
-(require 'init-clang)
-(require 'init-java)
-(require 'init-markdown)
-(require 'init-python)
-(require 'init-r)
-(require 'init-ruby)
-(require 'init-web)
+(require 'init-misc)
+(require 'init-theme)
 ;; --- lazy loading ---
 (with-eval-after-load "org"
   (require 'init-org))
