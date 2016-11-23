@@ -46,7 +46,7 @@
   (let ((index-org (concat org-directory "org/index.org"))
         (export-dir (concat org-directory "html")))
     (org-html-publish-to-html nil index-org export-dir)))
-(setq org-publish-timestamp-directory (concat user-emacs-directory "etc/org-timestamps/"))
+(setq org-publish-timestamp-directory user-emacs-directory)
 (setq org-publish-project-alist
       `(("org"
          :base-directory ,(concat org-directory "org/")

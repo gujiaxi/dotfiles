@@ -22,13 +22,9 @@
 (setq create-lockfiles nil)
 
 ;; backup and autosave
-(setq backup-directory-alist `((".*" . ,(concat user-emacs-directory "etc/backup"))))
+(setq backup-directory-alist `((".*" . ,(concat user-emacs-directory "backup"))))
 (setq version-control t)
 (setq delete-old-versions t)
-
-;; auto-save
-(setq auto-save-list-file-prefix (concat user-emacs-directory "etc/auto-save/.saves-"))
-(setq auto-save-file-name-transforms `((".*" ,(concat user-emacs-directory "etc/auto-save") t)))
 
 ;; no startup message
 (setq inhibit-startup-message t)

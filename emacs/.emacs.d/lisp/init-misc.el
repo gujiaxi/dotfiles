@@ -9,10 +9,6 @@
 
 ;; --- built-in packages ---
 
-;; bookmark [built-in]
-(require-package 'bookmark)
-(setq bookmark-default-file (concat user-emacs-directory "etc/bookmarks"))
-
 ;; calendar [built-in]
 (require-package 'calendar)
 (setq calendar-location-name "Beijing, China")
@@ -30,7 +26,6 @@
 (add-hook 'c++-mode-hook 'semantic-mode)
 (add-hook 'objc-mode-hook 'semantic-mode)
 (with-eval-after-load "semantic"
-  (setq semanticdb-default-save-directory (concat user-emacs-directory "etc/semanticdb"))
   (global-semantic-idle-scheduler-mode t)
   (global-semantic-idle-completions-mode t)
   (global-semantic-decoration-mode t)
@@ -44,10 +39,6 @@
 ;; css-mode [built-in]
 (require-package 'css-mode)
 (setq css-indent-offset 2)
-
-;; dabbrev [built-in]
-(require-package 'dabbrev)
-(setq abbrev-file-name (concat user-emacs-directory "etc/abbrev_defs"))
 
 ;; dired [built-in]
 (setq dired-recursive-deletes 'always)
@@ -63,14 +54,6 @@
 ;; epa [built-in]
 (require-package 'epa)
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
-
-;; eshell [built-in]
-(require-package 'eshell)
-(setq eshell-directory-name (concat user-emacs-directory "etc/eshell"))
-
-;; eww [built-in]
-(require-package 'eww)
-(setq eww-bookmarks-directory (concat user-emacs-directory "etc"))
 
 ;; flyspell [built-in]
 (require-package 'flyspell)
@@ -90,11 +73,10 @@
 (require-package 'ispell)
 (setenv "DICTIONARY" "en_US")
 (setq isepell-program-name "hunspell")
-(setq ispell-personal-dictionary (concat user-emacs-directory "etc/ispell/hunspell_en_US"))
+(setq ispell-personal-dictionary (concat user-emacs-directory "ispell/hunspell_en_US"))
 
 ;; ido [built-in]
 (require-package 'ido)
-(setq ido-save-directory-list-file (concat user-emacs-directory "etc/ido.last"))
 (ido-mode t)
 (ido-everywhere t)
 
@@ -106,7 +88,6 @@
 
 ;; newsticker [built-in]
 (require-package 'newsticker)
-(setq newsticker-dir (concat user-emacs-directory "etc/newsticker"))
 (setq newsticker-url-list-defaults nil)
 (setq newsticker-retrieval-interval 0)
 (setq newsticker-url-list '(("Hacker News" "https://fulltextrssfeed.com/hnrss.org/newest?points=200" nil nil nil)
@@ -123,13 +104,11 @@
 
 ;; savehist [built-in]
 (require-package 'savehist)
-(setq savehist-file (concat user-emacs-directory "etc/history"))
 (savehist-mode t)
 
 ;; recentf [built-in]
 (require-package 'recentf)
 (setq recentf-max-saved-items 500)
-(setq recentf-save-file (concat user-emacs-directory "etc/recentf"))
 (recentf-mode t)
 
 ;; reftex [built-in]
@@ -139,18 +118,11 @@
 
 ;; saveplace [built-in]
 (require-package 'saveplace)
-(setq save-place-file (concat user-emacs-directory "etc/places"))
 (save-place-mode t)
 
 ;; tramp [built-in]
 (require-package 'tramp)
 (setq tramp-backup-directory-alist backup-directory-alist)
-(with-eval-after-load "tramp-cache"
-  (setq tramp-persistency-file-name (concat user-emacs-directory "etc/tramp")))
-
-;; url [built-in]
-(require-package 'url)
-(setq url-configuration-directory (concat user-emacs-directory "etc/url"))
 
 ;; windmove [built-in]
 (require-package 'windmove)
@@ -170,7 +142,6 @@
 
 ;; anaconda-mode
 (require-package 'anaconda-mode)
-(setq anaconda-mode-installation-directory (concat user-emacs-directory "etc/anaconda-mode"))
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
@@ -277,7 +248,6 @@
 
 ;; irony
 (require-package 'irony)
-(setq irony-user-dir (concat user-emacs-directory "etc/irony"))
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
@@ -319,13 +289,10 @@
 
 ;; persistent-scratch
 (require-package 'persistent-scratch)
-(setq persistent-scratch-save-file (concat user-emacs-directory "etc/persistent-scratch"))
 (persistent-scratch-setup-default)
 
 ;; projectile
 (require-package 'projectile)
-(setq projectile-cache-file (concat user-emacs-directory "etc/projectile/projectile.cache"))
-(setq projectile-known-projects-file (concat user-emacs-directory "etc/projectile/projectile-bookmarks.eld"))
 (projectile-global-mode)
 
 ;; quickrun
