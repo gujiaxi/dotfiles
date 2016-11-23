@@ -26,7 +26,6 @@
             'newsticker-treeview-mode 'profiler-report-mode
             'quickrun/mode 'shell-mode 'speedbar-mode
             'special-mode 'TeX-output-mode))
-
 ;; Key bindings
 (define-key evil-emacs-state-map (kbd "C-w") 'evil-window-map)
 (global-set-key (kbd "<f5>") 'evil-make)

@@ -159,9 +159,13 @@
 ;; prevent it bound externally
 (add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-'"))))
 
+;; bbdb
+(require-package 'bbdb)
+(add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
+
 ;; csv-mode
 (require-package 'csv-mode)
-(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(add-to-list 'auto-mode-alist '("\\.csv\\'" . csv-mode))
 
 ;; bing-dict
 (require-package 'bing-dict)

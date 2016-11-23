@@ -90,10 +90,6 @@
         (".*" "[Gmail]/All Mail")
         (".*" "[Gmail]/Trash")))
 
-;; bbdb
-(require-package 'bbdb)
-(add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
-
 
 (provide 'init-gnus)
 ;;; init-gnus.el ends here

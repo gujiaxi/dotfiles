@@ -1,6 +1,0 @@
-#+TITLE: Emacs Settings
-#+AUTHOR: Jiaxi Gu
-
-* emacs.d
-
-Emacs Settings.

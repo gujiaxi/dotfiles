@@ -79,7 +79,6 @@
          :components ("org" "static"))))
 
 ;; ox-latex
-(setq org-latex-pdf-process '("pdflatex %f" "bibtex %b" "pdflatex %f" "pdflatex %f"))
 
 ;; org-babel
 (org-babel-do-load-languages
