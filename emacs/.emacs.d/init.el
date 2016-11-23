@@ -14,11 +14,10 @@
 (require 'init-basic)
 (require 'init-pkgs)
 ;; --- load packages ---
-(require 'init-evil)
-(require 'init-helm)
-(require 'init-company)
 (require 'init-misc)
 (require 'init-theme)
+(require 'init-evil)
+(require 'init-helm)
 ;; --- lazy loading ---
 (with-eval-after-load "org"
   (require 'init-org))
