@@ -235,11 +235,10 @@
 
 ;; ----- package archives -----
 
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(setq package-archives '(("gnu"   . "https://elpa.zilongshanren.com/gnu/")
-                         ("melpa" . "https://elpa.zilongshanren.com/melpa/")
-                         ("org" . "https://elpa.zilongshanren.com/org/")))
+(setq package-archives
+      '(("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; ----- use-package -----
 
@@ -438,8 +437,8 @@
 ;; -------------------------------------------------------------------
 
 ;; auctex
-(use-package auctex
-  :mode ("\\.tex\\'" . TeX-latex-mode)
+(use-package tex-site
+  :ensure auctex
   :config
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
   (add-hook 'LaTeX-mode-hook 'visual-line-mode)
@@ -452,20 +451,20 @@
 
 ;; auctex-latexmk
 (use-package auctex-latexmk
-  :after tex
+  :after tex-site
   :config
   (auctex-latexmk-setup)
   (setq auctex-latexmk-inherit-TeX-PDF-mode t))
 
 ;; company-math
 (use-package company-math
-  :after tex
+  :after tex-site
   :config
   (add-to-list 'company-backends 'company-math-symbols-unicode))
 
 ;; company-auctex
 (use-package company-auctex
-  :after tex
+  :after tex-site
   :config
   (company-auctex-init))
 
@@ -474,24 +473,28 @@
 ;; Theme
 ;; -------------------------------------------------------------------
 
+;; ----- color theme -----
+
 ;; solarized-theme
 (use-package solarized-theme
-  :load-path "site-lisp/solarized-theme"
   :config
   (setq solarized-emphasize-indicators nil))
-
-;; powerline
-(use-package powerline
-  :load-path "site-lisp/powerline"
-  :config
-  (powerline-default-theme)
-  (setq powerline-default-separator 'utf-8))
 
 ;; theme-changer
 (use-package theme-changer
   :if window-system
   :config
   (change-theme 'solarized-light 'solarized-dark))
+
+;; ----- mode-line -----
+
+;; smart-mode-line
+(use-package smart-mode-line
+  :config
+  (sml/setup)
+  (setq sml/mode-width 'right)
+  (setq rm-blacklist ".*"))
+
 
 ;; -------------------------------------------------------------------
 ;; Evil
@@ -585,7 +588,7 @@
 
 
 ;; -------------------------------------------------------------------
-;; company
+;; Company
 ;; -------------------------------------------------------------------
 
 ;; company
@@ -826,7 +829,7 @@
 (use-package linum-relative
   :config
   (linum-relative-mode)
-  (setq linum-relative-current-symbol ""))
+  (setq linum-relative-current-symbol "0"))
 
 ;; multiple-cursors
 (use-package multiple-cursors
