@@ -439,6 +439,7 @@
 ;; auctex
 (use-package tex-site
   :ensure auctex
+  :after tex
   :config
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
   (add-hook 'LaTeX-mode-hook 'visual-line-mode)
@@ -491,9 +492,10 @@
 ;; smart-mode-line
 (use-package smart-mode-line
   :config
-  (sml/setup)
+  (setq sml/no-confirm-load-theme t)
   (setq sml/mode-width 'right)
-  (setq rm-blacklist ".*"))
+  (setq rm-blacklist ".*")
+  (sml/setup))
 
 
 ;; -------------------------------------------------------------------
@@ -901,7 +903,8 @@
 (use-package undo-tree)
 
 ;; wgrep
-(use-package wgrep)
+(use-package wgrep
+  :after grep)
 
 ;; which-key
 (use-package which-key
