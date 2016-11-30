@@ -181,13 +181,13 @@
 
 ;; linum [built-in]
 (mapc (lambda (hook) (add-hook hook 'linum-mode))
-      '(bibtex-mode-hook LaTeX-mode-hook markdown-mode-hook
-                         org-mode-hook prog-mode-hook text-mode-hook))
+      (list 'bibtex-mode-hook 'ess-mode-hook 'LaTeX-mode-hook 'markdown-mode-hook
+            'org-mode-hook 'prog-mode-hook 'text-mode-hook))
 
 ;; newsticker [built-in]
 (setq newsticker-url-list-defaults nil)
 (setq newsticker-retrieval-interval 0)
-(setq newsticker-url-list '(("Hacker News" "https://fulltextrssfeed.com/hnrss.org/newest?points=200" nil nil nil)
+(setq newsticker-url-list '(("湾区日报" "http://wanqu.co/feed/" nil nil nil)
                             ("一天世界" "https://blog.yitianshijie.net/feed/" nil nil nil)))
 
 ;; org [built-in]
@@ -264,19 +264,22 @@
 (setq smtpmail-smtp-service 587)
 ;; more attractive summary view
 (when window-system
-  (setq gnus-sum-thread-tree-indent "  ")
-  (setq gnus-sum-thread-tree-root "") ;; "● ")
-  (setq gnus-sum-thread-tree-false-root "") ;; "◯ ")
-  (setq gnus-sum-thread-tree-single-indent "") ;; "◎ ")
+  (setq gnus-sum-thread-tree-indent          "  ")
+  (setq gnus-sum-thread-tree-root            "● ")
+  (setq gnus-sum-thread-tree-false-root      "◯ ")
+  (setq gnus-sum-thread-tree-single-indent   "◎ ")
   (setq gnus-sum-thread-tree-vertical        "│")
   (setq gnus-sum-thread-tree-leaf-with-other "├─► ")
   (setq gnus-sum-thread-tree-single-leaf     "╰─► "))
 (setq gnus-summary-line-format
       (concat "%0{%U%R%z%}"
-              "%3{│%}" "%1{%d%}" "%3{│%}"
-              "  " "%4{%-20,20f%}"
-              "  " "%3{│%}"
-              " " "%1{%B%}"
+              "%3{│%}" "%1{%d%}" "%3{│%}" ;; date
+              "  "
+              "%4{%-20,20f%}" ;; name
+              "  "
+              "%3{│%}"
+              " "
+              "%1{%B%}"
               "%s\n"))
 ;; directories
 (setq gnus-use-dribble-file nil)
@@ -331,7 +334,7 @@
 ;; OrgMode
 ;; -------------------------------------------------------------------
 
-;; org
+;; basic org options
 (setq org-src-fontify-natively t)
 (setq org-src-preserve-indentation t)
 (setq org-confirm-babel-evaluate nil)
@@ -392,8 +395,7 @@
            :html-head-include-default-style nil
            :html-head-include-scripts nil
            :html-preamble "<nav><a href='/'>&#8617;</a></nav>"
-           :html-head "<link rel='stylesheet' href='static/org.css' type='text/css'/>"
-           :html-head-extra "<meta name='viewport' content='width=device-width'>"
+           :html-head "<link rel='stylesheet' type='text/css' href='static/org.css'/>"
            :html-mathjax "path:https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"
            :html-doctype "html5"
            :html-html5-fancy t
@@ -429,7 +431,7 @@
 
 ;; htmlize
 (use-package htmlize
-  :commands (htmlize-buffer))
+  :after org)
 
 
 ;; -------------------------------------------------------------------
@@ -452,20 +454,20 @@
 
 ;; auctex-latexmk
 (use-package auctex-latexmk
-  :after tex-site
+  :after tex
   :config
   (auctex-latexmk-setup)
   (setq auctex-latexmk-inherit-TeX-PDF-mode t))
 
 ;; company-math
 (use-package company-math
-  :after tex-site
+  :after tex
   :config
   (add-to-list 'company-backends 'company-math-symbols-unicode))
 
 ;; company-auctex
 (use-package company-auctex
-  :after tex-site
+  :after tex
   :config
   (company-auctex-init))
 
@@ -766,7 +768,7 @@
 
 ;; avy
 (use-package avy
-  :bind ("C-'" . avy-goto-char-2)
+  :bind* ("C-'" . avy-goto-char-2)
   :config
   ;; need tounlease this key in some cases
   (add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-'")))))
