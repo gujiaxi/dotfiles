@@ -6,7 +6,7 @@ Zsh configurations by Isaac
 1. Install [zgen](https://github.com/tarjoilija/zgen):
 
    ``` sh
-   git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+   git clone https://github.com/tarjoilija/zgen.git ~/.zsh/.zgen
    ```
 
 2. Make a soft link `.zshrc` from `zshrc` in this directory:

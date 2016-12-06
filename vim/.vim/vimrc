@@ -1,15 +1,234 @@
 """""""""""""""""""""""""""
-" Vim settings by Isaac
+" Basic settings
 """""""""""""""""""""""""""
 
-if filereadable(expand("~/.vim/basic.vim"))
-  source ~/.vim/basic.vim
+" Show (relative) line number
+set number
+set relativenumber
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+let mapleader = ","
+let g:mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file 
+command W w !sudo tee % > /dev/null
+
+" Set 7 lines to the cursor - when moving vertically
+set so=7
+
+" Turn on the WiLd menu
+set wildmenu
+
+" Always show current position
+set ruler
+
+" A buffer becomes hidden when it is abandoned
+set hid
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+
+" No end of line
+set noeol
+
+" Ignore/Smart case when searching
+set ignorecase
+set smartcase
+
+" Highlight/Increase search results
+set hlsearch
+set incsearch 
+
+" Don't redraw while executing macros
+set lazyredraw 
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch 
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+
+" Always show the status line
+set laststatus=2
+
+" Enable syntax highlighting
+syntax enable 
+
+" Set background to dark
+set background=dark
+
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
 endif
 
-if filereadable(expand("~/.vim/plug.vim"))
-  source ~/.vim/plug.vim
-endif
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
 
-if filereadable(expand("~/.vim/plugged.vim"))
-  source ~/.vim/plugged.vim
-endif
+" Use Unix as the standard file type
+set ffs=unix,mac,dos
+
+" Turn backup off
+set nobackup
+set nowb
+set noswapfile
+
+" Use spaces instead of tabs
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+" Auto/Smart indent
+set ai
+set si
+
+" Wrap lines
+set wrap
+
+" Treat long lines as break lines
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
+
+" Useful mappings for managing windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Useful mappings for managing buffers
+map <leader>bd :Bclose<cr>
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext 
+
+
+"""""""""""""""""""""""""""
+" Plugin settings
+"""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'henrik/vim-indexed-search'
+Plug 'honza/vim-snippets'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dietsche/vim-lastplace'
+Plug 'dracula/vim'
+Plug 'klen/python-mode'
+Plug 'kshenoy/vim-signature'
+Plug 'luochen1990/rainbow'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-startify'
+Plug 'mileszs/ack.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'plasticboy/vim-markdown'
+Plug 'reedes/vim-lexical'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'Shougo/neocomplete.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thinca/vim-quickrun'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'wellle/targets.vim'
+
+call plug#end()
+
+" ---8<-----------
+
+" dracula/vim
+colorscheme dracula
+
+" luochen1990/rainbow
+let g:rainbow_active = 1
+
+" Lokaltog/vim-easymotion
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase  = 1
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
+
+" majutsushi/tagbar
+nmap <F7> :TagbarToggle<cr>
+
+" nathanaelkane/vim-indent-guides
+nmap <F4> :IndentGuidesToggle<cr>
+
+" plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
+" reedes/vim-lexical
+augroup lexical
+    autocmd!
+    autocmd FileType plaintex call lexical#init()
+augroup END
+
+" scrooloose/nerdcommenter
+let g:NERDSpaceDelims = 1
+
+" scrooloose/nerdtree
+nmap <F9> :NERDTreeToggle<cr>
+
+" scrooloose/syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" SirVer/ultisnips
+let g:UltiSnipsExpandTrigger = '<TAB>'
+let g:UltiSnipsJumpForwardTrigger = '<TAB>'
+
+" Shougo/neocomplete.vim
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+inoremap <expr><TAB>  pumvisible() ? '\<C-n>' : '\<TAB>'
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" thinca/vim-quickrun
+nmap <F5> :QuickRun<cr>
+
+" vim-airline/vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1

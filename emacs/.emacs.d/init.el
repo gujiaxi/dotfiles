@@ -236,9 +236,9 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+        ("melpa" . "https://elpa.emacs-china.org/melpa/")
+        ("org" . "http://elpa.emacs-china.org/org/")))
 
 ;; ----- use-package -----
 
@@ -768,10 +768,7 @@
 
 ;; avy
 (use-package avy
-  :bind* ("C-'" . avy-goto-char-2)
-  :config
-  ;; need tounlease this key in some cases
-  (add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-'")))))
+  :bind* ("C-'" . avy-goto-char-2))
 
 ;; bbdb
 (use-package bbdb
@@ -900,9 +897,6 @@
   :config
   (setq symon-delay 33)
   (symon-mode))
-
-;; undo-tree
-(use-package undo-tree)
 
 ;; wgrep
 (use-package wgrep
