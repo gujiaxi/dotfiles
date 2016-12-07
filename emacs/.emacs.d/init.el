@@ -421,7 +421,7 @@
      (gnuplot . t)
      (haskell . t)
      (latex . t)
-     (ledger . t)
+     (lgr . t)
      (perl . t)
      (plantuml . t)
      (python . t)
@@ -690,14 +690,6 @@
 
 
 ;; -------------------------------------------------------------------
-;; Java
-;; -------------------------------------------------------------------
-
-(use-package jdee
-  :mode ("\\.java\\'" . jdee-mode))
-
-
-;; -------------------------------------------------------------------
 ;; Haskell
 ;; -------------------------------------------------------------------
 
@@ -824,7 +816,7 @@
 
 ;; ledger-mode
 (use-package ledger-mode
-  :mode "\\.ledger\\'")
+  :mode "\\.lgr\\'")
 
 ;; linum-relative
 (use-package linum-relative

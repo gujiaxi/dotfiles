@@ -2,6 +2,9 @@
 " Basic settings
 """""""""""""""""""""""""""
 
+" set no compatible
+set nocompatible
+
 " Show (relative) line number
 set number
 set relativenumber
@@ -139,6 +142,7 @@ map <leader>t<leader> :tabnext
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
@@ -148,14 +152,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dietsche/vim-lastplace'
 Plug 'dracula/vim'
 Plug 'klen/python-mode'
-Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'majutsushi/tagbar'
+Plug 'lervag/vimtex'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'plasticboy/vim-markdown'
 Plug 'reedes/vim-lexical'
 Plug 'scrooloose/nerdcommenter'
@@ -164,32 +164,24 @@ Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'Shougo/neocomplete.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'wellle/targets.vim'
 
 call plug#end()
 
-" ---8<-----------
+" ---8<----------------------
 
 " dracula/vim
 colorscheme dracula
 
-" luochen1990/rainbow
-let g:rainbow_active = 1
-
-" Lokaltog/vim-easymotion
+" easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
 nmap <Leader>s <Plug>(easymotion-overwin-f2)
 
-" majutsushi/tagbar
-nmap <F7> :TagbarToggle<cr>
-
-" nathanaelkane/vim-indent-guides
-nmap <F4> :IndentGuidesToggle<cr>
+" luochen1990/rainbow
+let g:rainbow_active = 1
 
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -197,7 +189,8 @@ let g:vim_markdown_folding_disabled = 1
 " reedes/vim-lexical
 augroup lexical
     autocmd!
-    autocmd FileType plaintex call lexical#init()
+    autocmd FileType markdown call lexical#init()
+    autocmd FileType tex call lexical#init()
 augroup END
 
 " scrooloose/nerdcommenter
@@ -225,9 +218,6 @@ autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" thinca/vim-quickrun
-nmap <F5> :QuickRun<cr>
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
