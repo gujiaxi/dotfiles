@@ -421,7 +421,7 @@
      (gnuplot . t)
      (haskell . t)
      (latex . t)
-     (lgr . t)
+     (ledger . t)
      (perl . t)
      (plantuml . t)
      (python . t)
