@@ -1,8 +1,11 @@
 ;; init.el --- Main init file for Emacs
 
+;; Author: Jiaxi Gu <imjiaxi@gmail.com>
+;; Url: https://gujiaxi.github.io/
+
 ;;; Commentary:
 ;;
-;; Main init file for Emacs.
+;; An awesome init file for Emacs.
 
 ;;; Code:
 
