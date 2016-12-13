@@ -1,4 +1,4 @@
-;; init.el --- Main init file for Emacs
+;; init.el --- An awesome init file for Emacs.
 
 ;; Author: Jiaxi Gu <imjiaxi@gmail.com>
 ;; Url: https://gujiaxi.github.io/
@@ -107,9 +107,9 @@
 
 ;; set default font
 (when (member "Input" (font-family-list))
-  (set-face-attribute 'default nil :font "Input-12"))
+  (set-face-attribute 'default nil :font "Input-13"))
 (when (member "微软雅黑" (font-family-list))
-  (set-fontset-font "fontset-default" 'unicode "微软雅黑"))
+  (set-fontset-font t 'unicode "微软雅黑"))
 
 ;; custom directory
 (setq org-directory "~/Dropbox/Documents/EmacsFiles/")
@@ -276,12 +276,9 @@
   (setq gnus-sum-thread-tree-single-leaf     "╰─► "))
 (setq gnus-summary-line-format
       (concat "%0{%U%R%z%}"
-              "%3{│%}" "%1{%d%}" "%3{│%}" ;; date
-              "  "
-              "%4{%-20,20f%}" ;; name
-              "  "
-              "%3{│%}"
-              " "
+              "%3{│%}" "%1{%d%}" "%3{│%}" "  "
+              "%4{%-20,20f%}" "  "
+              "%3{│%}" " "
               "%1{%B%}"
               "%s\n"))
 ;; directories
@@ -450,7 +447,6 @@
   (add-hook 'LaTeX-mode-hook 'visual-line-mode)
   (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
   (add-hook 'LaTeX-mode-hook 'TeX-fold-mode)
-  (add-hook 'LaTeX-mode-hook 'flycheck-mode)
   (add-hook 'LaTeX-mode-hook 'flyspell-mode)
   (setq TeX-auto-save t)
   (setq TeX-parse-self t))
@@ -581,7 +577,7 @@
 
 ;; helm-bibtex
 (use-package helm-bibtex
-  :requires helm
+  :after helm
   :config
   (setq bibtex-completion-bibliography (list (concat org-directory "org/bib/main.bib")))
   (setq bibtex-completion-notes-symbol "✎")
