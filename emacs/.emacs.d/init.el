@@ -164,7 +164,6 @@
 
 ;; flyspell [built-in]
 (add-hook 'org-mode-hook 'flyspell-mode)
-(add-hook 'markdown-mode-hook 'flyspell-mode)
 (add-hook 'message-mode-hook 'flyspell-mode)
 
 ;; grep [built-in]
@@ -740,7 +739,9 @@
   :mode ("\\.md\\'" "\\.markdown\\'")
   :config
   (setq markdown-enable-math t)
-  (setq markdown-command "pandoc --mathjax -c http://tilde.works/~isaac/assets/md.css"))
+  (setq markdown-command "pandoc")
+  (setq markdown-css-paths '("http://tilde.works/~isaac/static/md.css"))
+  (add-hook 'markdown-mode-hook 'flyspell-mode))
 
 
 ;; -------------------------------------------------------------------
