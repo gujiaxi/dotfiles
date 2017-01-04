@@ -240,7 +240,7 @@
 (setq package-archives
       '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
         ("melpa" . "https://elpa.emacs-china.org/melpa/")
-        ("org" . "http://elpa.emacs-china.org/org/")))
+        ("org" . "https://elpa.emacs-china.org/org/")))
 
 ;; ----- use-package -----
 
@@ -359,8 +359,8 @@
          "* TODO %?\n%U\n%a")
         ("n" "Note" entry (file+headline "org/notes.org" "Inbox")
          "* %?\n%U\n%a")
-        ("j" "Journal" entry (file+datetree "org/journal.org")
-         "* %?\n")
+        ("j" "Journal" plain (file+datetree "org/journal.org")
+         "_%<%H:%M>_ / %?\n")
         ("w" "Wish" entry (file+headline "org/wish.org" "Wishlist")
          "* WANT %?\n%U")
         ("p" "Publish" plain (file "org/p-tweets.org")
