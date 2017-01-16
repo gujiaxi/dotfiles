@@ -178,7 +178,7 @@ colorscheme dracula
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
-nmap <Leader>s <Plug>(easymotion-overwin-f2)
+nmap <leader>s <Plug>(easymotion-overwin-f2)
 
 " luochen1990/rainbow
 let g:rainbow_active = 1
