@@ -9,10 +9,8 @@ if ! zgen saved; then
     zgen oh-my-zsh
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/common-aliases
-    zgen oh-my-zsh plugins/emacs
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/tmux
     zgen oh-my-zsh plugins/z
     zgen load      nksoff/muslim muslim
     zgen load      zsh-users/zsh-syntax-highlighting
