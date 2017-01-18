@@ -905,4 +905,17 @@
   (yas-global-mode t))
 
 
+;; -------------------------------------------------------------------
+;; Compatibility
+;; -------------------------------------------------------------------
+
+;; ----- MacOS -----
+
+(when (memq window-system '(mac ns))
+  (use-package exec-path-from-shell
+    :config
+    (exec-path-from-shell-initialize)))
+
+
+
 ;;; init.el ends here
