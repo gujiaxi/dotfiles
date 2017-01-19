@@ -105,12 +105,6 @@
 ;; suppress warnings
 (setq find-file-suppress-same-file-warnings t)
 
-;; set default font
-(when (member "Input" (font-family-list))
-  (set-face-attribute 'default nil :font "Input-13"))
-(when (member "微软雅黑" (font-family-list))
-  (set-fontset-font t 'unicode "微软雅黑"))
-
 ;; custom directory
 (setq org-directory "~/Dropbox/Documents/EmacsFiles/")
 (setq custom-file (concat user-emacs-directory "custom.el"))
@@ -171,11 +165,6 @@
 
 ;; hideshow [built-in]
 (add-hook 'prog-mode-hook 'hs-minor-mode)
-
-;; ispell [built-in]
-(setenv "DICTIONARY" "en_US")
-(setq isepell-program-name "hunspell")
-(setq ispell-personal-dictionary (concat user-emacs-directory "ispell/hunspell_en_US"))
 
 ;; ido [built-in]
 (ido-mode t)
@@ -909,12 +898,27 @@
 ;; Compatibility
 ;; -------------------------------------------------------------------
 
+;; ----- Windows -----
+
+(when (memq window-system '(w32 pc))
+  ;; set font
+  (when (member "Input" (font-family-list))
+    (set-face-attribute 'default nil :font "Input-13"))
+  (when (member "微软雅黑" (font-family-list))
+    (set-fontset-font t 'unicode "微软雅黑")))
+
 ;; ----- MacOS -----
 
-(when (memq window-system '(mac ns))
+(when (memq window-system '(ns))
+  ;; fix PATH problem
   (use-package exec-path-from-shell
     :config
-    (exec-path-from-shell-initialize)))
+    (exec-path-from-shell-initialize))
+  ;; set font
+  (when (member "Menlo" (font-family-list))
+    (set-face-attribute 'default nil :font "Menlo-13"))
+  (when (member "Lantinghei SC" (font-family-list))
+    (set-fontset-font t 'unicode "Lantinghei SC")))
 
 
 ;;; init.el ends here
