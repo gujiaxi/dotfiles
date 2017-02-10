@@ -572,7 +572,7 @@
   (setq bibtex-completion-notes-path (concat org-directory "org/research-notes.org"))
   (setq bibtex-completion-pdf-symbol "⌘")
   (setq bibtex-completion-library-path (list (concat org-directory "pdf")))
-  (setq bibtex-completion-pdf-open-function (lambda (fpath) (call-process "evince" nil 0 nil fpath)))
+  (setq bibtex-completion-pdf-open-function (lambda (fpath) (call-process "open" nil 0 nil "-a" "/Applications/PDF Expert.app" fpath)))
   (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
   (setq bibtex-completion-notes-template-one-file "\n* ${title} (${year})\n:PROPERTIES:\n:Custom_ID: ${=key=}\n:END:\n")
   :bind ("C-c b" . helm-bibtex))
@@ -813,6 +813,11 @@
   (linum-relative-mode)
   (setq linum-relative-current-symbol "0"))
 
+;; lua-mode
+(use-package lua-mode
+  :mode "\\.lua\\'"
+  :interpreter "lua")
+
 ;; multiple-cursors
 (use-package multiple-cursors
   :bind ("C->" . mc/mark-next-like-this))
@@ -914,6 +919,8 @@
   (use-package exec-path-from-shell
     :config
     (exec-path-from-shell-initialize))
+  ;; use command as meta
+  (setq mac-command-modifier 'meta)
   ;; set font
   (when (member "Menlo" (font-family-list))
     (set-face-attribute 'default nil :font "Menlo-13"))

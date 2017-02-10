@@ -26,5 +26,3 @@ fi
 ####################
 # Set default editor
 export EDITOR="vim"
-# Add ruby gems to PATH
-export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
