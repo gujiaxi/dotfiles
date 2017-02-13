@@ -140,7 +140,7 @@ map <leader>t<leader> :tabnext
 " Plugin settings
 """""""""""""""""""""""""""
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/bundle')
 
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
@@ -212,7 +212,7 @@ let g:UltiSnipsJumpForwardTrigger = '<TAB>'
 " Shougo/neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-inoremap <expr><TAB>  pumvisible() ? '\<C-n>' : '\<TAB>'
+" inoremap <expr><TAB>  pumvisible() ? '\<C-n>' : '\<TAB>'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
