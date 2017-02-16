@@ -805,7 +805,7 @@
 
 ;; ledger-mode
 (use-package ledger-mode
-  :mode "\\.lgr\\'")
+  :mode "\\.ldg\\'")
 
 ;; linum-relative
 (use-package linum-relative
