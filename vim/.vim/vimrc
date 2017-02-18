@@ -124,7 +124,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Useful mappings for managing buffers
-map <leader>bd :Bclose<cr>
+map <leader>bd :bd<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 
@@ -183,6 +183,10 @@ nmap <leader>s <Plug>(easymotion-overwin-f2)
 " luochen1990/rainbow
 let g:rainbow_active = 1
 
+" mileszs/ack.vim
+let g:ackprg = 'ag --vimgrep'
+nnoremap <Leader>a :Ack!<Space>
+
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
@@ -207,12 +211,10 @@ let g:syntastic_check_on_wq = 0
 
 " SirVer/ultisnips
 let g:UltiSnipsExpandTrigger = '<TAB>'
-let g:UltiSnipsJumpForwardTrigger = '<TAB>'
 
 " Shougo/neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-" inoremap <expr><TAB>  pumvisible() ? '\<C-n>' : '\<TAB>'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
