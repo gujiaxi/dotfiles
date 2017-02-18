@@ -74,14 +74,6 @@ syntax enable
 " Set background to dark
 set background=dark
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -118,10 +110,10 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 map <silent> <leader><cr> :noh<cr>
 
 " Useful mappings for managing windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
 
 " Useful mappings for managing buffers
 map <leader>bd :bd<cr>
@@ -178,14 +170,14 @@ colorscheme dracula
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
-nmap <leader>s <Plug>(easymotion-overwin-f2)
+nmap <leader>s <plug>(easymotion-overwin-f2)
 
 " luochen1990/rainbow
 let g:rainbow_active = 1
 
 " mileszs/ack.vim
 let g:ackprg = 'ag --vimgrep'
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <leader>a :Ack!<space>
 
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -201,7 +193,7 @@ augroup END
 let g:NERDSpaceDelims = 1
 
 " scrooloose/nerdtree
-nmap <F9> :NERDTreeToggle<cr>
+nmap <f9> :NERDTreeToggle<cr>
 
 " scrooloose/syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -210,7 +202,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " SirVer/ultisnips
-let g:UltiSnipsExpandTrigger = '<TAB>'
+let g:UltiSnipsExpandTrigger = '<tab>'
 
 " Shougo/neocomplete.vim
 let g:neocomplete#enable_at_startup = 1

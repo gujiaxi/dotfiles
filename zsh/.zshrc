@@ -1,6 +1,6 @@
-####################
-# zgen settings
-####################
+################################################################################
+#  CLONE ZGEN FIRST: 'git clone git@github.com:tarjoilija/zgen.git ~/.zsh_zgen`
+################################################################################
 export ZGEN_DIR=$HOME/.zsh_zgen
 source $ZGEN_DIR/zgen.zsh
 # START of Plug
@@ -28,5 +28,6 @@ fi
 ####################
 # Set default editor
 export EDITOR="vim"
+# Set PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
