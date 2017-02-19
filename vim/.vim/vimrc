@@ -26,6 +26,9 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file 
 command W w !sudo tee % > /dev/null
 
+" Highlight cursor line
+set cul
+
 " Set 7 lines to the cursor - when moving vertically
 set so=7
 
@@ -70,9 +73,6 @@ set laststatus=2
 
 " Enable syntax highlighting
 syntax enable 
-
-" Set background to dark
-set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -140,9 +140,9 @@ Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+" Plug 'jszakmeister/vim-togglecursor'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dietsche/vim-lastplace'
-Plug 'dracula/vim'
 Plug 'klen/python-mode'
 Plug 'luochen1990/rainbow'
 Plug 'lervag/vimtex'
@@ -158,14 +158,12 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
 " ---8<----------------------
-
-" dracula/vim
-colorscheme dracula
 
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
@@ -212,6 +210,17 @@ autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" tyrannicaltoucan/vim-quantum
+set background=dark
+colorscheme quantum
+let g:quantum_italics = 1
+"" use true color ""
+set termguicolors
+"" fix for tmux ""
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
