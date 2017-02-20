@@ -20,8 +20,10 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
-" Fast saving
+" Fast save and quit
 nmap <leader>w :w!<cr>
+nmap <leader>q :q!<cr>
+nmap <leader>x :x!<cr>
 
 " :W sudo saves the file 
 command W w !sudo tee % > /dev/null
@@ -140,7 +142,6 @@ Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'jszakmeister/vim-togglecursor'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dietsche/vim-lastplace'
 Plug 'klen/python-mode'
@@ -214,13 +215,11 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " tyrannicaltoucan/vim-quantum
 set background=dark
 colorscheme quantum
-let g:quantum_italics = 1
-"" use true color ""
+"" true color
 set termguicolors
-"" fix for tmux ""
+"" true color fix for tmux
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
-
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1

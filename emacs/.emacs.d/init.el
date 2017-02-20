@@ -915,17 +915,19 @@
 ;; ----- MacOS -----
 
 (when (memq window-system '(ns))
-  ;; fix PATH problem
+  ;; 1. fix PATH problem
   (use-package exec-path-from-shell
     :config
     (exec-path-from-shell-initialize))
-  ;; use command as meta
+  ;; 2. use command as meta
   (setq mac-command-modifier 'meta)
-  ;; set font
+  ;; 3. set font
   (when (member "Menlo" (font-family-list))
     (set-face-attribute 'default nil :font "Menlo-13"))
   (when (member "Lantinghei SC" (font-family-list))
-    (set-fontset-font t 'unicode "Lantinghei SC")))
+    (set-fontset-font t 'unicode "Lantinghei SC"))
+  ;; 4. fix gpg error
+  (custom-set-variables '(epg-gpg-program  "gpg1")))
 
 
 ;;; init.el ends here
