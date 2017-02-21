@@ -465,16 +465,12 @@
 
 ;; ----- color theme -----
 
-;; solarized-theme
-(use-package solarized-theme
+;; zenburn-theme
+(use-package zenburn-theme
   :config
-  (setq solarized-emphasize-indicators nil))
-
-;; theme-changer
-(use-package theme-changer
-  :if window-system
-  :config
-  (change-theme 'solarized-light 'solarized-dark))
+  (load-theme 'zenburn t)
+  (set-face-attribute 'fringe nil :background nil)
+  (set-face-attribute 'mode-line nil :box `(:line-width 1 :color nil)))
 
 ;; ----- mode-line -----
 
@@ -789,13 +785,6 @@
 (use-package flycheck
   :config
   (add-hook 'after-init-hook 'global-flycheck-mode))
-
-;; highlight-thing
-(use-package highlight-thing
-  :config
-  (add-hook 'prog-mode-hook 'highlight-thing-mode)
-  (setq highlight-thing-delay-seconds 1.0)
-  (setq highlight-thing-case-sensitive-p t))
 
 ;; indent-guide
 (use-package indent-guide
