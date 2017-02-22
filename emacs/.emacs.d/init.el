@@ -745,6 +745,8 @@
 
 ;; avy
 (use-package avy
+  :config
+  (setq avy-background t)
   :bind* ("C-'" . avy-goto-char-2))
 
 ;; bbdb
