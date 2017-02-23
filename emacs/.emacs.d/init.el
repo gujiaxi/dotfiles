@@ -323,12 +323,13 @@
 ;; -------------------------------------------------------------------
 
 ;; basic org options
+(setq org-startup-with-inline-images nil)
+(setq org-image-actual-width nil)
 (setq org-src-fontify-natively t)
 (setq org-src-preserve-indentation t)
 (setq org-confirm-babel-evaluate nil)
 (setq org-export-html-style-include-scripts nil)
 (setq org-export-html-style-include-default nil)
-(setq org-startup-with-inline-images t)
 (setq org-html-postamble t)
 (setq org-html-postamble-format '(("en" "&copy; %a / %C")))
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
@@ -465,12 +466,16 @@
 
 ;; ----- color theme -----
 
-;; zenburn-theme
-(use-package zenburn-theme
+;; solarized-theme
+(use-package solarized-theme
   :config
-  (load-theme 'zenburn t)
-  (set-face-attribute 'fringe nil :background nil)
-  (set-face-attribute 'mode-line nil :box `(:line-width 1 :color nil)))
+  (setq solarized-emphasize-indicators nil))
+
+;; theme-changer
+(use-package theme-changer
+  :if window-system
+  :config
+  (change-theme 'solarized-light 'solarized-dark))
 
 ;; ----- mode-line -----
 
@@ -905,7 +910,7 @@
 
 ;; ----- MacOS -----
 
-(when (memq window-system '(ns))
+(when (memq window-system '(ns mac))
   ;; 1. fix PATH problem
   (use-package exec-path-from-shell
     :config
