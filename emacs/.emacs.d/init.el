@@ -357,7 +357,7 @@
          "*** %?\n%U\n-----")))
 
 ;; ox-latex
-(setq org-latex-pdf-process '("pdflatex %f" "bibtex %b" "pdflatex %f" "pdflatex %f"))
+(setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
 
 ;; org
 (use-package org
@@ -915,8 +915,9 @@
   (use-package exec-path-from-shell
     :config
     (exec-path-from-shell-initialize))
-  ;; 2. use command as meta
+  ;; 2. command => meta; option => super
   (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'super)
   ;; 3. set font
   (when (member "Menlo" (font-family-list))
     (set-face-attribute 'default nil :font "Menlo-13"))
