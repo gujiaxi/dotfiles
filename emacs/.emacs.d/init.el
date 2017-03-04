@@ -64,6 +64,9 @@
 (setq-default indent-tabs-mode nil)
 (setq-default default-tab-width 4)
 
+;; turn off truncate lines
+(setq-default truncate-lines nil)
+
 ;; deltet selection
 (delete-selection-mode t)
 
@@ -645,6 +648,19 @@
   :after irony
   :config
   (add-to-list 'company-backends 'company-irony))
+
+;; flycheck-irony
+(use-package flycheck-irony
+  :after irony flycheck
+  :config
+  (add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
+
+;; cmake-mode
+(use-package cmake-mode
+  :after irony
+  :config
+  :mode (("CMakeLists\\.txt\\'" . cmake-mode)
+         ("\\.cmake\\'" . cmake-mode)))
 
 
 ;; -------------------------------------------------------------------
