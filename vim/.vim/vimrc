@@ -22,7 +22,7 @@ let g:mapleader = ","
 
 " Fast save and quit
 nmap <leader>w :w!<cr>
-nmap <leader>q :q!<cr>
+nmap <leader>q :qa!<cr>
 nmap <leader>x :x!<cr>
 
 " :W sudo saves the file 
@@ -104,18 +104,16 @@ set si
 " Wrap lines
 set wrap
 
+" set spell for markdown and tex
+autocmd BufEnter *.md set spell
+autocmd BufEnter *.tex set spell
+
 " Treat long lines as break lines
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
-
-" Useful mappings for managing windows
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-h> <c-w>h
-map <c-l> <c-w>l
 
 " Useful mappings for managing buffers
 map <leader>bd :bd<cr>
@@ -137,30 +135,28 @@ map <leader>t<leader> :tabnext
 call plug#begin('~/.vim/bundle')
 
 Plug 'easymotion/vim-easymotion'
-Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dietsche/vim-lastplace'
 Plug 'klen/python-mode'
-Plug 'luochen1990/rainbow'
 Plug 'lervag/vimtex'
+Plug 'luochen1990/rainbow'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'maralla/completor.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
-Plug 'mileszs/ack.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'reedes/vim-lexical'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/neocomplete.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -174,19 +170,11 @@ nmap <leader>s <plug>(easymotion-overwin-f2)
 " luochen1990/rainbow
 let g:rainbow_active = 1
 
-" mileszs/ack.vim
-let g:ackprg = 'ag --vimgrep'
-nnoremap <leader>a :Ack!<space>
+" mhinz/vim-grepper
+nnoremap <leader>g :Grepper -tool ag<cr>
 
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
-
-" reedes/vim-lexical
-augroup lexical
-    autocmd!
-    autocmd FileType markdown call lexical#init()
-    autocmd FileType tex call lexical#init()
-augroup END
 
 " scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -194,23 +182,8 @@ let g:NERDSpaceDelims = 1
 " scrooloose/nerdtree
 nmap <f9> :NERDTreeToggle<cr>
 
-" scrooloose/syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " SirVer/ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
-
-" Shougo/neocomplete.vim
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " tyrannicaltoucan/vim-quantum
 set background=dark

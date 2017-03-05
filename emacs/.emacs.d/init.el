@@ -651,7 +651,7 @@
 
 ;; flycheck-irony
 (use-package flycheck-irony
-  :after irony flycheck
+  :after (irony flycheck)
   :config
   (add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
 
@@ -895,10 +895,6 @@
   :config
   (setq symon-delay 33)
   (symon-mode))
-
-;; wgrep
-(use-package wgrep
-  :after grep)
 
 ;; which-key
 (use-package which-key
