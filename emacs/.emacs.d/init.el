@@ -230,7 +230,7 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+      '(("gnu" . "https://elpa.emacs-china.org/gnu/")
         ("melpa" . "https://elpa.emacs-china.org/melpa/")
         ("org" . "https://elpa.emacs-china.org/org/")))
 
@@ -433,7 +433,6 @@
 ;; auctex
 (use-package tex-site
   :ensure auctex
-  :after tex
   :config
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
   (add-hook 'LaTeX-mode-hook 'visual-line-mode)
@@ -762,7 +761,8 @@
 ;; aggressive-indent
 (use-package aggressive-indent
   :config
-  (global-aggressive-indent-mode t))
+  (global-aggressive-indent-mode t)
+  (add-to-list 'aggressive-indent-excluded-modes 'latex-mode))
 
 ;; avy
 (use-package avy
