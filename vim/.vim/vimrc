@@ -140,7 +140,6 @@ Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dietsche/vim-lastplace'
-Plug 'klen/python-mode'
 Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'
 Plug 'ludovicchabant/vim-gutentags'
@@ -148,6 +147,7 @@ Plug 'maralla/completor.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
+Plug 'python-mode/python-mode'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
@@ -169,6 +169,9 @@ nmap <leader>s <plug>(easymotion-overwin-f2)
 
 " luochen1990/rainbow
 let g:rainbow_active = 1
+
+" maralla/completor.vim
+let g:pymode_python = 'python3'
 
 " mhinz/vim-grepper
 nnoremap <leader>g :Grepper -tool ag<cr>

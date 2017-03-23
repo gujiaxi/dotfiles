@@ -575,7 +575,7 @@
   (setq bibtex-completion-notes-path (concat org-directory "org/research-notes.org"))
   (setq bibtex-completion-pdf-symbol "⌘")
   (setq bibtex-completion-library-path (list (concat org-directory "pdf")))
-  (setq bibtex-completion-pdf-open-function (lambda (fpath) (call-process "open" nil 0 nil "-a" "/Applications/PDF Expert.app" fpath)))
+  (setq bibtex-completion-pdf-open-function 'helm-open-file-with-default-tool)
   (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
   (setq bibtex-completion-notes-template-one-file "\n* ${title} (${year})\n:PROPERTIES:\n:Custom_ID: ${=key=}\n:END:\n")
   :bind ("C-c b" . helm-bibtex))
@@ -762,7 +762,9 @@
 (use-package aggressive-indent
   :config
   (global-aggressive-indent-mode t)
-  (add-to-list 'aggressive-indent-excluded-modes 'latex-mode))
+  (add-to-list 'aggressive-indent-excluded-modes 'latex-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'org-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'python-mode))
 
 ;; avy
 (use-package avy
@@ -935,8 +937,10 @@
     (set-face-attribute 'default nil :font "Menlo-13"))
   (when (member "Lantinghei SC" (font-family-list))
     (set-fontset-font t 'unicode "Lantinghei SC"))
-  ;; 4. fix gpg error
-  (custom-set-variables '(epg-gpg-program  "gpg1")))
+  ;; 4. fix some binareis
+  (custom-set-variables '(epg-gpg-program "gpg1"))
+  (custom-set-variables '(python-shell-interpreter "python3"))
+  (setq org-babel-python-command "python3 "))
 
 
 ;;; init.el ends here
