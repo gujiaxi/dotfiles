@@ -148,13 +148,13 @@ Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
 Plug 'python-mode/python-mode'
+Plug 'rakr/vim-one'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 
@@ -167,17 +167,32 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
 nmap <leader>s <plug>(easymotion-overwin-f2)
 
+" lervag/vimtex
+let g:vimtex_latexmk_callback = 0
+
 " luochen1990/rainbow
 let g:rainbow_active = 1
 
 " maralla/completor.vim
-let g:pymode_python = 'python3'
+let g:completor_python_binary = 'python3'
 
 " mhinz/vim-grepper
 nnoremap <leader>g :Grepper -tool ag<cr>
 
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
+
+" python-mode/python-mode
+let g:pymode_python = 'python3'
+
+" rakr/vim-one
+set background=dark
+colorscheme one
+"" true color
+set termguicolors
+"" true color fix for tmux
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
 
 " scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -187,15 +202,6 @@ nmap <f9> :NERDTreeToggle<cr>
 
 " SirVer/ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
-
-" tyrannicaltoucan/vim-quantum
-set background=dark
-colorscheme quantum
-"" true color
-set termguicolors
-"" true color fix for tmux
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
