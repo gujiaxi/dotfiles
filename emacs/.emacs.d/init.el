@@ -65,7 +65,7 @@
 (setq-default default-tab-width 4)
 
 ;; turn off truncate lines
-(setq-default truncate-lines nil)
+(setq-default truncate-lines t)
 
 ;; deltet selection
 (delete-selection-mode t)
@@ -230,9 +230,9 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu" . "https://elpa.emacs-china.org/gnu/")
-        ("melpa" . "https://elpa.emacs-china.org/melpa/")
-        ("org" . "https://elpa.emacs-china.org/org/")))
+      '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; ----- use-package -----
 
@@ -501,12 +501,13 @@
   (evil-mode t)
   (mapc (lambda (my-mode) (evil-set-initial-state my-mode 'emacs))
         (list 'calendar-mode 'comint-mode 'completion-mode
-              'deft-mode 'dired-mode 'eshell-mode 'eww-mode
-              'eww-bookmark-mode 'flycheck-error-list-mode
-              'help-mode 'inferior-ess-mode 'inferior-python-mode
-              'newsticker-treeview-mode 'profiler-report-mode
-              'quickrun/mode 'shell-mode 'speedbar-mode
-              'special-mode 'TeX-output-mode))
+              'deft-mode 'dired-mode 'epa-key-list-mode
+              'eshell-mode 'eww-mode 'eww-bookmark-mode
+              'flycheck-error-list-mode 'help-mode
+              'inferior-ess-mode 'inferior-python-mode
+              'message-mode 'newsticker-treeview-mode
+              'profiler-report-mode 'quickrun/mode 'shell-mode
+              'speedbar-mode 'special-mode 'TeX-output-mode))
   :bind
   (("<f5>" . evil-make)
    :map evil-normal-state-map
@@ -520,7 +521,6 @@
 
 ;; evil-nerd-commenter
 (use-package evil-nerd-commenter
-  :after evil
   :bind
   (("M-;" . evilnc-comment-or-uncomment-lines)
    :map evil-normal-state-map
@@ -528,12 +528,10 @@
 
 ;; evil-surround
 (use-package evil-surround
-  :after evil
   :config (global-evil-surround-mode t))
 
 ;; evil-matchit
 (use-package evil-matchit
-  :after evil
   :config (global-evil-matchit-mode t))
 
 ;; evil-search-highlight-persist
@@ -938,7 +936,6 @@
   (when (member "Lantinghei SC" (font-family-list))
     (set-fontset-font t 'unicode "Lantinghei SC"))
   ;; 4. fix some binareis
-  (custom-set-variables '(epg-gpg-program "gpg1"))
   (custom-set-variables '(python-shell-interpreter "python3"))
   (setq org-babel-python-command "python3 "))
 
