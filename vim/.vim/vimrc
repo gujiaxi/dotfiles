@@ -140,6 +140,7 @@ Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dietsche/vim-lastplace'
+Plug 'davidhalter/jedi-vim'
 Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'
 Plug 'ludovicchabant/vim-gutentags'
@@ -147,12 +148,12 @@ Plug 'maralla/completor.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
-Plug 'python-mode/python-mode'
 Plug 'rakr/vim-one'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
@@ -178,22 +179,20 @@ let g:rainbow_active = 1
 let g:completor_python_binary = 'python3'
 
 " mhinz/vim-grepper
-nnoremap <leader>g :Grepper -tool ag<cr>
+nnoremap <leader>g :Grepper -tool rg<cr>
 
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
-
-" python-mode/python-mode
-let g:pymode_python = 'python3'
 
 " rakr/vim-one
 set background=dark
 colorscheme one
 "" true color
-set termguicolors
-"" true color fix for tmux
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
+if has("termguicolors")
+    set termguicolors
+    set t_8f=[38;2;%lu;%lu;%lum
+    set t_8b=[48;2;%lu;%lu;%lum
+endif
 
 " scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -203,6 +202,10 @@ nmap <f9> :NERDTreeToggle<cr>
 
 " SirVer/ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
+
+
+" thinca/vim-quickrun
+nmap <f5> :QuickRun<cr>
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1

@@ -158,6 +158,7 @@
 
 ;; epa [built-in]
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
+(setf epa-pinentry-mode 'loopback)
 
 ;; flyspell [built-in]
 (add-hook 'org-mode-hook 'flyspell-mode)
@@ -388,7 +389,7 @@
            :html-head-include-scripts nil
            :html-preamble "<nav><a href='/'>&#8617;</a></nav>"
            :html-head "<link rel='stylesheet' type='text/css' href='static/org.css'/>"
-           :html-mathjax "path:https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"
+           :html-mathjax "path:https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"
            :html-doctype "html5"
            :html-html5-fancy t
            :htmlized-source t
