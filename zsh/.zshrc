@@ -10,6 +10,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/common-aliases
     zgen oh-my-zsh plugins/extract
+    zgen oh-my-zsh plugins/gem
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/osx
     zgen oh-my-zsh plugins/sudo
@@ -33,17 +34,22 @@ fi
 ####################
 # custom settings
 ####################
-# Set default editor
+# Set Editor
 export EDITOR="vim"
-# Homebrew PATH
-export PATH=/usr/local/bin:$PATH
-# BasicTeX PATH
-export PATH=/Library/TeX/texbin:$PATH
-# OpenCV PATH
-export PATH=/usr/local/opt/opencv3/bin:$PATH
-# gpg instead of gpg1
-export PATH=/usr/local/opt/gnupg/libexec/gpgbin:$PATH
-# homebrew-bottles repo
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-# MPEG-DASH Player
-alias osmo=/Applications/Osmo4.app/Contents/MacOS/Osmo4
+# Set Zsh
+export SHELL="/usr/local/bin/zsh"
+# Add Homebrew
+export PATH="/usr/local/bin:$PATH"
+# Add BasicTeX
+export PATH="/Library/TeX/texbin:$PATH"
+# Add OpenCV
+export PATH="/usr/local/opt/opencv3/bin:$PATH"
+# Add gpg
+export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
+# Set homebrew-bottles repo
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+# Set proxy provided by Surge
+export http_proxy="http://127.0.0.1:6152"
+export https_proxy="http://127.0.0.1:6152"
+# Alias MPEG-DASH Player
+alias osmo="/Applications/Osmo4.app/Contents/MacOS/Osmo4"
