@@ -1,7 +1,15 @@
-########################################################################
-#  'git clone git@github.com:tarjoilija/zgen.git ~/.zsh_zgen`
-########################################################################
+################################
+# Use zgen to manage plugins
+################################
+# set zgen env
 export ZGEN_DIR=$HOME/.zsh_zgen
+# bootstrap zgen
+if ! [[ -d $ZGEN_DIR ]]; then
+    puts 'Installing' 'zgen'
+    command -v git > /dev/null 2>&1 && \
+        env git clone https://github.com/tarjoilija/zgen.git $ZGEN_DIR > /dev/null 2>&1
+fi
+# source zgen
 source $ZGEN_DIR/zgen.zsh
 # START of Plug
 if ! zgen saved; then

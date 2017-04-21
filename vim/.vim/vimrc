@@ -132,19 +132,27 @@ map <leader>t<leader> :tabnext
 " Plugin settings
 """""""""""""""""""""""""""
 
+" Bootstrap vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync
+endif
+
 call plug#begin('~/.vim/bundle')
 
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'dietsche/vim-lastplace'
 Plug 'easymotion/vim-easymotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dietsche/vim-lastplace'
-Plug 'davidhalter/jedi-vim'
 Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'maralla/completor.vim'
+Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
@@ -202,7 +210,6 @@ nmap <f9> :NERDTreeToggle<cr>
 
 " SirVer/ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
-
 
 " thinca/vim-quickrun
 nmap <f5> :QuickRun<cr>
