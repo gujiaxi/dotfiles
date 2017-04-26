@@ -2,7 +2,7 @@
 " Basic settings
 """""""""""""""""""""""""""
 
-" set no compatible
+" Set no compatible
 set nocompatible
 
 " Show (relative) line number
@@ -104,7 +104,13 @@ set si
 " Wrap lines
 set wrap
 
-" set spell for markdown and tex
+" Enable mouse in all modes
+set mouse=a
+
+" Use system clipboard
+set clipboard=unnamed
+
+" Set spell for markdown and tex
 autocmd BufEnter *.md set spell
 autocmd BufEnter *.tex set spell
 
@@ -196,7 +202,7 @@ let g:vim_markdown_folding_disabled = 1
 set background=dark
 colorscheme one
 "" true color
-if has("termguicolors")
+if has("termguicolors") && &t_Co == 256
     set termguicolors
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum

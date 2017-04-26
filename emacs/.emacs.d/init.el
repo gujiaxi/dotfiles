@@ -374,14 +374,14 @@
   (defun org-html-publish-index (prop)
     "Generate index.html."
     (let ((index-org (concat org-directory "org/index.org"))
-          (export-dir (concat org-directory "html")))
+          (export-dir "/ssh:jiaxi@sdf.org:~/html/"))
       (org-html-publish-to-html nil index-org export-dir)))
   (setq org-publish-timestamp-directory user-emacs-directory)
   (setq org-publish-project-alist
         `(("org"
            :base-directory ,(concat org-directory "org/")
            :base-extension "org"
-           :publishing-directory ,(concat org-directory "html/")
+           :publishing-directory "/ssh:jiaxi@sdf.org:~/html/"
            :publishing-function org-html-publish-to-html
            :exclude "^\\([^p]\\|p[^-]\\).*"
            :completion-function org-html-publish-index
@@ -401,7 +401,7 @@
           ("static"
            :base-directory ,(concat org-directory "static/")
            :base-extension "css\\|js\\|pdf"
-           :publishing-directory ,(concat org-directory "html/static/")
+           :publishing-directory "/ssh:jiaxi@sdf.org:~/html/static/"
            :publishing-function org-publish-attachment)
           ("website"
            :components ("org" "static"))))

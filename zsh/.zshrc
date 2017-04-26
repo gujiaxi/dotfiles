@@ -61,3 +61,7 @@ export http_proxy="http://127.0.0.1:6152"
 export https_proxy="http://127.0.0.1:6152"
 # Alias MPEG-DASH Player
 alias osmo="/Applications/Osmo4.app/Contents/MacOS/Osmo4"
+# pastebins
+alias ix="curl -n -F 'f:1=<-' ix.io"
+alias ptpb="curl -F 'c=<-' ptpb.pw"
+alias sprunge="curl -F 'sprunge=<-' sprunge.us"
