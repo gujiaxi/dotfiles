@@ -129,17 +129,6 @@
 (setq diary-file (concat org-directory "org/diary.org"))
 (global-set-key (kbd "C-c k") 'calendar)
 
-;; cedet [built-in]
-(add-hook 'c-mode-hook 'semantic-mode)
-(add-hook 'c++-mode-hook 'semantic-mode)
-(add-hook 'objc-mode-hook 'semantic-mode)
-(with-eval-after-load "semantic"
-  (global-semantic-idle-scheduler-mode t)
-  (global-semantic-idle-completions-mode t)
-  (global-semantic-decoration-mode t)
-  (global-semantic-highlight-func-mode t)
-  (global-semantic-show-unmatched-syntax-mode t))
-
 ;; compile [built-in]
 (global-set-key (kbd "<f6>") 'compile)
 
@@ -231,9 +220,9 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; ----- use-package -----
 
@@ -634,24 +623,11 @@
 ;; C/C++
 ;; -------------------------------------------------------------------
 
-;; irony
-(use-package irony
+;; comapny-c-headers
+(use-package company-c-headers
+  :after company
   :config
-  (add-hook 'c-mode-hook 'irony-mode)
-  (add-hook 'c++-mode-hook 'irony-mode)
-  (add-hook 'objc-mode-hook 'irony-mode))
-
-;; company-irony
-(use-package company-irony
-  :after irony
-  :config
-  (add-to-list 'company-backends 'company-irony))
-
-;; flycheck-irony
-(use-package flycheck-irony
-  :after (irony flycheck)
-  :config
-  (add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
+  (add-to-list 'company-backends 'company-c-headers))
 
 ;; cmake-mode
 (use-package cmake-mode

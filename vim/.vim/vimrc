@@ -148,7 +148,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'davidhalter/jedi-vim'
+Plug 'Chiel92/vim-autoformat'
 Plug 'dietsche/vim-lastplace'
 Plug 'easymotion/vim-easymotion'
 Plug 'henrik/vim-indexed-search'
@@ -157,6 +157,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 Plug 'maralla/completor.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-grepper'
@@ -178,6 +179,9 @@ call plug#end()
 
 " ---8<----------------------
 
+" Chiel92/vim-autoformat
+noremap <f3> :Autoformat<cr>
+
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
@@ -189,7 +193,11 @@ let g:vimtex_latexmk_callback = 0
 " luochen1990/rainbow
 let g:rainbow_active = 1
 
+" majutsushi/tagbar
+nmap <f8> :TagbarToggle<cr>
+
 " maralla/completor.vim
+" let g:completor_clang_binary = 'clang'
 let g:completor_python_binary = 'python3'
 
 " mhinz/vim-grepper
