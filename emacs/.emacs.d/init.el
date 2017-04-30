@@ -349,14 +349,17 @@
         ("p" "Publish" plain (file "org/p-tweets.org")
          "*** %?\n%U\n-----")))
 
-;; ox-latex
-(setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
-
 ;; org
 (use-package org
   :ensure org-plus-contrib
   :after org
   :config
+  ;; ox-latex
+  (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
+  (setq org-latex-listings t)
+  (setq org-latex-listings-options '(("breaklines" "true")))
+  (add-to-list 'org-latex-packages-alist '("" "listings"))
+  (add-to-list 'org-latex-packages-alist '("" "color"))
   ;; ox-bibtex
   (require 'ox-bibtex)
   ;; org-publish
