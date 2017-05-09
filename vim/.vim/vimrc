@@ -197,7 +197,6 @@ let g:rainbow_active = 1
 nmap <f8> :TagbarToggle<cr>
 
 " maralla/completor.vim
-" let g:completor_clang_binary = 'clang'
 let g:completor_python_binary = 'python3'
 
 " mhinz/vim-grepper

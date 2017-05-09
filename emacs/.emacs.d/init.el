@@ -1,11 +1,30 @@
-;; init.el --- An awesome init file for Emacs.
+;;; init.el --- jiaxi's configuration
+
+;; Copyright (C) 2017 Jiaxi Gu
 
 ;; Author: Jiaxi Gu <imjiaxi@gmail.com>
-;; Url: https://gujiaxi.github.io/
+;; Version: 0.2.0
+;; Keywords: convenience
+;; Package-Requires: ((emacs "25.1"))
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+
+;; jiaxi's Emacs configuration
 ;;
-;; An awesome init file for Emacs.
+;; See documentation on https://git.io/v96UQ
 
 ;;; Code:
 
@@ -220,9 +239,9 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; ----- use-package -----
 
@@ -401,14 +420,11 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((calc . t)
-     (ditaa . t)
      (emacs-lisp . t)
-     (gnuplot . t)
      (haskell . t)
      (latex . t)
      (ledger . t)
      (perl . t)
-     (plantuml . t)
      (python . t)
      (ruby . t)
      (R . t)
@@ -496,8 +512,8 @@
         (list 'calendar-mode 'comint-mode 'completion-mode
               'deft-mode 'dired-mode 'epa-key-list-mode
               'eshell-mode 'eww-mode 'eww-bookmark-mode
-              'flycheck-error-list-mode 'help-mode
-              'inferior-ess-mode 'inferior-python-mode
+              'flycheck-error-list-mode 'helm-grep-mode
+              'help-mode 'inferior-ess-mode 'inferior-python-mode
               'message-mode 'newsticker-treeview-mode
               'profiler-report-mode 'quickrun/mode 'shell-mode
               'speedbar-mode 'special-mode 'TeX-output-mode))
@@ -531,6 +547,10 @@
 (use-package evil-search-highlight-persist
   :config (global-evil-search-highlight-persist t))
 
+;; evil-goggles
+(use-package evil-goggles
+  :config (evil-goggles-mode))
+
 
 ;; -------------------------------------------------------------------
 ;; Helm
@@ -550,12 +570,14 @@
   (setq helm-follow-mode-persistent t)
   (setq helm-mode-fuzzy-match t)
   (setq helm-completion-in-region-fuzzy-match t)
+  (setq helm-grep-ag-command "rg --color always --smart-case --no-heading --line-number %s %s %s")
   :bind
   (("M-x" . helm-M-x)
    ("M-y" . helm-show-kill-ring)
    ("C-s" . helm-occur)
    ("C-x b" . helm-mini)
-   ("C-x C-f" . helm-find-files)))
+   ("C-x C-f" . helm-find-files)
+   ("C-x g" . helm-do-grep-ag)))
 
 ;; helm-bibtex
 (use-package helm-bibtex
@@ -913,11 +935,11 @@
   ;; 3. set font
   (when (member "Menlo" (font-family-list))
     (set-face-attribute 'default nil :font "Menlo-13"))
-  (when (member "Lantinghei SC" (font-family-list))
-    (set-fontset-font t 'unicode "Lantinghei SC"))
+  (when (member "STFangsong" (font-family-list))
+    (set-fontset-font t 'unicode "STFangsong-16"))
   ;; 4. fix some binareis
   (custom-set-variables '(python-shell-interpreter "python3"))
-  (setq org-babel-python-command "python3 "))
+  (setq org-babel-python-command "python3"))
 
 
 ;;; init.el ends here

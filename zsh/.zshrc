@@ -56,12 +56,12 @@ export PATH="/usr/local/opt/opencv3/bin:$PATH"
 export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
 # Set homebrew-bottles repo
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-# Set proxy provided by Surge
-export http_proxy="http://127.0.0.1:6152"
-export https_proxy="http://127.0.0.1:6152"
+# Proxy
+export https_proxy=http://127.0.0.1:8888
+export http_proxy=http://127.0.0.1:8888
 # Alias MPEG-DASH Player
 alias osmo="/Applications/Osmo4.app/Contents/MacOS/Osmo4"
-# pastebins
+# Pastebins
 alias ix="curl -n -F 'f:1=<-' ix.io"
 alias ptpb="curl -F 'c=<-' ptpb.pw"
 alias sprunge="curl -F 'sprunge=<-' sprunge.us"
