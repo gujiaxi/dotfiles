@@ -133,6 +133,11 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
 
+" Jump to last position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 
 """""""""""""""""""""""""""
 " Plugin settings
@@ -148,20 +153,14 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'dietsche/vim-lastplace'
 Plug 'easymotion/vim-easymotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lervag/vimtex'
-Plug 'luochen1990/rainbow'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
 Plug 'maralla/completor.vim'
-Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-grepper'
-Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
 Plug 'rakr/vim-one'
 Plug 'scrooloose/nerdcommenter'
@@ -179,9 +178,6 @@ call plug#end()
 
 " ---8<----------------------
 
-" Chiel92/vim-autoformat
-noremap <f3> :Autoformat<cr>
-
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
@@ -189,12 +185,6 @@ nmap <leader>s <plug>(easymotion-overwin-f2)
 
 " lervag/vimtex
 let g:vimtex_latexmk_callback = 0
-
-" luochen1990/rainbow
-let g:rainbow_active = 1
-
-" majutsushi/tagbar
-nmap <f8> :TagbarToggle<cr>
 
 " maralla/completor.vim
 let g:completor_python_binary = 'python3'
@@ -214,9 +204,6 @@ if has("termguicolors") && &t_Co == 256
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum
 endif
-
-" scrooloose/nerdcommenter
-let g:NERDSpaceDelims = 1
 
 " scrooloose/nerdtree
 nmap <f9> :NERDTreeToggle<cr>

@@ -322,7 +322,7 @@
 (setq gnus-preserve-marks nil)
 (setq message-confirm-send t)
 (setq message-from-style 'angles)
-(setq message-signature "Regards,\nJiaxi Gu\n0x3F938F7B")
+(setq message-signature "Jiaxi\n0x3F938F7B")
 ;; type `B m' to move entries
 (setq gnus-move-split-methods
       '((".*" "INBOX")
@@ -515,8 +515,9 @@
               'flycheck-error-list-mode 'helm-grep-mode
               'help-mode 'inferior-ess-mode 'inferior-python-mode
               'message-mode 'newsticker-treeview-mode
-              'profiler-report-mode 'quickrun/mode 'shell-mode
-              'speedbar-mode 'special-mode 'TeX-output-mode))
+              'process-menu-mode 'profiler-report-mode
+              'quickrun/mode 'shell-mode 'speedbar-mode
+              'special-mode 'TeX-output-mode))
   :bind
   (("<f5>" . evil-make)
    :map evil-normal-state-map
@@ -546,10 +547,6 @@
 ;; evil-search-highlight-persist
 (use-package evil-search-highlight-persist
   :config (global-evil-search-highlight-persist t))
-
-;; evil-goggles
-(use-package evil-goggles
-  :config (evil-goggles-mode))
 
 
 ;; -------------------------------------------------------------------
@@ -819,7 +816,9 @@
 
 ;; ledger-mode
 (use-package ledger-mode
-  :mode "\\.ldg\\'")
+  :mode "\\.ldg\\'"
+  :config
+  (setq ledger-binary-path "hledger"))
 
 ;; linum-relative
 (use-package linum-relative
