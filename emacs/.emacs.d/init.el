@@ -607,6 +607,8 @@
   (global-company-mode)
   ;; enable file name completion
   (add-to-list 'company-backends 'company-files)
+  ;; exclude annoying dabbrev completion
+  (setq company-backends (delete 'company-dabbrev company-backends))
   ;; turn company off in some specific modes
   (setq company-global-modes '(not comint-mode eshell-mode org-mode))
   :bind

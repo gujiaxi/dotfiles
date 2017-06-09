@@ -63,5 +63,3 @@ export http_proxy=http://127.0.0.1:8888
 alias osmo="/Applications/Osmo4.app/Contents/MacOS/Osmo4"
 # Pastebins
 alias ix="curl -n -F 'f:1=<-' ix.io"
-alias ptpb="curl -F 'c=<-' ptpb.pw"
-alias sprunge="curl -F 'sprunge=<-' sprunge.us"
