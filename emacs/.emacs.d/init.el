@@ -239,9 +239,9 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; ----- use-package -----
 
@@ -419,8 +419,10 @@
   ;; org-babel
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((calc . t)
+   '((awk . t)
+     (calc . t)
      (emacs-lisp . t)
+     (gnuplot . t)
      (haskell . t)
      (latex . t)
      (ledger . t)
@@ -428,7 +430,7 @@
      (python . t)
      (ruby . t)
      (R . t)
-     (sh . t))))
+     (shell . t))))
 
 ;; htmlize
 (use-package htmlize
@@ -796,14 +798,17 @@
   :config
   (add-hook 'prog-mode-hook 'dumb-jump-mode))
 
+;; elscreen
+(use-package elscreen
+  :config
+  (elscreen-set-prefix-key (kbd "C-l"))
+  (setq elscreen-tab-display-control nil)
+  (setq elscreen-tab-display-kill-screen nil)
+  (elscreen-start))
+
 ;; expand-region
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
-
-;; eyebrowse
-(use-package eyebrowse
-  :config
-  (eyebrowse-mode t))
 
 ;; flycheck
 (use-package flycheck
