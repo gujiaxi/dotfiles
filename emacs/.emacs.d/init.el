@@ -128,7 +128,7 @@
 (setq find-file-suppress-same-file-warnings t)
 
 ;; custom directory
-(setq org-directory "~/Dropbox/Documents/EmacsFiles/")
+(setq org-directory "~/Dropbox/Documents/EmacsFiles")
 (setq custom-file (concat user-emacs-directory "custom.el"))
 
 
@@ -144,8 +144,8 @@
 (setq calendar-longitude 116.40)
 (setq mark-diary-entries-in-calendar t)
 (setq mark-holidays-in-calendar t)
-(setq cal-html-directory (concat org-directory "calendar"))
-(setq diary-file (concat org-directory "org/diary.org"))
+(setq cal-html-directory (concat org-directory "/calendar"))
+(setq diary-file (concat org-directory "/org/diary.org"))
 (global-set-key (kbd "C-c k") 'calendar)
 
 ;; compile [built-in]
@@ -209,7 +209,7 @@
 
 ;; reftex [built-in]
 (setq reftex-plug-into-AUCTeX t)
-(setq reftex-default-bibliography (list (concat org-directory "org/bib/main.bib")))
+(setq reftex-default-bibliography (list (concat org-directory "/org/bib/main.bib")))
 
 ;; saveplace [built-in]
 (save-place-mode t)
@@ -343,17 +343,18 @@
 (setq org-export-html-style-include-scripts nil)
 (setq org-export-html-style-include-default nil)
 (setq org-html-postamble t)
+(setq org-archive-location (concat org-directory "/org/archive.org::"))
 (setq org-html-postamble-format '(("en" "&copy; %a / %C")))
 (setq org-priority-faces '((?A . (:foreground "red" :weight bold))
                            (?B . (:foreground "orange" :weight bold))
                            (?C . (:foreground "yellow" :wegith bold))))
 
 ;; org-agenda
-(setq org-agenda-files (list (concat org-directory "org/agenda.org"))) 
+(setq org-agenda-files (list (concat org-directory "/org/agenda.org"))) 
 (setq org-agenda-include-diary nil)
 
 ;; org-capture
-(setq org-default-notes-file (concat org-directory "org/agenda.org"))
+(setq org-default-notes-file (concat org-directory "/org/agenda.org"))
 (setq org-capture-templates
       '(("a" "Appt" entry (file+headline "org/agenda.org" "Appointments")
          "* %?\n%t")
@@ -384,13 +385,13 @@
   ;; org-publish
   (defun org-html-publish-index (prop)
     "Generate index.html."
-    (let ((index-org (concat org-directory "org/index.org"))
+    (let ((index-org (concat org-directory "/org/index.org"))
           (export-dir "/ssh:jiaxi@sdf.org:~/html/"))
       (org-html-publish-to-html nil index-org export-dir)))
   (setq org-publish-timestamp-directory user-emacs-directory)
   (setq org-publish-project-alist
         `(("org"
-           :base-directory ,(concat org-directory "org/")
+           :base-directory ,(concat org-directory "/org/")
            :base-extension "org"
            :publishing-directory "/ssh:jiaxi@sdf.org:~/html/"
            :publishing-function org-html-publish-to-html
@@ -410,7 +411,7 @@
            :sitemap-sort-files anti-chronologically
            :sitemap-file-entry-format "%d  »  %t")
           ("static"
-           :base-directory ,(concat org-directory "static/")
+           :base-directory ,(concat org-directory "/static/")
            :base-extension "css\\|js\\|pdf"
            :publishing-directory "/ssh:jiaxi@sdf.org:~/html/static/"
            :publishing-function org-publish-attachment)
@@ -516,7 +517,7 @@
               'eshell-mode 'eww-mode 'eww-bookmark-mode
               'flycheck-error-list-mode 'helm-grep-mode
               'help-mode 'inferior-ess-mode 'inferior-python-mode
-              'message-mode 'newsticker-treeview-mode
+              'Info-mode 'message-mode 'newsticker-treeview-mode
               'process-menu-mode 'profiler-report-mode
               'quickrun/mode 'shell-mode 'speedbar-mode
               'special-mode 'TeX-output-mode))
@@ -582,11 +583,11 @@
 (use-package helm-bibtex
   :after helm
   :config
-  (setq bibtex-completion-bibliography (list (concat org-directory "org/bib/main.bib")))
+  (setq bibtex-completion-bibliography (list (concat org-directory "/org/bib/main.bib")))
   (setq bibtex-completion-notes-symbol "✎")
-  (setq bibtex-completion-notes-path (concat org-directory "org/research-notes.org"))
+  (setq bibtex-completion-notes-path (concat org-directory "/org/research-notes.org"))
   (setq bibtex-completion-pdf-symbol "⌘")
-  (setq bibtex-completion-library-path (list (concat org-directory "pdf")))
+  (setq bibtex-completion-library-path (list (concat org-directory "/pdf")))
   (setq bibtex-completion-pdf-open-function 'helm-open-file-with-default-tool)
   (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
   (setq bibtex-completion-notes-template-one-file "\n* ${title} (${year})\n:PROPERTIES:\n:Custom_ID: ${=key=}\n:END:\n")
@@ -635,13 +636,14 @@
 
 (use-package deft
   :config
-  (setq deft-directory (concat org-directory "org"))
+  (setq deft-directory (concat org-directory "/org"))
   (setq deft-extensions '("org" "md" "tex"))
   (setq deft-default-extension "org")
   (setq deft-recursive t)
   (setq deft-auto-save-interval nil)
   (setq deft-use-filename-as-title t)
   (setq deft-use-filter-string-for-filename t)
+  (add-hook 'deft-open-file-hook 'deft-filter-clear)
   :bind ("C-c d" . deft))
 
 
