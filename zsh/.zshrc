@@ -54,6 +54,7 @@ export PATH="/Library/TeX/texbin:$PATH"
 export PATH="/usr/local/opt/opencv3/bin:$PATH"
 # Add gpg
 export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
+export GPG_TTY=$(tty)
 # Set homebrew-bottles repo
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 # Proxy
