@@ -499,12 +499,12 @@
               (list '(:propertize " %l " face (:weight bold))
                     'mode-line-mule-info
                     'mode-line-modified
-                    'mode-line-remote " "
+                    'mode-line-remote
+                    '(:eval (propertize (evil-generate-mode-line-tag evil-state) 'face '(:inherit 'font-lock-comment-face)))
                     '(:eval (propertize " %b " 'face (if (buffer-modified-p) '(:background "#d33682" :foreground "#fdf6e3" :weight bold)
                                                        '(:background "#268bd2" :foreground "#fdf6e3" :weight light))))
                     '(:propertize " %p/%I " face (:background "gray60" :foreground "#fdf6e3"))
-                    '(:eval (evil-generate-mode-line-tag evil-state))
-                    '(:eval (propertize (concat (eyebrowse-mode-line-indicator) " ")))
+                    '(:eval (propertize (concat " " (eyebrowse-mode-line-indicator) " ")))
                     '(:eval (propertize (format-time-string "%p·%H:%M ") 'help-echo (format-time-string "%F %a") 'face '(:inherit 'font-lock-doc-face)))
                     '(:propertize vc-mode face (:inherit font-lock-keyword-face :weight bold))
                     " {%m} " "-%-"))
