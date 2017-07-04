@@ -4,7 +4,7 @@
 
 ;; Author: Jiaxi Gu <imjiaxi@gmail.com>
 ;; Version: 0.2.0
-;; Keywords: convenience
+;; Keywords: emacs, dotfile
 ;; Package-Requires: ((emacs "25.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -499,19 +499,15 @@
               (list '(:propertize " %l " face (:weight bold))
                     'mode-line-mule-info
                     'mode-line-modified
-                    'mode-line-remote
-                    " "
-                    '(:eval (propertize " %b " 'face
-                                        (if (buffer-modified-p)
-                                            '(:background "#d33682" :foreground "#fdf6e3" :weight bold)
-                                          '(:background "#268bd2" :foreground "#fdf6e3" :weight normal))))
+                    'mode-line-remote " "
+                    '(:eval (propertize " %b " 'face (if (buffer-modified-p) '(:background "#d33682" :foreground "#fdf6e3" :weight bold)
+                                                       '(:background "#268bd2" :foreground "#fdf6e3" :weight light))))
                     '(:propertize " %p/%I " face (:background "gray60" :foreground "#fdf6e3"))
-                    '(:eval (propertize (concat " " (eyebrowse-mode-line-indicator) " ")))
+                    '(:eval (evil-generate-mode-line-tag evil-state))
+                    '(:eval (propertize (concat (eyebrowse-mode-line-indicator) " ")))
                     '(:eval (propertize (format-time-string "%p·%H:%M ") 'help-echo (format-time-string "%F %a") 'face '(:inherit 'font-lock-doc-face)))
                     '(:propertize vc-mode face (:inherit font-lock-keyword-face :weight bold))
-                    " {%m} "
-                    "-%-"
-                    ))
+                    " {%m} " "-%-"))
 
 ;; -------------------------------------------------------------------
 ;; Evil
