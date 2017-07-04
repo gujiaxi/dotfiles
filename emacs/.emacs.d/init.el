@@ -96,13 +96,14 @@
 (setq load-prefer-newer t)
 
 ;; show which function current line belongs to
-(which-function-mode t)
+(setq which-func-modes (list 'emacs-lisp-mode 'c++-mode 'python-mode))
 
 ;; highlight current line
 (global-hl-line-mode t)
 
 ;; display time in mode line
 (display-time-mode t)
+(setq display-time-default-load-average nil)
 (setq display-time-24hr-format t)
 (setq system-time-locale "C")
 
@@ -399,7 +400,7 @@
            :completion-function org-html-publish-index
            :html-head-include-default-style nil
            :html-head-include-scripts nil
-           :html-preamble "<nav><a href='/'>&#8617;</a></nav>"
+           :html-preamble "<nav><a href='/'>$HOME</a></nav>"
            :html-head "<link rel='stylesheet' type='text/css' href='static/org.css'/>"
            :html-mathjax "path:https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"
            :html-doctype "html5"
@@ -483,6 +484,7 @@
 ;; solarized-theme
 (use-package solarized-theme
   :config
+  (setq x-underline-at-descent-line t)
   (setq solarized-emphasize-indicators nil))
 
 ;; theme-changer
@@ -493,14 +495,23 @@
 
 ;; ----- mode-line -----
 
-;; smart-mode-line
-(use-package smart-mode-line
-  :config
-  (setq sml/no-confirm-load-theme t)
-  (setq sml/mode-width 'right)
-  (setq rm-blacklist ".*")
-  (sml/setup))
-
+(setq-default mode-line-format
+              (list '(:propertize " %l " face (:weight bold))
+                    'mode-line-mule-info
+                    'mode-line-modified
+                    'mode-line-remote
+                    " "
+                    '(:eval (propertize " %b " 'face
+                                        (if (buffer-modified-p)
+                                            '(:background "#d33682" :foreground "#fdf6e3" :weight bold)
+                                          '(:background "#268bd2" :foreground "#fdf6e3" :weight normal))))
+                    '(:propertize " %p/%I " face (:background "gray60" :foreground "#fdf6e3"))
+                    '(:eval (propertize (concat " " (eyebrowse-mode-line-indicator) " ")))
+                    '(:eval (propertize (format-time-string "%p·%H:%M ") 'help-echo (format-time-string "%F %a") 'face '(:inherit 'font-lock-doc-face)))
+                    '(:propertize vc-mode face (:inherit font-lock-keyword-face :weight bold))
+                    " {%m} "
+                    "-%-"
+                    ))
 
 ;; -------------------------------------------------------------------
 ;; Evil
@@ -800,17 +811,16 @@
   :config
   (add-hook 'prog-mode-hook 'dumb-jump-mode))
 
-;; elscreen
-(use-package elscreen
-  :config
-  (elscreen-set-prefix-key (kbd "C-l"))
-  (setq elscreen-tab-display-control nil)
-  (setq elscreen-tab-display-kill-screen nil)
-  (elscreen-start))
-
 ;; expand-region
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
+
+;; eyebrowse
+(use-package eyebrowse
+  :config
+  (eyebrowse-mode t)
+  (setq eyebrowse-mode-line-separator ",")
+  (set-face-attribute 'eyebrowse-mode-line-active nil :inherit 'font-lock-warning-face))
 
 ;; flycheck
 (use-package flycheck
@@ -843,11 +853,6 @@
 ;; multiple-cursors
 (use-package multiple-cursors
   :bind ("C->" . mc/mark-next-like-this))
-
-;; nyan-mode
-(use-package nyan-mode
-  :config
-  (nyan-mode t))
 
 ;; persistent-scratch
 (use-package persistent-scratch
