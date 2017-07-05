@@ -244,9 +244,9 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; ----- use-package -----
 
@@ -429,7 +429,6 @@
      (calc . t)
      (emacs-lisp . t)
      (gnuplot . t)
-     (haskell . t)
      (latex . t)
      (ledger . t)
      (perl . t)
@@ -711,15 +710,6 @@
   (setq ess-ask-for-ess-directory nil)
   (setq ess-eval-visibly nil)
   (setq ess-history-file nil))
-
-
-;; -------------------------------------------------------------------
-;; Haskell
-;; -------------------------------------------------------------------
-
-;; haskell-mode
-(use-package haskell-mode
-  :mode ("\\.hs\\'" . haskell-mode))
 
 
 ;; -------------------------------------------------------------------
