@@ -244,9 +244,9 @@
 ;; ----- package archives -----
 
 (setq package-archives
-      '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; ----- use-package -----
 
@@ -499,7 +499,7 @@
 
 ;; ----- mode-line -----
 
-;; Crafted for battery-mode, evil-mode, eyebrowse-mode and flycheck-mode
+;; Crafted for battery-mode, evil-mode and eyebrowse-mode
 (setq-default mode-line-format
               (list '(:eval (propertize (evil-generate-mode-line-tag evil-state) 'face '(:inherit font-lock-comment-face)))
                     "%e"
@@ -515,10 +515,10 @@
                     '(:eval (propertize (format-time-string "%p·%H:%M ") 'help-echo (format-time-string "%F %a") 'face '(:inherit 'font-lock-doc-face)))
                     'battery-mode-line-string
                     '(:propertize (which-func-mode (" " which-func-format)))
-                    '(:eval (when (bound-and-true-p flycheck-mode) (propertize (flycheck-mode-line-status-text) 'face '(:inherit 'font-lock-type-face))))
                     '(:eval (when (> (window-width) 100) (propertize " {%m}" 'face '(:weight normal))))
                     '(:eval (when (> (window-width) 100) (propertize vc-mode 'face '(:inherit font-lock-keyword-face :weight bold))))
                     "-%-"))
+
 
 ;; -------------------------------------------------------------------
 ;; Evil
@@ -948,7 +948,7 @@
   ;; 1. fix PATH problem
   (use-package exec-path-from-shell
     :config
-    (exec-path-from-shell-initialize))
+    (exec-path-from-shell-copy-env "PATH"))
   ;; 2. command => meta; option => super
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super)
