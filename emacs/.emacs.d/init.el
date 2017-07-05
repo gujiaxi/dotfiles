@@ -96,6 +96,7 @@
 (setq load-prefer-newer t)
 
 ;; show which function current line belongs to
+(which-function-mode)
 (setq which-func-modes (list 'emacs-lisp-mode 'c++-mode 'python-mode))
 
 ;; highlight current line
@@ -106,6 +107,9 @@
 (setq display-time-default-load-average nil)
 (setq display-time-24hr-format t)
 (setq system-time-locale "C")
+
+;; display battery status
+(display-battery-mode t)
 
 ;; set frame title
 (setq frame-title-format "%b")
@@ -495,19 +499,26 @@
 
 ;; ----- mode-line -----
 
+;; Crafted for battery-mode, evil-mode, eyebrowse-mode and flycheck-mode
 (setq-default mode-line-format
-              (list '(:propertize " %l " face (:weight bold))
+              (list '(:eval (propertize (evil-generate-mode-line-tag evil-state) 'face '(:inherit font-lock-comment-face)))
+                    "%e"
                     'mode-line-mule-info
                     'mode-line-modified
-                    'mode-line-remote
-                    '(:eval (propertize (evil-generate-mode-line-tag evil-state) 'face '(:inherit 'font-lock-comment-face)))
+                    'mode-line-remote " "
                     '(:eval (propertize " %b " 'face (if (buffer-modified-p) '(:background "#d33682" :foreground "#fdf6e3" :weight bold)
-                                                       '(:background "#268bd2" :foreground "#fdf6e3" :weight light))))
-                    '(:propertize " %p/%I " face (:background "gray60" :foreground "#fdf6e3"))
+                                                       '(:background "#268bd2" :foreground "#fdf6e3" :weight light))
+                                        'help-echo (buffer-file-name)))
+                    '(:propertize " %p/%I " face (:background "gray60" :foreground "#fdf6e3")
+                                  help-echo (count-words--buffer-message))
                     '(:eval (propertize (concat " " (eyebrowse-mode-line-indicator) " ")))
                     '(:eval (propertize (format-time-string "%p·%H:%M ") 'help-echo (format-time-string "%F %a") 'face '(:inherit 'font-lock-doc-face)))
-                    '(:propertize vc-mode face (:inherit font-lock-keyword-face :weight bold))
-                    " {%m} " "-%-"))
+                    'battery-mode-line-string
+                    '(:propertize (which-func-mode (" " which-func-format)))
+                    '(:eval (when (bound-and-true-p flycheck-mode) (propertize (flycheck-mode-line-status-text) 'face '(:inherit 'font-lock-type-face))))
+                    '(:eval (when (> (window-width) 100) (propertize " {%m}" 'face '(:weight normal))))
+                    '(:eval (when (> (window-width) 100) (propertize vc-mode 'face '(:inherit font-lock-keyword-face :weight bold))))
+                    "-%-"))
 
 ;; -------------------------------------------------------------------
 ;; Evil
@@ -839,7 +850,7 @@
 (use-package linum-relative
   :config
   (linum-relative-mode)
-  (setq linum-relative-current-symbol "0"))
+  (setq linum-relative-current-symbol ""))
 
 ;; lua-mode
 (use-package lua-mode
