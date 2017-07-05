@@ -67,8 +67,7 @@
 ;; nice frame
 (when (display-graphic-p)
   (scroll-bar-mode 0)
-  (tool-bar-mode 0)
-  (menu-bar-mode 0))
+  (tool-bar-mode 0))
 
 ;; nice scrolling
 (setq scroll-margin 5)
@@ -428,12 +427,9 @@
    '((awk . t)
      (calc . t)
      (emacs-lisp . t)
-     (gnuplot . t)
      (latex . t)
      (ledger . t)
-     (perl . t)
      (python . t)
-     (ruby . t)
      (R . t)
      (shell . t))))
 
@@ -575,6 +571,7 @@
 
 ;; helm
 (use-package helm
+  :defer 5
   :config
   (require 'helm-config)
   (helm-mode)
@@ -676,7 +673,6 @@
 
 ;; cmake-mode
 (use-package cmake-mode
-  :after irony
   :config
   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
          ("\\.cmake\\'" . cmake-mode)))
@@ -710,18 +706,6 @@
   (setq ess-ask-for-ess-directory nil)
   (setq ess-eval-visibly nil)
   (setq ess-history-file nil))
-
-
-;; -------------------------------------------------------------------
-;; Ruby
-;; -------------------------------------------------------------------
-
-;; robe
-(use-package robe
-  :after ruby-mode
-  :config
-  (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-to-list 'company-backends 'company-robe))
 
 
 ;; -------------------------------------------------------------------
@@ -792,16 +776,6 @@
 (use-package bing-dict
   :bind ("C-c t" . bing-dict-brief))
 
-;; color-identifiers-mode
-(use-package color-identifiers-mode
-  :after prog-mode
-  :config
-  (add-hook 'prog-mode-hook 'color-identifiers-mode))
-
-;; csv-mode
-(use-package csv-mode
-  :mode "\\.csv\\'")
-
 ;; dumb-jump
 (use-package dumb-jump
   :after prog-mode
@@ -842,11 +816,6 @@
   (linum-relative-mode)
   (setq linum-relative-current-symbol ""))
 
-;; lua-mode
-(use-package lua-mode
-  :mode "\\.lua\\'"
-  :interpreter "lua")
-
 ;; multiple-cursors
 (use-package multiple-cursors
   :bind ("C->" . mc/mark-next-like-this))
@@ -876,10 +845,6 @@
   :after css-mode
   :config
   (add-hook 'css-mode-hook 'rainbow-mode))
-
-;; ranger
-(use-package ranger
-  :bind ("C-c r" . ranger))
 
 ;; smartparens
 (use-package smartparens
@@ -915,8 +880,8 @@
 
 ;; yasnippet
 (use-package yasnippet
-  :config
-  (yas-global-mode t))
+  :defer 5
+  :config (yas-global-mode t))
 
 
 ;; -------------------------------------------------------------------
@@ -937,8 +902,8 @@
 (when (memq window-system '(ns mac))
   ;; 1. fix PATH problem
   (use-package exec-path-from-shell
-    :config
-    (exec-path-from-shell-copy-env "PATH"))
+    :defer 5
+    :config (exec-path-from-shell-copy-env "PATH"))
   ;; 2. command => meta; option => super
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super)
