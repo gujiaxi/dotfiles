@@ -554,15 +554,18 @@
 
 ;; evil-surround
 (use-package evil-surround
-  :config (global-evil-surround-mode t))
+  :config
+  (global-evil-surround-mode t))
 
 ;; evil-matchit
 (use-package evil-matchit
-  :config (global-evil-matchit-mode t))
+  :config
+  (global-evil-matchit-mode t))
 
 ;; evil-search-highlight-persist
 (use-package evil-search-highlight-persist
-  :config (global-evil-search-highlight-persist t))
+  :config
+  (global-evil-search-highlight-persist t))
 
 
 ;; -------------------------------------------------------------------
@@ -571,7 +574,6 @@
 
 ;; helm
 (use-package helm
-  :defer 5
   :config
   (require 'helm-config)
   (helm-mode)
@@ -875,12 +877,10 @@
 
 ;; which-key
 (use-package which-key
-  :config
-  (which-key-mode))
+  :config (which-key-mode))
 
 ;; yasnippet
 (use-package yasnippet
-  :defer 5
   :config (yas-global-mode t))
 
 
@@ -902,7 +902,6 @@
 (when (memq window-system '(ns mac))
   ;; 1. fix PATH problem
   (use-package exec-path-from-shell
-    :defer 5
     :config (exec-path-from-shell-copy-env "PATH"))
   ;; 2. command => meta; option => super
   (setq mac-command-modifier 'meta)
