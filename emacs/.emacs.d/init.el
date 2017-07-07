@@ -58,6 +58,10 @@
 (setq version-control t)
 (setq delete-old-versions t)
 
+;; move to trash
+(setq delete-by-moving-to-trash t)
+(setq trash-directory "~/.Trash/")
+
 ;; no startup message
 (setq inhibit-startup-message t)
 
@@ -159,9 +163,10 @@
 (setq css-indent-offset 2)
 
 ;; dired [built-in]
+(put 'dired-find-alternate-file 'disabled nil)
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
-(put 'dired-find-alternate-file 'disabled nil)
+(setq dired-listing-switches "-alh")
 
 ;; electric [built-in]
 (electric-pair-mode t)
@@ -507,7 +512,7 @@
                     '(:propertize " %p/%I " face (:background "gray60" :foreground "#fdf6e3")
                                   help-echo (count-words--buffer-message))
                     '(:eval (propertize (concat " " (eyebrowse-mode-line-indicator) " ")))
-                    '(:eval (propertize (format-time-string "%p·%H:%M ") 'help-echo (format-time-string "%F %a") 'face '(:inherit 'font-lock-doc-face)))
+                    '(:eval (propertize (format-time-string "%p·%H:%M ") 'help-echo (format-time-string "%F %a") 'face '(:inherit font-lock-doc-face)))
                     'battery-mode-line-string
                     '(:propertize (which-func-mode (" " which-func-format)))
                     '(:eval (when (> (window-width) 100) (propertize " {%m}" 'face '(:weight normal))))
@@ -532,7 +537,7 @@
               'help-mode 'inferior-ess-mode 'inferior-python-mode
               'Info-mode 'message-mode 'newsticker-treeview-mode
               'process-menu-mode 'profiler-report-mode
-              'quickrun/mode 'shell-mode 'speedbar-mode
+              'quickrun--mode 'shell-mode 'speedbar-mode
               'special-mode 'TeX-output-mode))
   :bind
   (("<f5>" . evil-make)
@@ -616,14 +621,15 @@
 
 ;; company
 (use-package company
+  :init
+  ;; enable company globally
+  (add-hook 'after-init-hook 'global-company-mode)
   :config
   (setq company-idle-delay 0.3)
   (setq company-minimum-prefix-length 1)
   (setq company-dabbrev-downcase nil)
   (setq company-selection-wrap-around t)
   (setq company-show-numbers t)
-  ;; enable company mode globally
-  (global-company-mode)
   ;; enable file name completion
   (add-to-list 'company-backends 'company-files)
   ;; exclude annoying dabbrev completion
@@ -793,7 +799,7 @@
   :config
   (eyebrowse-mode t)
   (setq eyebrowse-mode-line-separator ",")
-  (set-face-attribute 'eyebrowse-mode-line-active nil :inherit 'font-lock-warning-face))
+  (set-face-attribute 'eyebrowse-mode-line-active nil :inherit font-lock-warning-face))
 
 ;; flycheck
 (use-package flycheck
