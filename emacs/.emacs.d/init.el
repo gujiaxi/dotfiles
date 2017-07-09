@@ -138,6 +138,7 @@
 ;; custom directory
 (setq org-directory "~/Dropbox/Documents/EmacsFiles")
 (setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file)
 
 
 ;; -------------------------------------------------------------------
@@ -182,7 +183,7 @@
 (add-hook 'message-mode-hook 'flyspell-mode)
 
 ;; grep [built-in]
-(global-set-key (kbd "C-c g") 'lgrep)
+(global-set-key (kbd "C-c g") 'zrgrep)
 
 ;; hideshow [built-in]
 (add-hook 'prog-mode-hook 'hs-minor-mode)
@@ -871,6 +872,9 @@
   :config
   (setq symon-delay 33)
   (symon-mode))
+
+;; wgrep
+(use-package wgrep)
 
 ;; which-key
 (use-package which-key
