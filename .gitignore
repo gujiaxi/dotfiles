@@ -1,8 +1,13 @@
 /*
+.DS_Store
 !.gitignore
 !README.md
-!emacs
+# essential tools
 !vim
 !zsh
 !tmux
-.DS_Store
+# misc tools
+!karabiner
+!hammerspoon
+!git
+!pip

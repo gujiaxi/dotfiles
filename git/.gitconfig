@@ -1,0 +1,11 @@
+[user]
+	name = Jiaxi Gu
+	email = imjiaxi@gmail.com
+	signingkey = 3F938F7B
+[core]
+    editor = vim
+	excludesfile = ~/.gitignore
+[color]
+    ui = auto
+[commit]
+	gpgsign = true
