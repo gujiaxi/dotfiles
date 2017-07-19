@@ -108,7 +108,9 @@ set wrap
 set mouse=a
 
 " Use system clipboard
-set clipboard=unnamed
+if $TMUX == "" && $SCREEN_NO == ""
+    set clipboard+=unnamed
+endif
 
 " Set spell for markdown and tex
 autocmd BufEnter *.md set spell
@@ -194,12 +196,18 @@ let g:vim_markdown_folding_disabled = 1
 
 " rakr/vim-one
 set background=dark
-colorscheme one
 "" true color
 if has("termguicolors") && &t_Co == 256
-    set termguicolors
-    set t_8f=[38;2;%lu;%lu;%lum
-    set t_8b=[48;2;%lu;%lu;%lum
+    if $TERM_PROGRAM == "Apple_Terminal" && $TMUX == ""
+        colorscheme desert
+    else
+        colorscheme one
+        set termguicolors
+        set t_8f=[38;2;%lu;%lu;%lum
+        set t_8b=[48;2;%lu;%lu;%lum
+    endif
+else
+    colorscheme desert
 endif
 
 " scrooloose/nerdtree
