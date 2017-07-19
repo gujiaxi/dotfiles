@@ -14,27 +14,16 @@ source $ZGEN_DIR/zgen.zsh
 # START of Plug
 if ! zgen saved; then
     zgen oh-my-zsh
-    zgen oh-my-zsh plugins/brew
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/common-aliases
-    zgen oh-my-zsh plugins/extract
-    zgen oh-my-zsh plugins/gem
     zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/osx
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/z
-    zgen oh-my-zsh plugins/catimg
     zgen oh-my-zsh plugins/sublime
     zgen load      djui/alias-tips
     zgen load      nksoff/muslim muslim
-    zgen load      supercrabtree/k
     zgen load      tarruda/zsh-autosuggestions
     zgen load      zsh-users/zsh-syntax-highlighting
-    if [[ -n /usr/local/fzf ]]; then
-        zgen load junegunn/fzf shell/completion.zsh
-        zgen load junegunn/fzf shell/key-bindings.zsh
-        export FZF_DEFAULT_OPTS="--height 40% --reverse --border --inline-info"
-    fi
     zgen save
 fi
 # END of Plug
@@ -64,3 +53,7 @@ export http_proxy=http://127.0.0.1:8888
 alias osmo="/Applications/Osmo4.app/Contents/MacOS/Osmo4"
 # Pastebins
 alias ix="curl -n -F 'f:1=<-' ix.io"
+# Be cautious
+if hash trash; then
+    alias rm="trash"
+fi
