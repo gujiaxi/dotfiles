@@ -197,17 +197,11 @@ let g:vim_markdown_folding_disabled = 1
 " rakr/vim-one
 set background=dark
 "" true color
-if has("termguicolors") && &t_Co == 256
-    if $TERM_PROGRAM == "Apple_Terminal" && $TMUX == ""
-        colorscheme desert
-    else
-        colorscheme one
-        set termguicolors
-        set t_8f=[38;2;%lu;%lu;%lum
-        set t_8b=[48;2;%lu;%lu;%lum
-    endif
-else
-    colorscheme desert
+if has("termguicolors") && &t_Co == 256 && $TERM_PROGRAM != "Apple_Terminal"
+    colorscheme one
+    set termguicolors
+    set t_8f=[38;2;%lu;%lu;%lum
+    set t_8b=[48;2;%lu;%lu;%lum
 endif
 
 " scrooloose/nerdtree
