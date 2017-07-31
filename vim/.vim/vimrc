@@ -11,7 +11,7 @@ set lazyredraw                  " only redraw when necessary
 set autoread                    " reload file when changed outside vim
 set showmatch                   " show matching brackets
 set mouse=a                     " enable mouse support
-set scrolloff=5                 " keep some lines from the top and the bottom
+set scrolloff=7                 " keep some lines from the top and the bottom
 set hidden                      " buffer becoes hidden when it is abandoned
 set backspace=indent,eol,start  " backspace over autoindent, line breaks and insert
 set magic                       " more natural regexp
@@ -67,7 +67,7 @@ command W w !sudo tee % > /dev/null
 let mapleader=","
 " Quick save and quit
 nmap <leader>w :w!<cr>
-nmap <leader>q :qa!<cr>
+nmap <leader>q :q!<cr>
 nmap <leader>x :x!<cr>
 " Quick highlight removal
 map <silent> <leader><cr> :noh<cr>
@@ -104,6 +104,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'henrik/vim-indexed-search'
 Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -113,14 +114,6 @@ Plug 'plasticboy/vim-markdown'
 " Color scheme
 Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
-" Enhancement
-Plug 'scrooloose/nerdtree'
-Plug 'thinca/vim-quickrun'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'mhinz/vim-grepper'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -146,18 +139,3 @@ let g:airline_powerline_fonts = 1
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
 nmap <leader>s <plug>(easymotion-overwin-f2)
-
-" scrooloose/nerdtree
-nmap <f9> :NERDTreeToggle<cr>
-
-" SirVer/ultisnips
-let g:UltiSnipsExpandTrigger = '<tab>'
-
-" thinca/vim-quickrun
-nmap <f5> :QuickRun<cr>
-
-" mhinz/vim-grepper
-nnoremap <leader>g :Grepper -tool rg<cr>
-
-" plasticboy/vim-markdown
-let g:vim_markdown_folding_disabled = 1
