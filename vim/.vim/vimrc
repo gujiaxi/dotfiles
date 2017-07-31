@@ -1,141 +1,82 @@
 """""""""""""""""""""""""""
-" Basic settings
+" General settings
 """""""""""""""""""""""""""
 
-" Set no compatible
-set nocompatible
-
-" Show (relative) line number
-set number
-set relativenumber
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" With a map leader it's possible to do extra key combinations
-let mapleader = ","
-let g:mapleader = ","
-
-" Fast save and quit
-nmap <leader>w :w!<cr>
-nmap <leader>q :qa!<cr>
-nmap <leader>x :x!<cr>
-
-" :W sudo saves the file 
-command W w !sudo tee % > /dev/null
-
-" Highlight cursor line
-set cul
-
-" Set 7 lines to the cursor - when moving vertically
-set so=7
-
-" Turn on the WiLd menu
-set wildmenu
-
-" Always show current position
-set ruler
-
-" A buffer becomes hidden when it is abandoned
-set hid
-
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-
-" No end of line
-set noeol
-
-" Ignore/Smart case when searching
-set ignorecase
-set smartcase
-
-" Highlight/Increase search results
-set hlsearch
-set incsearch 
-
-" Don't redraw while executing macros
-set lazyredraw 
-
-" For regular expressions turn magic on
-set magic
-
-" Show matching brackets when text indicator is over them
-set showmatch 
-
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-
-" Always show the status line
-set laststatus=2
-
-" Enable syntax highlighting
-syntax enable 
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,mac,dos
-
-" Turn backup off
-set nobackup
-set nowb
-set noswapfile
-
-" Use spaces instead of tabs
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-
-" Linebreak on 500 characters
-set lbr
-set tw=500
-
-" Auto/Smart indent
-set ai
-set si
-
-" Wrap lines
-set wrap
-
-" Enable mouse in all modes
-set mouse=a
-
-" Use system clipboard
+filetype plugin indent on       " adaptive plugin and indent according to file types
+syntax enable                   " enable syntax highlight
+set nocompatible                " incompatible with old Vi
+set cursorline                  " highlight current line
+set wildmenu                    " visual autocomplete for command menu
+set lazyredraw                  " only redraw when necessary
+set autoread                    " reload file when changed outside vim
+set showmatch                   " show matching brackets
+set mouse=a                     " enable mouse support
+set scrolloff=5                 " keep some lines from the top and the bottom
+set hidden                      " buffer becoes hidden when it is abandoned
+set backspace=indent,eol,start  " backspace over autoindent, line breaks and insert
+set magic                       " more natural regexp
+set laststatus=2                " always show the status line
+set wrap                        " allow wrap lines
+set encoding=utf8               " set encoding to utf-8
+set fileformats=unix,mac,dos    " set end-of-line (EOL) formats
+" Line numbers
+set number             " enable line numbers
+set relativenumber     " show relative line numbers
+" Indentation
+set tabstop=4          " number of visual spaces per tab
+set softtabstop=4      " number of spaces per tab when editing
+set expandtab          " tabs are spaces
+set shiftround         " round to multiple of shiftwidth when adjusing indentation
+set shiftwidth=4       " number of spaces for each step of autoindent
+set autoindent         " auto indent on a new line
+" Key timeout
+set notimeout          " no timeout for mappings
+set ttimeout           " allow timeout for keycodes
+" Search
+set incsearch          " search as characters are enters
+set hlsearch           " highlight matches
+set ignorecase         " ignore case when searching lowercase
+set smartcase          " do not ignore case when searching uppercase
+" Backups
+set nobackup           " disable backups
+set noswapfile         " disable swapfiles
+" Spell check
+autocmd BufEnter *.md set spell
+autocmd BufEnter *.tex set spell
+" Clipboard
 if $TMUX == "" && $SCREEN_NO == ""
     set clipboard+=unnamed
 endif
 
-" Set spell for markdown and tex
-autocmd BufEnter *.md set spell
-autocmd BufEnter *.tex set spell
+" ----8<---------- Customization
 
+" Jump to last position everytime
+if has("autocmd")
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 " Treat long lines as break lines
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
+" :W sudo saves the file 
+command W w !sudo tee % > /dev/null
 
-" Disable highlight when <leader><cr> is pressed
+" ----8<---------- Key bindings
+
+" COMMA as a leader key
+let mapleader=","
+" Quick save and quit
+nmap <leader>w :w!<cr>
+nmap <leader>q :qa!<cr>
+nmap <leader>x :x!<cr>
+" Quick highlight removal
 map <silent> <leader><cr> :noh<cr>
-
-" Useful mappings for managing buffers
+" Quick buffer operations
 map <leader>bd :bd<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
-
-" Useful mappings for managing tabs
+" Quick tab operations
 map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
-
-" Jump to last position
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
 
 
 """""""""""""""""""""""""""
@@ -144,65 +85,66 @@ endif
 
 " Bootstrap vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync
 endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'henrik/vim-indexed-search'
-Plug 'honza/vim-snippets'
-Plug 'jiangmiao/auto-pairs'
-Plug 'lervag/vimtex'
-Plug 'ludovicchabant/vim-gutentags'
+" Syntax / ***
+Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
-Plug 'mhinz/vim-grepper'
-Plug 'plasticboy/vim-markdown'
-Plug 'rakr/vim-one'
+" Coding / **
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'thinca/vim-quickrun'
-Plug 'tpope/vim-fugitive'
+" Navigation / *
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
+Plug 'henrik/vim-indexed-search'
+Plug 'easymotion/vim-easymotion'
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" Languages
+Plug 'lervag/vimtex'
+Plug 'plasticboy/vim-markdown'
+" Color scheme
+Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
-Plug 'w0rp/ale'
+" Enhancement
+Plug 'scrooloose/nerdtree'
+Plug 'thinca/vim-quickrun'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'mhinz/vim-grepper'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-" ---8<----------------------
+" ----8<----------Plugin Settings
+
+" maralla/completor.vim
+let g:completor_python_binary = 'python3'
+
+" rakr/vim-one
+set background=dark
+if has("termguicolors") && &t_Co == 256 && $TERM_PROGRAM != "Apple_Terminal"
+    silent! colorscheme one
+    set termguicolors
+    set t_8f=[38;2;%lu;%lu;%lum
+    set t_8b=[48;2;%lu;%lu;%lum
+endif
+
+" vim-airline/vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
 nmap <leader>s <plug>(easymotion-overwin-f2)
-
-" lervag/vimtex
-let g:vimtex_latexmk_callback = 0
-
-" maralla/completor.vim
-let g:completor_python_binary = 'python3'
-
-" mhinz/vim-grepper
-nnoremap <leader>g :Grepper -tool rg<cr>
-
-" plasticboy/vim-markdown
-let g:vim_markdown_folding_disabled = 1
-
-" rakr/vim-one
-set background=dark
-"" true color
-if has("termguicolors") && &t_Co == 256 && $TERM_PROGRAM != "Apple_Terminal"
-    colorscheme one
-    set termguicolors
-    set t_8f=[38;2;%lu;%lu;%lum
-    set t_8b=[48;2;%lu;%lu;%lum
-endif
 
 " scrooloose/nerdtree
 nmap <f9> :NERDTreeToggle<cr>
@@ -213,6 +155,8 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 " thinca/vim-quickrun
 nmap <f5> :QuickRun<cr>
 
-" vim-airline/vim-airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" mhinz/vim-grepper
+nnoremap <leader>g :Grepper -tool rg<cr>
+
+" plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
