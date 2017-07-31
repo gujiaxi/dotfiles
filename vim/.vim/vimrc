@@ -19,6 +19,7 @@ set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
 set encoding=utf8               " set encoding to utf-8
 set fileformats=unix,mac,dos    " set end-of-line (EOL) formats
+
 " Line numbers
 set number             " enable line numbers
 set relativenumber     " show relative line numbers
@@ -40,6 +41,9 @@ set smartcase          " do not ignore case when searching uppercase
 " Backups
 set nobackup           " disable backups
 set noswapfile         " disable swapfiles
+
+" ----8<---------- Customization
+
 " Spell check
 autocmd BufEnter *.md set spell
 autocmd BufEnter *.tex set spell
@@ -47,9 +51,6 @@ autocmd BufEnter *.tex set spell
 if $TMUX == "" && $SCREEN_NO == ""
     set clipboard+=unnamed
 endif
-
-" ----8<---------- Customization
-
 " Jump to last position everytime
 if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
