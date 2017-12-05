@@ -99,10 +99,11 @@ Plug 'maralla/completor.vim'
 " Coding / **
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
+Plug 'thinca/vim-quickrun'
 " Navigation / *
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
-Plug 'henrik/vim-indexed-search'
+Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 " Snippets
@@ -124,11 +125,13 @@ let g:completor_python_binary = 'python3'
 
 " rakr/vim-one
 set background=dark
-if has("termguicolors") && &t_Co == 256 && $TERM_PROGRAM != "Apple_Terminal"
+if has("termguicolors") && &t_Co == 256
     silent! colorscheme one
-    set termguicolors
-    set t_8f=[38;2;%lu;%lu;%lum
-    set t_8b=[48;2;%lu;%lu;%lum
+    if $TERM_PROGRAM != "Apple_Terminal"
+        set termguicolors
+        set t_8f=[38;2;%lu;%lu;%lum
+        set t_8b=[48;2;%lu;%lu;%lum
+    endif
 endif
 
 " vim-airline/vim-airline
