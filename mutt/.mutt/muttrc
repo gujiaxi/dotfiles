@@ -2,7 +2,7 @@
 #
 set realname = "Jiaxi Gu"
 set from = "gujiaxi@love.com"
-set signature = "--\nJiaxi Gu\n0x3F938F7B"
+set signature = "echo \"Jiaxi Gu\n0x3F91F329\" |"
 
 # -- account --
 #
@@ -15,12 +15,12 @@ set smtp_pass = $my_mailpass
 # -- folders --
 #
 set mbox_type = Maildir
-set folder = "imaps://imap.aol.com:993"
+set folder = "imaps://imap.aol.com:993/"
 set spoolfile = "+INBOX"
 set mbox = "+Archive"
 set postponed = "+Drafts"
 set trash = "+Trash"
-set record = ""
+set record = "+Sent"
 
 # -- cache --
 #
