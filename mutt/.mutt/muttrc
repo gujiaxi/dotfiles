@@ -1,32 +1,25 @@
 # -- personal --
 #
 set realname = "Jiaxi Gu"
-set from = "imjiaxi@gmail.com"
+set from = "gujiaxi@love.com"
 set signature = "--\nJiaxi Gu\n0x3F938F7B"
 
 # -- account --
 #
-set imap_user = "imjiaxi@gmail.com"
-set smtp_url = "smtp://imjiaxi@smtp.gmail.com:587/"
-set my_mailpass = `gpg -qd ~/.authinfo.gpg | sed -n 's/^machine imap.gmail.com .*password \([^ ]*\).*/\1/p'`
+set my_mailpass = `gpg -qd ~/.authinfo.gpg | sed -n 's/^machine imap.aol.com .*password \([^ ]*\).*/\1/p'`
+set imap_user = "gujiaxi@love.com"
 set imap_pass = $my_mailpass
+set smtp_url = "smtp://gujiaxi\@love.com@smtp.aol.com:587/"
 set smtp_pass = $my_mailpass
-set smtp_authenticators = "gssapi:login"
-
-# -- GPG --
-#
-source ~/.mutt/gpg.rc
-set pgp_timeout = 3600
-set pgp_sign_as = 0x3F91F329
 
 # -- folders --
 #
 set mbox_type = Maildir
-set folder = "imaps://imap.gmail.com:993"
+set folder = "imaps://imap.aol.com:993"
 set spoolfile = "+INBOX"
-set mbox = "+[Gmail]/All Mail"
-set postponed = "+[Gmail]/Drafts"
-set trash = "+[Gmail]/Trash"
+set mbox = "+Archive"
+set postponed = "+Drafts"
+set trash = "+Trash"
 set record = ""
 
 # -- cache --
@@ -74,14 +67,14 @@ source ~/.mutt/colors.rc
 # -- key bindings --
 #
 bind editor <space> noop
-macro index,pager e "<save-message>+[Gmail]/All Mail<enter>" "Archive mail"
-macro index,pager \# "<save-message>+[Gmail]/Trash<enter>" "Trash mail"
+macro index,pager e "<save-message>+Archive<enter>" "Archive mail"
+macro index,pager \# "<save-message>+Trash<enter>" "Trash mail"
 macro index,pager S "<save-message>+INBOX<enter>" "Restore mail"
 macro index,pager gi "<change-folder>+INBOX<enter>" "Go to Inbox"
-macro index,pager ga "<change-folder>+[Gmail]/All Mail<enter>" "Go to All Mail"
-macro index,pager gs "<change-folder>+[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
-macro index,pager gt "<change-folder>+[Gmail]/Trash<enter>" "Go to Trash"
-macro index,pager gd "<change-folder>+[Gmail]/Drafts<enter>" "Go to Drafts"
+macro index,pager ga "<change-folder>+Archive<enter>" "Go to All Mail"
+macro index,pager gs "<change-folder>+Sent<enter>" "Go to Sent Mail"
+macro index,pager gt "<change-folder>+Trash<enter>" "Go to Trash"
+macro index,pager gd "<change-folder>+Drafts<enter>" "Go to Drafts"
 # vim-like keys
 bind index,pager \cf next-page
 bind index,pager \cb previous-page
