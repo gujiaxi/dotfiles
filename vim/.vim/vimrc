@@ -4,7 +4,6 @@
 
 filetype plugin indent on       " adaptive plugin and indent according to file types
 syntax enable                   " enable syntax highlight
-set nocompatible                " incompatible with old Vi
 set cursorline                  " highlight current line
 set wildmenu                    " visual autocomplete for command menu
 set lazyredraw                  " only redraw when necessary
@@ -124,7 +123,6 @@ call plug#end()
 let g:completor_python_binary = 'python3'
 
 " rakr/vim-one
-set background=dark
 if has("termguicolors") && &t_Co == 256
     silent! colorscheme one
     if $TERM_PROGRAM != "Apple_Terminal"
