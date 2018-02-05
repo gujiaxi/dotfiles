@@ -92,14 +92,14 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-" Syntax / ***
+" Syntax
 Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
-" Coding / **
+" Coding
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'thinca/vim-quickrun'
-" Navigation / *
+" Navigation
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'google/vim-searchindex'
@@ -108,9 +108,6 @@ Plug 'scrooloose/nerdtree'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Languages
-Plug 'lervag/vimtex'
-Plug 'plasticboy/vim-markdown'
 " Color scheme
 Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
@@ -123,6 +120,7 @@ call plug#end()
 let g:completor_python_binary = 'python3'
 
 " rakr/vim-one
+set background=dark
 if has("termguicolors") && &t_Co == 256
     silent! colorscheme one
     if $TERM_PROGRAM != "Apple_Terminal"
