@@ -59,6 +59,8 @@ nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 " :W sudo saves the file 
 command W w !sudo tee % > /dev/null
+" default TeX flavor
+let g:tex_flavor = 'latex'
 
 " ----8<---------- Key bindings
 
