@@ -66,10 +66,6 @@ let g:tex_flavor = 'latex'
 
 " COMMA as a leader key
 let mapleader=","
-" Quick save and quit
-nmap <leader>w :w!<cr>
-nmap <leader>q :q!<cr>
-nmap <leader>x :x!<cr>
 " Quick highlight removal
 map <silent> <leader><cr> :noh<cr>
 " Quick buffer operations
