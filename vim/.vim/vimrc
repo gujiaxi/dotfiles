@@ -107,7 +107,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Color scheme
-Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
@@ -117,16 +117,9 @@ call plug#end()
 " maralla/completor.vim
 let g:completor_python_binary = 'python3'
 
-" rakr/vim-one
+" joshdick/onedark.vim
 set background=dark
-if has("termguicolors") && &t_Co == 256
-    silent! colorscheme one
-    if $TERM_PROGRAM != "Apple_Terminal"
-        set termguicolors
-        set t_8f=[38;2;%lu;%lu;%lum
-        set t_8b=[48;2;%lu;%lu;%lum
-    endif
-endif
+colorscheme onedark
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
