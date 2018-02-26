@@ -59,8 +59,6 @@ nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 " :W sudo saves the file 
 command W w !sudo tee % > /dev/null
-" default TeX flavor
-let g:tex_flavor = 'latex'
 
 " ----8<---------- Key bindings
 
@@ -95,6 +93,7 @@ Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
 " Coding
 Plug 'jiangmiao/auto-pairs'
+Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
 Plug 'thinca/vim-quickrun'
 " Navigation
@@ -119,11 +118,8 @@ let g:completor_python_binary = 'python3'
 
 " joshdick/onedark.vim
 set background=dark
+if (empty($TMUX)) | if (has("termguicolors")) | set termguicolors | endif | endif
 colorscheme onedark
-
-" vim-airline/vim-airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
