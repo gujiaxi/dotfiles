@@ -121,6 +121,10 @@ set background=dark
 if (empty($TMUX)) | if (has("termguicolors")) | set termguicolors | endif | endif
 colorscheme onedark
 
+" vim-airline/vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
