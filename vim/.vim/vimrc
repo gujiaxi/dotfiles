@@ -95,7 +95,6 @@ Plug 'maralla/completor.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
-Plug 'thinca/vim-quickrun'
 " Navigation
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
@@ -111,15 +110,15 @@ Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
-" ----8<----------Plugin Settings
+" ----8<---------- Plugin Settings
 
 " maralla/completor.vim
 let g:completor_python_binary = 'python3'
 
 " joshdick/onedark.vim
 set background=dark
-if (empty($TMUX)) | if (has("termguicolors")) | set termguicolors | endif | endif
 colorscheme onedark
+if (empty($TMUX)) | if (has("termguicolors")) | set termguicolors | endif | endif
 
 " vim-airline/vim-airline
 let g:airline_powerline_fonts = 1
