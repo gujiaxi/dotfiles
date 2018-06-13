@@ -43,6 +43,11 @@ set noswapfile         " disable swapfiles
 
 " ----8<---------- Customization
 
+" File explorer
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 1
+
 " Spell check
 autocmd BufEnter *.md set spell
 autocmd BufEnter *.tex set spell
@@ -63,7 +68,7 @@ command W w !sudo tee % > /dev/null
 " ----8<---------- Key bindings
 
 " COMMA as a leader key
-let mapleader=","
+let mapleader="\<Space>"
 " Quick highlight removal
 map <silent> <leader><cr> :noh<cr>
 " Quick buffer operations
@@ -100,7 +105,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
