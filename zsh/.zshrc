@@ -56,3 +56,5 @@ alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
 # My scripts
 SH_FILE="$HOME/Dropbox/Workspace/scripts/_scripts" 
 if [[ -e $SH_FILE ]]; then source $SH_FILE; fi
+# Java Env from Android Studio
+export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
