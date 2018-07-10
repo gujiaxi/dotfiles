@@ -34,27 +34,39 @@ fi
 ####################
 # custom settings
 ####################
-# Set Editor
+# default editor
 export EDITOR="vim"
-# Set Zsh
+# default shell
 export SHELL="/usr/local/bin/zsh"
-# Set homebrew
+# homebrew path
 export PATH="/usr/local/bin:$PATH"
-# Set basicTeX
+# ! basicTeX path
 export PATH="/Library/TeX/texbin:$PATH"
-# Set gnupg
-export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
+# ! gnupg path and tty
 export GPG_TTY=$(tty)
-# Set homebrew-bottles repo
+# ! homebrew-bottles repo
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-# Delete to trash
-if hash trash; then alias rmm="trash"; fi
-# Delete .DS_Store
-alias clds="find . -name '*.DS_Store' -type f -delete"
-# Abd
-alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
-# My scripts
-SH_FILE="$HOME/Dropbox/Workspace/scripts/_scripts" 
-if [[ -e $SH_FILE ]]; then source $SH_FILE; fi
-# Java Env from Android Studio
+# ! java env from android studio
 export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
+# ! Delete to trash
+if hash trash; then alias rmm="trash"; fi
+# ! Delete .DS_Store
+alias clds="find . -name '*.DS_Store' -type f -delete"
+# ! abd toolkit
+alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
+# ! zquote
+alias zquote="$HOME/Dropbox/Workspace/scripts/zQuote/bin/zquote"
+# ! let's call it a day
+alias ciad="$HOME/Dropbox/Workspace/scripts/ciad.sh"
+
+####################
+# functions
+####################
+# Recursively find files by name
+function rf () {
+    if hash rg 2> /dev/null; then
+        rg --files --iglob "*$1*"
+    else
+        find . -iname "*$1*"
+    fi
+}
