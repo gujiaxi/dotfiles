@@ -1,10 +1,14 @@
 # -- Multiple Accounts --
 #
+# Account related shortcuts
+folder-hook '.*' 'source ~/.mutt/shortcuts.muttrc'
 # Default account
-source ~/.mutt/account.nwpu.rc
+source ~/.mutt/accounts/account_nwpu.muttrc
 # Switching accounts
-macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.love.rc<enter><change-folder>!<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.nwpu.rc<enter><change-folder>!<enter>'
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/account_nwpu.muttrc<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/account_love.muttrc<enter><change-folder>!<enter>'
+# Run mbsync to fetch mails
+macro index <f5> "!mbsync -a<enter>" "Fetch new mails"
 
 # -- misc --
 #
@@ -27,9 +31,8 @@ set include = yes
 set mime_forward = yes
 # reply with body directly
 set fast_reply = yes
-# no copy or move
-set copy = no
-set move = no
+# save sent mails
+set copy = yes
 # prompt when quit
 set quit = ask-yes
 # no prompt for delete
@@ -40,20 +43,13 @@ set confirmappend = no
 alternative_order text/plain text/enriched text/html
 auto_view text/html
 # color scheme
-source ~/.mutt/colors.rc
+source ~/.mutt/colors.muttrc
+# gnupg functions
+source ~/.mutt/gpg.muttrc
 
-# -- key bindings --
+# -- general key bindings --
 #
 bind editor <space> noop
-macro index,pager e "<save-message>$mbox<enter>" "Archive mail"
-macro index,pager \# "<save-message>$trash<enter>" "Trash mail"
-macro index,pager S "<save-message>$spoolfile<enter>" "Restore mail"
-macro index,pager gi "<change-folder>$spoolfile<enter>" "Go to Inbox"
-macro index,pager ga "<change-folder>$mbox<enter>" "Go to All Mail"
-macro index,pager gs "<change-folder>$record<enter>" "Go to Sent Mail"
-macro index,pager gt "<change-folder>$trash<enter>" "Go to Trash"
-macro index,pager gd "<change-folder>$postponed<enter>" "Go to Drafts"
-# vim-like keys
 bind index,pager \cf next-page
 bind index,pager \cb previous-page
 bind index gg first-entry
