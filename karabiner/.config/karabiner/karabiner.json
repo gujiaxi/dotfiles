@@ -17,7 +17,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Adaptively modify caps_lock to left_control and escape.",
+                                "description": "Optionally map caps_lock to left_control or escape.",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -28,22 +28,32 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control",
-                                        "modifiers": {
-                                            "optional": [
-                                                "any"
-                                            ]
-                                        }
+                                        "key_code": "left_control"
                                     }
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "escape",
-                                        "modifiers": {
-                                            "optional": [
-                                                "any"
-                                            ]
-                                        }
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Optionally map left_shift to left_control+spacebar.",
+                                "from": {
+                                    "key_code": "left_shift"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
