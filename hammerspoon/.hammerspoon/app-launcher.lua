@@ -11,7 +11,7 @@ local key2app = {
    n = 'Notes',
    r = 'Reminders',
    s = 'Safari',
-   t = 'iTerm',
+   t = 'Terminal',
    w = 'WeChat'
 }
 

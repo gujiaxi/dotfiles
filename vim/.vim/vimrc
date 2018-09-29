@@ -124,7 +124,7 @@ let g:completor_python_binary = 'python3'
 " joshdick/onedark.vim
 set background=dark
 colorscheme onedark
-if (empty($TMUX)) | if (has("termguicolors")) | set termguicolors | endif | endif
+" if (empty($TMUX)) | if (has("termguicolors")) | set termguicolors | endif | endif
 
 " vim-airline/vim-airline
 let g:airline_powerline_fonts = 1
