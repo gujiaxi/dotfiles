@@ -2,11 +2,14 @@
 .DS_Store
 !.gitignore
 !README.md
-# essential tools
+# essential stuff
 !vim
 !zsh
 !tmux
-# misc tools
+# linux stuff
+!x
+!i3
+# other stuff
 !karabiner
 !hammerspoon
 !git

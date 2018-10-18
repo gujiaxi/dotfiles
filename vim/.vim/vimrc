@@ -135,5 +135,8 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
 nmap <leader>s <plug>(easymotion-overwin-f2)
 
+" ctrlpvim/ctrlp.vim
+nmap <leader>f <plug>(ctrlp)
+
 " thinca/vim-quickrun
 nnoremap <silent> <f5> :QuickRun<CR>

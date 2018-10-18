@@ -1,0 +1,23 @@
+URxvt.scrollBar:False
+! font
+URxvt.font: xft:PragmataPro-11,xft:WenQuanYi Zen Hei Mono-11
+
+! color
+URxvt.background: #1C1C1C
+URxvt.foreground: #DEDEDE
+URxvt.color0: #2E3436
+URxvt.color8: #555753
+URxvt.color1: #CC0000
+URxvt.color9: #EF2929
+URxvt.color2: #4E9A06
+URxvt.color10: #8AE234
+URxvt.color3: #C4A000
+URxvt.color11: #FCE94F
+URxvt.color4: #3465A4
+URxvt.color12: #729FCF
+URxvt.color5: #75507B
+URxvt.color13: #AD7FA8
+URxvt.color6: #06989A
+URxvt.color14: #34E2E2
+URxvt.color7: #D3D7CF
+URxvt.color15: #EEEEC
