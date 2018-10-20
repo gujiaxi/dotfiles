@@ -63,7 +63,7 @@ alias ciad="$HOME/Dropbox/Workspace/scripts/ciad.sh"
 # functions
 ####################
 # Recursively find files by name
-function rf () {
+function rf() {
     if hash rg 2> /dev/null; then
         rg --files --iglob "*$1*"
     else

@@ -1,6 +1,6 @@
 URxvt.scrollBar:False
 ! font
-URxvt.font: xft:PragmataPro-11,xft:WenQuanYi Zen Hei Mono-11
+URxvt.font: xft:PragmataPro-11,xft:WenQuanYi Micro Hei Mono-11
 
 ! color
 URxvt.background: #1C1C1C
