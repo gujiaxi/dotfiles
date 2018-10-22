@@ -133,7 +133,7 @@ let g:airline#extensions#tabline#enabled = 1
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
-nmap <leader>s <plug>(easymotion-overwin-f2)
+nmap <leader>s <plug>(easymotion-s2)
 
 " ctrlpvim/ctrlp.vim
 nmap <leader>f <plug>(ctrlp)
