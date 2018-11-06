@@ -1,7 +1,7 @@
 [user]
 	name = Jiaxi Gu
 	email = imjiaxi@gmail.com
-	signingkey = 3F91F329
+	signingkey = 16B93FBF3F91F329
 [core]
     editor = vim
 	excludesfile = ~/.gitignore
