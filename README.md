@@ -1,6 +1,6 @@
 # My dotfiles
 
-A set of configuration files managed by [Stow](http://www.gnu.org/software/stow/).
+A set of configuration files managed by [stow](http://www.gnu.org/software/stow/).
 
 ## Get started
 
@@ -16,7 +16,7 @@ OPTIONS:
     -R, --restow          Restow (like stow -D followed by stow -S)
 ```
 
-For this repository, it can used as a Stow root directory containing several packages such as `emacs`, `tmux` and etc. After stowwing any of them, the corresponding symbolinks will be created in the target directory. Below is an example for vim configurations.
+This repository can be used as a stow root directory containing several packages such as `emacs`, `tmux`, etc. After "stowing" any of them, the corresponding symlink will be created in the target directory. Below is an example for configuring vim.
 
 ``` sh
 # Clone this repo.
@@ -24,7 +24,7 @@ git clone git@github.com:gujiaxi/dotfiles.git
 # Enter the directory.
 cd dotfiles/
 # Create vim configs in $HOME.
-# This will create symbolinks in $HOME
+# This will create a symlink in $HOME
 # pointing to everything in vim folder of stow dir.
-stow -t $HOME -S vim
+stow -t ~ -S vim
 ```
