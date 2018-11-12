@@ -8,8 +8,5 @@ require('app-launcher')
 -- Window resizer
 require('window-resizer')
 
--- Function trigger
-require('func-trigger')
-
 -- Reload hs config
 hs.hotkey.bind(hyper, 'escape', nil , function() hs.reload() end)
