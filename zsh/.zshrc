@@ -21,7 +21,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/osx
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/z
-    zgen oh-my-zsh plugins/sublime
     zgen load      djui/alias-tips
     zgen load      nksoff/muslim muslim
     zgen load      supercrabtree/k
@@ -32,24 +31,32 @@ fi
 # END of Plug
 
 ####################
-# custom settings
+# PATH settings
+####################
+# homebrew path
+export PATH="/usr/local/bin:$PATH"
+# ! ruby gem path
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+# ! basicTeX path
+export PATH="/Library/TeX/texbin:$PATH"
+# ! java env from android studio
+export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
+
+####################
+# other settings
 ####################
 # default editor
 export EDITOR="vim"
 # default shell
 export SHELL="/usr/local/bin/zsh"
-# homebrew path
-export PATH="/usr/local/bin:$PATH"
-# ! basicTeX path
-export PATH="/Library/TeX/texbin:$PATH"
 # ! gnupg path and tty
 export GPG_TTY=$(tty)
 # ! homebrew-bottles repo
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-# ! java env from android studio
-export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
 # ! Delete to trash
 if hash trash; then alias rmm="trash"; fi
+# ! TextEdit.app
+alias te='open -a TextEdit'
 # ! Delete .DS_Store
 alias clds="find . -name '*.DS_Store' -type f -delete"
 # ! abd toolkit
@@ -65,7 +72,7 @@ alias ciad="$HOME/Dropbox/Workspace/scripts/ciad.sh"
 # Recursively find files by name
 function rf() {
     if hash rg 2> /dev/null; then
-        rg --files --iglob "*$1*"
+        rg -l --files --iglob "*$1*"
     else
         find . -iname "*$1*"
     fi
@@ -73,7 +80,4 @@ function rf() {
 function swap() {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
-}
-unalias help 2> /dev/null; function help() {
-    curl cheat.sh/"$1"
 }
