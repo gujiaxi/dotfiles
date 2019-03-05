@@ -51,10 +51,8 @@ let g:netrw_browse_split = 1
 " Spell check
 autocmd BufEnter *.md set spell
 autocmd BufEnter *.tex set spell
-" Clipboard
-if $TMUX == "" && $SCREEN_NO == ""
-    set clipboard+=unnamed
-endif
+" Clipboard sharing
+set clipboard=unnamed
 " Jump to last position everytime
 if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
