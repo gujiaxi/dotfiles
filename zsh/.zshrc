@@ -65,6 +65,8 @@ alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
 alias zquote="$HOME/Dropbox/Workspace/scripts/zQuote/bin/zquote"
 # ! let's call it a day
 alias ciad="$HOME/Dropbox/Workspace/scripts/ciad.sh"
+# ! enable proxy
+alias hi="export all_proxy=socks5://localhost:8889;"
 
 ####################
 # functions
