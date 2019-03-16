@@ -65,7 +65,7 @@ command W w !sudo tee % > /dev/null
 
 " ----8<---------- Key bindings
 
-" COMMA as a leader key
+" Use SPC as a leader key
 let mapleader="\<Space>"
 " Quick highlight removal
 map <silent> <leader><cr> :noh<cr>
@@ -73,9 +73,6 @@ map <silent> <leader><cr> :noh<cr>
 map <leader>bd :bd<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
-" Quick tab operations
-map <leader>tn :tabnew<cr>
-map <leader>tc :tabclose<cr>
 
 
 """""""""""""""""""""""""""
