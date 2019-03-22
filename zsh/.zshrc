@@ -59,6 +59,8 @@ if hash trash; then alias rmm="trash"; fi
 alias te='open -a TextEdit'
 # ! Delete .DS_Store
 alias clds="find . -name '*.DS_Store' -type f -delete"
+# ! calculate disk usage
+alias duu="sh -c 'du -hs .[^.]* * | sort -rh'"
 # ! abd toolkit
 alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
 # ! zquote
