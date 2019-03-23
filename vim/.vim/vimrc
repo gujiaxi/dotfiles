@@ -12,7 +12,6 @@ set showmatch                   " show matching brackets
 set mouse=a                     " enable mouse support
 set scrolloff=7                 " keep some lines from the top and the bottom
 set hidden                      " buffer becoes hidden when it is abandoned
-set backspace=indent,eol,start  " backspace over autoindent, line breaks and insert
 set magic                       " more natural regexp
 set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
@@ -45,9 +44,9 @@ set noswapfile         " disable swapfiles
 
 " File explorer
 let g:netrw_banner = 0
+let g:netrw_winsize = 24
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 1
-
+let g:netrw_browse_split = 4
 " Spell check
 autocmd BufEnter *.md set spell
 autocmd BufEnter *.tex set spell
@@ -58,8 +57,8 @@ if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 " Treat long lines as break lines
-nnoremap <expr> j v:count ? 'j' : 'gj'
-nnoremap <expr> k v:count ? 'k' : 'gk'
+noremap <expr> j v:count ? 'j' : 'gj'
+noremap <expr> k v:count ? 'k' : 'gk'
 " :W sudo saves the file 
 command W w !sudo tee % > /dev/null
 
@@ -67,13 +66,17 @@ command W w !sudo tee % > /dev/null
 
 " Use SPC as a leader key
 let mapleader="\<Space>"
+" Toggle netrw
+noremap <leader>e :Lexplore<cr>
 " Quick highlight removal
-map <silent> <leader><cr> :noh<cr>
+noremap <silent> <leader><cr> :noh<cr>
 " Quick buffer operations
-map <leader>bd :bd<cr>
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
-
+noremap <leader>bd :bd<cr>
+noremap <leader>l :bnext<cr>
+noremap <leader>h :bprevious<cr>
+" Quick tab operations
+noremap go :tabnew<cr>
+noremap gc :tabclose<cr>
 
 """""""""""""""""""""""""""
 " Plugin settings
@@ -114,7 +117,8 @@ call plug#end()
 " ----8<---------- Plugin Settings
 
 " maralla/completor.vim
-let g:completor_python_binary = 'python3'
+let g:completor_python_binary = "python3"
+let g:completor_complete_options = "menuone,noselect,noinsert"
 
 " joshdick/onedark.vim
 set background=dark
@@ -128,10 +132,10 @@ let g:airline#extensions#tabline#enabled = 1
 " easymotion/vim-easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase  = 1
-nmap <leader>s <plug>(easymotion-s2)
+map <leader>s <plug>(easymotion-s2)
 
 " ctrlpvim/ctrlp.vim
-nmap <leader>f <plug>(ctrlp)
+map <leader>f <plug>(ctrlp)
 
 " thinca/vim-quickrun
-nnoremap <silent> <f5> :QuickRun<CR>
+noremap <silent> <f5> :QuickRun<CR>
