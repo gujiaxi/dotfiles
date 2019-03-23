@@ -1,6 +1,6 @@
-"""""""""""""""""""""""""""
-" General settings
-"""""""""""""""""""""""""""
+""""""""""""""""""""""
+"  General settings  "
+""""""""""""""""""""""
 
 filetype plugin indent on       " adaptive plugin and indent according to file types
 syntax enable                   " enable syntax highlight
@@ -17,7 +17,6 @@ set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
 set encoding=utf8               " set encoding to utf-8
 set fileformats=unix,mac,dos    " set end-of-line (EOL) formats
-
 " Line numbers
 set number             " enable line numbers
 set relativenumber     " show relative line numbers
@@ -39,9 +38,6 @@ set smartcase          " do not ignore case when searching uppercase
 " Backups
 set nobackup           " disable backups
 set noswapfile         " disable swapfiles
-
-" ----8<---------- Customization
-
 " File explorer
 let g:netrw_banner = 0
 let g:netrw_winsize = 24
@@ -61,9 +57,6 @@ noremap <expr> j v:count ? 'j' : 'gj'
 noremap <expr> k v:count ? 'k' : 'gk'
 " :W sudo saves the file 
 command W w !sudo tee % > /dev/null
-
-" ----8<---------- Key bindings
-
 " Use SPC as a leader key
 let mapleader="\<Space>"
 " Toggle netrw
@@ -78,9 +71,9 @@ noremap <leader>h :bprevious<cr>
 noremap go :tabnew<cr>
 noremap gc :tabclose<cr>
 
-"""""""""""""""""""""""""""
-" Plugin settings
-"""""""""""""""""""""""""""
+"""""""""""""""""""""
+"  Plugin settings  "
+"""""""""""""""""""""
 
 " Bootstrap vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -90,52 +83,33 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-
-" Syntax
+" ----8<-------------------
 Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
-" Coding
+    let g:completor_python_binary = "python3"
+    let g:completor_complete_options = "menuone,noselect,noinsert"
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
 Plug 'thinca/vim-quickrun'
-" Navigation
+    noremap <silent> <f5> :QuickRun<CR>
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
+    let g:EasyMotion_do_mapping = 0
+    let g:EasyMotion_smartcase  = 1
+    map <leader>s <plug>(easymotion-s2)
 Plug 'ctrlpvim/ctrlp.vim'
-" Snippets
+    map <leader>f <plug>(ctrlp)
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Color scheme
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
-
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+" ----8<-------------------
 call plug#end()
-
-" ----8<---------- Plugin Settings
-
-" maralla/completor.vim
-let g:completor_python_binary = "python3"
-let g:completor_complete_options = "menuone,noselect,noinsert"
-
-" joshdick/onedark.vim
-set background=dark
+" Color scheme
 colorscheme onedark
-" if (empty($TMUX)) | if (has("termguicolors")) | set termguicolors | endif | endif
-
-" vim-airline/vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-
-" easymotion/vim-easymotion
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase  = 1
-map <leader>s <plug>(easymotion-s2)
-
-" ctrlpvim/ctrlp.vim
-map <leader>f <plug>(ctrlp)
-
-" thinca/vim-quickrun
-noremap <silent> <f5> :QuickRun<CR>
+" if (empty($TMUX) && has("termguicolors")) | set termguicolors | endif
