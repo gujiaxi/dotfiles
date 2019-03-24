@@ -6,7 +6,6 @@ filetype plugin indent on       " enable filetype detection, plugin, indent
 syntax enable                   " enable syntax highlight
 set background=dark             " use a dark background
 set cursorline                  " highlight current line
-set wildmenu                    " visual autocomplete for command menu
 set lazyredraw                  " only redraw when necessary
 set autoread                    " reload file when changed outside vim
 set backspace=2                 " backspace on indent,eol,start
@@ -16,6 +15,9 @@ set hidden                      " buffer becoes hidden when it is abandoned
 set magic                       " more natural regexp
 set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
+" Wild command
+set wildmenu                    " visual autocomplete for command menu
+set wildignorecase              " case insensitive in command line
 " Folding
 set foldmethod=syntax           " folds defined by syntax
 set nofoldenable                " open all folds by default
@@ -43,38 +45,54 @@ set smartcase          " do not ignore case when searching uppercase
 " Backups
 set nobackup           " disable backups
 set noswapfile         " disable swapfiles
+
+
+""""""""""""""""""""""""""""""""
+"  Other hacks & key bindings  "
+""""""""""""""""""""""""""""""""
+
+" Use space as a leader key
+let mapleader="\<Space>"
+
 " File explorer
 let g:netrw_banner = 0
 let g:netrw_winsize = 24
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
+noremap <leader>e :Lexplore<cr>
+
 " Spell check
 autocmd BufEnter *.md set spell
 autocmd BufEnter *.tex set spell
+
 " Clipboard sharing
 if has("unnamed") | set clipboard=unnamed | set mouse=a | endif
-" Jump to last position everytime
-if has("autocmd")
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+
 " Treat long lines as break lines
 noremap <expr> j v:count ? 'j' : 'gj'
 noremap <expr> k v:count ? 'k' : 'gk'
-" :W sudo saves the file 
-command W w !sudo tee % > /dev/null
-" Use SPC as a leader key
-let mapleader="\<Space>"
-" Toggle netrw
-noremap <leader>e :Lexplore<cr>
+
 " Quick highlight removal
 noremap <silent> <leader><cr> :noh<cr>
-" Quick buffer operations
-noremap <leader>bd :bd<cr>
-noremap <leader>l :bnext<cr>
-noremap <leader>h :bprevious<cr>
+
 " Quick tab operations
 noremap go :tabnew<cr>
 noremap gc :tabclose<cr>
+
+" :W sudo saves the file
+command W w !sudo tee % > /dev/null
+
+" Jump to last position everytime
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Toggle quickfix window
+function! QuickFixToggle()
+    let nr1 = winnr("$") | cwindow
+    let nr2 = winnr("$")
+    if nr1 == nr2 | cclose | endif
+endfunction
+nnoremap <silent> <leader>q :call QuickFixToggle()<cr>
+
 
 """""""""""""""""""""
 "  Plugin settings  "
@@ -102,16 +120,15 @@ Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_do_mapping = 0
     let g:EasyMotion_smartcase  = 1
-    map <leader>s <plug>(easymotion-s2)
+    map s <plug>(easymotion-s2)
 Plug 'ctrlpvim/ctrlp.vim'
-    map <leader>f <plug>(ctrlp)
+    map <leader>f :CtrlPBuffer<cr>
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'sheerun/vim-polyglot'
-Plug 'thinca/vim-quickrun'
-    noremap <leader>q :QuickRun<cr>
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
     let g:lightline = {'colorscheme': 'onedark'}
+Plug 'thinca/vim-quickrun'
+Plug 'sheerun/vim-polyglot'
 " ----8<-------------------
 call plug#end()
 colorscheme onedark
