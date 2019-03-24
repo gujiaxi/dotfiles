@@ -2,19 +2,24 @@
 "  General settings  "
 """"""""""""""""""""""
 
-filetype plugin indent on       " adaptive plugin and indent according to file types
+filetype plugin indent on       " enable filetype detection, plugin, indent
 syntax enable                   " enable syntax highlight
+set background=dark             " use a dark background
 set cursorline                  " highlight current line
 set wildmenu                    " visual autocomplete for command menu
 set lazyredraw                  " only redraw when necessary
 set autoread                    " reload file when changed outside vim
+set backspace=2                 " backspace on indent,eol,start
 set showmatch                   " show matching brackets
-set mouse=a                     " enable mouse support
 set scrolloff=7                 " keep some lines from the top and the bottom
 set hidden                      " buffer becoes hidden when it is abandoned
 set magic                       " more natural regexp
 set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
+" Folding
+set foldmethod=syntax           " folds defined by syntax
+set nofoldenable                " open all folds by default
+" Encoding
 set encoding=utf8               " set encoding to utf-8
 set fileformats=unix,mac,dos    " set end-of-line (EOL) formats
 " Line numbers
@@ -47,7 +52,7 @@ let g:netrw_browse_split = 4
 autocmd BufEnter *.md set spell
 autocmd BufEnter *.tex set spell
 " Clipboard sharing
-set clipboard=unnamed
+if has("unnamed") | set clipboard=unnamed | set mouse=a | endif
 " Jump to last position everytime
 if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -89,11 +94,9 @@ Plug 'maralla/completor.vim'
     let g:completor_python_binary = "python3"
     let g:completor_complete_options = "menuone,noselect,noinsert"
 Plug 'jiangmiao/auto-pairs'
-Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/nerdcommenter'
-Plug 'thinca/vim-quickrun'
-    noremap <silent> <f5> :QuickRun<CR>
 Plug 'tpope/vim-rsi'
+Plug 'scrooloose/nerdcommenter'
+Plug 'wellle/targets.vim'
 Plug 'tpope/vim-surround'
 Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
@@ -102,14 +105,14 @@ Plug 'easymotion/vim-easymotion'
     map <leader>s <plug>(easymotion-s2)
 Plug 'ctrlpvim/ctrlp.vim'
     map <leader>f <plug>(ctrlp)
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'sheerun/vim-polyglot'
+Plug 'thinca/vim-quickrun'
+    noremap <leader>q :QuickRun<cr>
 Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled = 1
+Plug 'itchyny/lightline.vim'
+    let g:lightline = {'colorscheme': 'onedark'}
 " ----8<-------------------
 call plug#end()
-" Color scheme
 colorscheme onedark
-" if (empty($TMUX) && has("termguicolors")) | set termguicolors | endif
+"if (empty($TMUX) && has("termguicolors")) | set termguicolors | endif
