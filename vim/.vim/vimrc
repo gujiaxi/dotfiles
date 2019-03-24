@@ -47,9 +47,9 @@ set nobackup           " disable backups
 set noswapfile         " disable swapfiles
 
 
-""""""""""""""""""""""""""""""""
-"  Other hacks & key bindings  "
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""
+"  Some hacks & key mappings  "
+"""""""""""""""""""""""""""""""
 
 " Use space as a leader key
 let mapleader="\<Space>"
