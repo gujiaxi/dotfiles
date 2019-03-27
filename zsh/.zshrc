@@ -1,6 +1,7 @@
-################################
-# Use zgen to manage plugins
-################################
+#############################
+#  plugins managed by zgen  #
+#############################
+
 # set zgen env
 export ZGEN_DIR=$HOME/.zsh_zgen
 # bootstrap zgen
@@ -30,9 +31,10 @@ if ! zgen saved; then
 fi
 # END of Plug
 
-####################
-# PATH settings
-####################
+###################
+#  path settings  #
+###################
+
 # homebrew path
 export PATH="/usr/local/bin:$PATH"
 # ! ruby gem path
@@ -43,8 +45,9 @@ export PATH="/Library/TeX/texbin:$PATH"
 export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
 
 ####################
-# other settings
+#  other settings  #
 ####################
+
 # default editor
 export EDITOR="vim"
 # default shell
@@ -53,8 +56,8 @@ export SHELL="/usr/local/bin/zsh"
 export GPG_TTY=$(tty)
 # ! homebrew-bottles repo
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-# ! Delete to trash
-if hash trash; then alias rmm="trash"; fi
+# ! trash: cli trash
+hash trash 2> /dev/null && alias rmm="trash"
 # ! TextEdit.app
 alias te='open -a TextEdit'
 # ! Delete .DS_Store
@@ -70,9 +73,10 @@ alias ciad="$HOME/Dropbox/Workspace/scripts/ciad.sh"
 # ! enable proxy
 alias hi="export all_proxy=socks5://localhost:8889;"
 
-####################
-# functions
-####################
+###############
+#  Functions  #
+###############
+
 # Recursively find files by name
 function rf() {
     if hash rg 2> /dev/null; then
