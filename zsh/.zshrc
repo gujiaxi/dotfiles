@@ -43,6 +43,8 @@ export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 # ! java env from android studio
 export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
+# ! my own scripts
+export PATH="$PATH:$HOME/Dropbox/Workspace/utils/_local/bin"
 
 ####################
 #  other settings  #
@@ -66,10 +68,6 @@ alias clds="find . -name '*.DS_Store' -type f -delete"
 alias duu="sh -c 'du -hs .[^.]* * | sort -rh'"
 # ! abd toolkit
 alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
-# ! zquote
-alias zquote="$HOME/Dropbox/Workspace/scripts/zQuote/bin/zquote"
-# ! let's call it a day
-alias ciad="$HOME/Dropbox/Workspace/scripts/ciad.sh"
 # ! enable proxy
 alias hi="export all_proxy=socks5://localhost:8889;"
 
