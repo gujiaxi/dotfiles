@@ -60,7 +60,7 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 24
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
-noremap <leader>e :Lexplore<cr>
+noremap <silent> <leader>e :Lexplore<cr>
 
 " Spell check
 autocmd BufEnter *.md set spell
@@ -77,8 +77,9 @@ noremap <expr> k v:count ? 'k' : 'gk'
 noremap <silent> <leader><cr> :nohlsearch<cr>
 
 " Quick save and/or quit
-noremap <leader>w :w<cr>
-noremap <leader>x :x<cr>
+noremap <silent> <leader>w :w<cr>
+noremap <silent> <leader>x :x<cr>
+noremap <silent> <leader>q :q<cr>
 
 " Quick tab operations
 noremap go :tabnew<cr>
@@ -96,7 +97,7 @@ function! QuickFixToggle()
     let nr2 = winnr("$")
     if nr1 == nr2 | cclose | endif
 endfunction
-nnoremap <silent> <leader>q :call QuickFixToggle()<cr>
+nnoremap <silent> <leader>k :call QuickFixToggle()<cr>
 
 
 """""""""""""""""""""
@@ -125,7 +126,7 @@ Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_do_mapping = 0
     let g:EasyMotion_smartcase  = 1
-    map s <plug>(easymotion-s2)
+    map <leader>s <plug>(easymotion-s2)
 Plug 'ctrlpvim/ctrlp.vim'
     map <leader>f :CtrlPBuffer<cr>
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
