@@ -31,21 +31,6 @@ if ! zgen saved; then
 fi
 # END of Plug
 
-###################
-#  path settings  #
-###################
-
-# homebrew path
-export PATH="/usr/local/bin:$PATH"
-# ! ruby gem path
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-# ! basicTeX path
-export PATH="/Library/TeX/texbin:$PATH"
-# ! java env from android studio
-export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
-# ! my own scripts
-export PATH="$PATH:$HOME/Dropbox/Workspace/utils/_local/bin"
-
 ####################
 #  other settings  #
 ####################
