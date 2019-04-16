@@ -63,7 +63,7 @@ alias hi="export all_proxy=socks5://localhost:8889;"
 # Recursively find files by name
 function rf() {
     if hash rg 2> /dev/null; then
-        rg -l --files --iglob "*$1*"
+        rg --hidden -l --files --iglob "*$1*"
     else
         find . -iname "*$1*"
     fi
