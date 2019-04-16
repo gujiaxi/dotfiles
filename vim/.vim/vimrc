@@ -119,9 +119,11 @@ endif
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
 Plug 'w0rp/ale'
-Plug 'maralla/completor.vim'
-    let g:completor_python_binary = "python3"
-    let g:completor_complete_options = "menuone,noselect,noinsert"
+Plug 'lifepillar/vim-mucomplete'
+    set completeopt=menuone,noselect,noinsert
+    let g:mucomplete#enable_auto_at_startup=1
+    imap <c-n> <plug>(MUcompleteFwd)
+    imap <c-p> <plug>(MUcompleteBwd)
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
@@ -134,7 +136,8 @@ Plug 'easymotion/vim-easymotion'
     map <leader>s <plug>(easymotion-s2)
 Plug 'ctrlpvim/ctrlp.vim'
     map <leader>f :CtrlPBuffer<cr>
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
+    imap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
     let g:lightline = {'colorscheme': 'onedark'}
