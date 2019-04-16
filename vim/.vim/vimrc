@@ -81,6 +81,11 @@ noremap <silent> <leader>w :w<cr>
 noremap <silent> <leader>x :x<cr>
 noremap <silent> <leader>q :q<cr>
 
+" Quick buffer operations
+noremap <leader>bd :bd<cr>
+noremap <leader>bn :bn<cr>
+noremap <leader>bp :bp<cr>
+
 " Quick tab operations
 noremap go :tabnew<cr>
 noremap gc :tabclose<cr>
