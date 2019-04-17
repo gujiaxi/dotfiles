@@ -10,7 +10,7 @@ set lazyredraw                  " only redraw when necessary
 set autoread                    " reload file when changed outside vim
 set backspace=2                 " backspace on indent,eol,start
 set showmatch                   " show matching brackets
-set scrolloff=7                 " keep some lines from the top and the bottom
+set scrolloff=3                 " keep some lines from the top and the bottom
 set hidden                      " buffer becoes hidden when it is abandoned
 set magic                       " more natural regexp
 set laststatus=2                " always show the status line
@@ -30,10 +30,11 @@ set number             " enable line numbers
 set relativenumber     " show relative line numbers
 " Indentation
 set tabstop=4          " number of visual spaces per tab
+set shiftwidth=4       " number of spaces for each step of autoindent
 set softtabstop=4      " number of spaces per tab when editing
+set smarttab           " helps with backspacing because of expandtab
 set expandtab          " tabs are spaces
 set shiftround         " round to multiple of shiftwidth when adjusing indentation
-set shiftwidth=4       " number of spaces for each step of autoindent
 set autoindent         " auto indent on a new line
 " Key timeout
 set notimeout          " no timeout for mappings
@@ -45,6 +46,7 @@ set ignorecase         " ignore case when searching lowercase
 set smartcase          " do not ignore case when searching uppercase
 " Backups
 set nobackup           " disable backups
+set nowritebackup      " disable backup before overwriting
 set noswapfile         " disable swapfiles
 
 
@@ -120,10 +122,9 @@ call plug#begin('~/.vim/plug')
 " ----8<-------------------
 Plug 'w0rp/ale'
 Plug 'lifepillar/vim-mucomplete'
-    set completeopt=menuone,noselect,noinsert
+    set completeopt=menuone,noselect
+    let g:mucomplete#no_mappings=1
     let g:mucomplete#enable_auto_at_startup=1
-    imap <c-n> <plug>(MUcompleteFwd)
-    imap <c-p> <plug>(MUcompleteBwd)
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
