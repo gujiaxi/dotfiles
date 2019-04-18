@@ -31,6 +31,24 @@ if ! zgen saved; then
 fi
 # END of Plug
 
+###################
+#  PATH settings  #
+###################
+
+# homebrew path
+PATH="/usr/local/bin:$PATH"
+# ! ruby gem path
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+# ! basicTeX path
+PATH="/Library/TeX/texbin:$PATH"
+# ! java env from android studio
+PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
+# ! my own scripts
+PATH="$HOME/Dropbox/Workspace/utils/_local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
+# [ZSH ONLY] prevent duplicate
+typeset -U path
+
 ####################
 #  other settings  #
 ####################
@@ -68,6 +86,7 @@ function rf() {
         find . -iname "*$1*"
     fi
 }
+# Swap content between two files
 function swap() {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
