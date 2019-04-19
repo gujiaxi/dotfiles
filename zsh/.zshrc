@@ -43,7 +43,6 @@ PATH="/Library/TeX/texbin:$PATH"
 # ! java env from android studio
 PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
 # ! my own scripts
-PATH="$HOME/Dropbox/Workspace/utils/_local/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 # [ZSH ONLY] prevent duplicate
 typeset -U path

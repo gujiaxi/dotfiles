@@ -15,7 +15,6 @@ set hidden                      " buffer becoes hidden when it is abandoned
 set magic                       " more natural regexp
 set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
-set textwidth=80                " maximum width of text per line
 " Wild command
 set wildmenu                    " visual autocomplete for command menu
 set wildignorecase              " case insensitive in command line
