@@ -15,6 +15,8 @@ set hidden                      " buffer becoes hidden when it is abandoned
 set magic                       " more natural regexp
 set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
+set noshowmode                  " no status info in echo are
+set cot=menuone,noselect        " complete options
 " Wild command
 set wildmenu                    " visual autocomplete for command menu
 set wildignorecase              " case insensitive in command line
@@ -62,10 +64,6 @@ let g:netrw_winsize = 24
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 noremap <silent> <leader>e :Lexplore<cr>
-
-" Spell check
-autocmd BufEnter *.md set spell
-autocmd BufEnter *.tex set spell
 
 " Clipboard sharing
 if has("unnamed") | set clipboard=unnamed | set mouse=a | endif
@@ -120,10 +118,9 @@ endif
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
 Plug 'w0rp/ale'
-Plug 'lifepillar/vim-mucomplete'
-    set completeopt=menuone,noselect
-    let g:mucomplete#no_mappings=1
-    let g:mucomplete#enable_auto_at_startup=1
+Plug 'maralla/completor.vim'
+    let g:completor_complete_options='menuone,noselect'
+    let g:completor_python_binary='python3'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
