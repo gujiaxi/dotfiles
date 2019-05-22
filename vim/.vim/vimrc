@@ -49,7 +49,9 @@ set smartcase          " do not ignore case when searching uppercase
 set nobackup           " disable backups
 set nowritebackup      " disable backup before overwriting
 set noswapfile         " disable swapfiles
-
+" Spell check
+au Filetype plaintex setlocal spell
+au Filetype markdown setlocal spell
 
 """""""""""""""""""""""""""""""
 "  Some hacks & key mappings  "
