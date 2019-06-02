@@ -120,9 +120,9 @@ endif
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
 Plug 'w0rp/ale'
-Plug 'maralla/completor.vim'
-    let g:completor_complete_options='menuone,noselect'
-    let g:completor_python_binary='python3'
+Plug 'lifepillar/vim-mucomplete'
+    let g:mucomplete#no_mappings=1
+    let g:mucomplete#enable_auto_at_startup=1
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
