@@ -80,10 +80,10 @@ noremap <silent> <leader><cr> :nohlsearch<cr>
 " Quick save and/or quit
 noremap <silent> <leader>w :w<cr>
 noremap <silent> <leader>x :x<cr>
-noremap <silent> <leader>q :q<cr>
+noremap <silent> <leader>q :qa!<cr>
 
 " Quick buffer operations
-noremap <leader>bd :bd<cr>
+noremap <leader>bd :bd!<cr>
 noremap <leader>bn :bn<cr>
 noremap <leader>bp :bp<cr>
 
@@ -138,8 +138,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
     imap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
 Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'
-    let g:lightline = {'colorscheme': 'onedark'}
+Plug 'vim-airline/vim-airline'
 Plug 'thinca/vim-quickrun'
 Plug 'sheerun/vim-polyglot'
 " ----8<-------------------
