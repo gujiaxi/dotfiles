@@ -68,7 +68,7 @@ let g:netrw_browse_split = 4
 noremap <silent> <leader>e :Lexplore<cr>
 
 " Clipboard sharing
-if has("unnamed") | set clipboard=unnamed | set mouse=a | endif
+if has("clipboard") | set clipboard=unnamed | set mouse=a | endif
 
 " Treat long lines as break lines
 noremap <expr> j v:count ? 'j' : 'gj'
