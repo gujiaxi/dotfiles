@@ -80,10 +80,10 @@ noremap <silent> <leader><cr> :nohlsearch<cr>
 " Quick save and/or quit
 noremap <silent> <leader>w :w<cr>
 noremap <silent> <leader>x :x<cr>
-noremap <silent> <leader>q :qa!<cr>
+noremap <silent> <leader>q :q<cr>
 
 " Quick buffer operations
-noremap <leader>bd :bd!<cr>
+noremap <leader>bd :bd<cr>
 noremap <leader>bn :bn<cr>
 noremap <leader>bp :bp<cr>
 
@@ -137,6 +137,7 @@ Plug 'ctrlpvim/ctrlp.vim'
     map <leader>f :CtrlPBuffer<cr>
 Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
     imap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
+    let g:neosnippet#snippets_directory='~/.vim/snippets'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'thinca/vim-quickrun'

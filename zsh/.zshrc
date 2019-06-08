@@ -70,7 +70,7 @@ alias duu="sh -c 'du -hs .[^.]* * | sort -rh'"
 # ! abd toolkit
 alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
 # ! enable proxy
-alias hi="export all_proxy=socks5://localhost:8889;"
+alias hi="export http_proxy=http://localhost:8888 https_proxy=http://localhost:8888;"
 
 ###############
 #  Functions  #
