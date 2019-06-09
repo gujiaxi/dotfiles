@@ -139,7 +139,8 @@ Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
     imap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
     let g:neosnippet#snippets_directory='~/.vim/snippets'
 Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+    let g:lightline = {'colorscheme': 'onedark'}
 Plug 'thinca/vim-quickrun'
 Plug 'sheerun/vim-polyglot'
 " ----8<-------------------
