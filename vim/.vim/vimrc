@@ -58,7 +58,7 @@ au Filetype markdown setlocal spell
 """""""""""""""""""""""""""""""
 
 " Use space as a leader key
-let mapleader="\<Space>"
+let mapleader = "\<Space>"
 
 " File explorer
 let g:netrw_banner = 0
@@ -119,6 +119,9 @@ endif
 
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
+Plug 'natebosch/vim-lsc'
+    let g:lsc_autocomplete_length = 1
+    let g:lsc_server_commands = {'python': 'pyls'}
 Plug 'lifepillar/vim-mucomplete'
     let g:mucomplete#no_mappings = 1
     let g:mucomplete#enable_auto_at_startup = 1
@@ -137,7 +140,7 @@ Plug 'ctrlpvim/ctrlp.vim'
     map <leader>f :CtrlPBuffer<cr>
 Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
     imap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
-    let g:neosnippet#snippets_directory='~/.vim/snippets'
+    let g:neosnippet#snippets_directory = '~/.vim/snippets'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
     let g:lightline = {'colorscheme': 'onedark'}
