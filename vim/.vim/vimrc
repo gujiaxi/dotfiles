@@ -120,13 +120,9 @@ endif
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
 Plug 'w0rp/ale'
-    let g:ale_set_highlights = 0
 Plug 'natebosch/vim-lsc'
     let g:lsc_autocomplete_length = 1
     let g:lsc_server_commands = {'python': 'pyls'}
-Plug 'lifepillar/vim-mucomplete'
-    let g:mucomplete#no_mappings = 1
-    let g:mucomplete#enable_auto_at_startup = 1
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
