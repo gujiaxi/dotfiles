@@ -122,7 +122,8 @@ call plug#begin('~/.vim/plug')
 Plug 'w0rp/ale'
 Plug 'natebosch/vim-lsc'
     let g:lsc_autocomplete_length = 1
-    let g:lsc_server_commands = {'python': 'pyls'}
+    let g:lsc_server_commands = {
+      \ 'python': {'command': 'pyls', 'suppress_stderr': v:true}}
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
@@ -133,16 +134,21 @@ Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_do_mapping = 0
     let g:EasyMotion_smartcase  = 1
     map <leader>s <plug>(easymotion-s2)
-Plug 'ctrlpvim/ctrlp.vim'
-    map <leader>f :CtrlPBuffer<cr>
-Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
-    imap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
+Plug 'junegunn/fzf', {'dir':'~/.vim/plug/fzf','do':'./install --bin'}
+    Plug 'junegunn/fzf.vim'
+    nnoremap <leader>ff :Files<cr>
+    nnoremap <leader>fb :Buffers<cr>
+    nnoremap <leader>fc :Commands<cr>
+Plug 'Shougo/neosnippet.vim'
+    Plug 'Shougo/neosnippet-snippets'
+    imap <expr><tab> neosnippet#expandable_or_jumpable() ?
+                \ "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
     let g:neosnippet#snippets_directory = '~/.vim/snippets'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
-    let g:lightline = {'colorscheme': 'onedark'}
+    let g:lightline = {'colorscheme':'onedark'}
 Plug 'thinca/vim-quickrun'
 Plug 'sheerun/vim-polyglot'
 " ----8<-------------------
 call plug#end()
-colo onedark
+silent! colorscheme onedark
