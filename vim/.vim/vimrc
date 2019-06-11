@@ -119,10 +119,10 @@ endif
 
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
-Plug 'natebosch/vim-lsc'
-    let g:lsc_autocomplete_length = 1
-    let g:lsc_server_commands = {
-      \ 'python': {'command': 'pyls', 'suppress_stderr': v:true}}
+Plug 'w0rp/ale'
+    let g:ale_set_highlights = 0
+    let g:ale_completion_enabled = 1
+    let g:ale_linters = {'python': ['pyls', 'flake8']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
