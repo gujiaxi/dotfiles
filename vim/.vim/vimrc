@@ -119,12 +119,13 @@ endif
 
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
-Plug 'autozimu/LanguageClient-neovim', {'branch':'next','do':'./install.sh'}
-    let g:LanguageClient_serverCommands={'python':['pyls']}
-    nnoremap <leader>l :call LanguageClient_contextMenu()<cr>
-Plug 'lifepillar/vim-mucomplete'
-    let g:mucomplete#no_mappings=1
-    let g:mucomplete#enable_auto_at_startup=1
+Plug 'w0rp/ale'
+    let g:ale_completion_enabled=1
+    let g:ale_set_highlights=0
+    let g:ale_sign_column_always=1
+    nnoremap <leader>lj :ALENextWrap<cr>
+    nnoremap <leader>lk :ALEPreviousWrap<cr>
+    let g:ale_linters={'python':['pyls']}
 Plug 'junegunn/fzf', {'dir':'~/.vim/plug/fzf','do':'./install --bin'}
     Plug 'junegunn/fzf.vim'
     nnoremap <leader>ff :Files<cr>
