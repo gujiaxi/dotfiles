@@ -11,7 +11,7 @@ set autoread                    " reload file when changed outside vim
 set backspace=2                 " backspace on indent,eol,start
 set showmatch                   " show matching brackets
 set scrolloff=3                 " keep some lines from the top and the bottom
-set hidden                      " buffer becoes hidden when it is abandoned
+set hidden                      " buffer becomes hidden when it is abandoned
 set magic                       " more natural regexp
 set laststatus=2                " always show the status line
 set wrap                        " allow wrap lines
@@ -58,21 +58,21 @@ au Filetype markdown setlocal spell
 """""""""""""""""""""""""""""""
 
 " Use space as a leader key
-let mapleader = "\<Space>"
+let mapleader="\<Space>"
 
 " File explorer
-let g:netrw_banner = 0
-let g:netrw_winsize = 24
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
+let g:netrw_banner=0
+let g:netrw_winsize=24
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
 noremap <silent> <leader>e :Lexplore<cr>
 
 " Clipboard sharing
 if has("clipboard") | set clipboard=unnamed | set mouse=a | endif
 
 " Treat long lines as break lines
-noremap <expr> j v:count ? 'j' : 'gj'
-noremap <expr> k v:count ? 'k' : 'gk'
+noremap <expr> j v:count?'j':'gj'
+noremap <expr> k v:count?'k':'gk'
 
 " Quick highlight removal
 noremap <silent> <leader><cr> :nohlsearch<cr>
@@ -99,9 +99,9 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 
 " Toggle quickfix window
 function! QuickFixToggle()
-    let nr1 = winnr("$") | cwindow
-    let nr2 = winnr("$")
-    if nr1 == nr2 | cclose | endif
+    let nr1=winnr("$") | cwindow
+    let nr2=winnr("$")
+    if nr1==nr2 | cclose | endif
 endfunction
 nnoremap <silent> <leader>k :call QuickFixToggle()<cr>
 
@@ -119,10 +119,17 @@ endif
 
 call plug#begin('~/.vim/plug')
 " ----8<-------------------
-Plug 'w0rp/ale'
-    let g:ale_set_highlights = 0
-    let g:ale_completion_enabled = 1
-    let g:ale_linters = {'python': ['pyls', 'flake8', 'pyflakes']}
+Plug 'autozimu/LanguageClient-neovim', {'branch':'next','do':'./install.sh'}
+    let g:LanguageClient_serverCommands={'python':['pyls']}
+    nnoremap <leader>l :call LanguageClient_contextMenu()<cr>
+Plug 'lifepillar/vim-mucomplete'
+    let g:mucomplete#no_mappings=1
+    let g:mucomplete#enable_auto_at_startup=1
+Plug 'junegunn/fzf', {'dir':'~/.vim/plug/fzf','do':'./install --bin'}
+    Plug 'junegunn/fzf.vim'
+    nnoremap <leader>ff :Files<cr>
+    nnoremap <leader>fb :Buffers<cr>
+    nnoremap <leader>fc :Commands<cr>
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rsi'
 Plug 'scrooloose/nerdcommenter'
@@ -130,25 +137,20 @@ Plug 'wellle/targets.vim'
 Plug 'tpope/vim-surround'
 Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
-    let g:EasyMotion_do_mapping = 0
-    let g:EasyMotion_smartcase  = 1
+    let g:EasyMotion_do_mapping=0
+    let g:EasyMotion_smartcase=1
     map <leader>s <plug>(easymotion-s2)
-Plug 'junegunn/fzf', {'dir':'~/.vim/plug/fzf','do':'./install --bin'}
-    Plug 'junegunn/fzf.vim'
-    nnoremap <leader>ff :Files<cr>
-    nnoremap <leader>fb :Buffers<cr>
-    nnoremap <leader>fc :Commands<cr>
 Plug 'Shougo/neosnippet.vim'
     Plug 'Shougo/neosnippet-snippets'
-    imap <expr><tab> neosnippet#expandable_or_jumpable() ?
-                \ "\<plug>(neosnippet_expand_or_jump)" : "\<tab>"
-    let g:neosnippet#snippets_directory = '~/.vim/snippets'
+    imap <expr><tab> neosnippet#expandable_or_jumpable()?
+                \ "\<plug>(neosnippet_expand_or_jump)":"\<tab>"
+    let g:neosnippet#snippets_directory='~/.vim/snippets'
 Plug 'ajmwagar/vim-deus'
 Plug 'itchyny/lightline.vim'
-    let g:lightline = {'colorscheme':'deus'}
+    let g:lightline={'colorscheme':'deus'}
 Plug 'thinca/vim-quickrun'
 Plug 'sheerun/vim-polyglot'
-    let g:tex_flavor = 'latex'
+    let g:tex_flavor='latex'
 " ----8<-------------------
 call plug#end()
 silent! colorscheme deus
