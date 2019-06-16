@@ -59,6 +59,8 @@ export SHELL="/usr/local/bin/zsh"
 export GPG_TTY=$(tty)
 # ! homebrew-bottles repo
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+# ! rg: better grep
+hash rg 2> /dev/null && alias rg="rg -Li"
 # ! trash: cli trash
 hash trash 2> /dev/null && alias rmm="trash"
 # ! TextEdit.app
