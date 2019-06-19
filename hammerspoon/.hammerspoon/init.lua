@@ -1,23 +1,14 @@
 ----------------------
 --/ Key Definition /--
 ----------------------
-hyper = {'ctrl', 'alt', 'cmd'}
-hyperShift = {'ctrl', 'alt', 'cmd', 'shift'}
+hyper = {'ctrl', 'alt'}
 
 --------------------
 --/ App Launcher /--
 --------------------
 local key2app = {
-   c = 'Calendar',
-   e = 'Emacs',
    f = 'Finder',
-   i = 'iTunes',
-   m = 'Mail',
-   n = 'Notes',
-   r = 'Reminders',
-   s = 'Safari',
-   t = 'Terminal',
-   w = 'WeChat'
+   t = 'Terminal'
 }
 for key, app in pairs(key2app) do
    hs.hotkey.bind(hyper, key, nil, function() hs.application.launchOrFocus(app) end)
