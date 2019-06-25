@@ -149,6 +149,7 @@ Plug 'Shougo/neosnippet.vim'
                 \ "\<plug>(neosnippet_expand_or_jump)":"\<tab>"
     let g:neosnippet#snippets_directory='~/.vim/snippets'
 Plug 'ajmwagar/vim-deus'
+    let g:deus_sign_column='bg0'
 Plug 'itchyny/lightline.vim'
     let g:lightline={'colorscheme':'deus'}
 Plug 'thinca/vim-quickrun'
