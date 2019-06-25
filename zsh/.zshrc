@@ -22,7 +22,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/z
     zgen load      djui/alias-tips
-    zgen load      nksoff/muslim muslim
+    zgen load      yardnsm/blox-zsh-theme blox
     zgen load      supercrabtree/k
     zgen load      tarruda/zsh-autosuggestions
     zgen load      zsh-users/zsh-syntax-highlighting
