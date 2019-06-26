@@ -31,15 +31,15 @@ for key, pos in pairs(winPos) do hs.hotkey.bind(hyper, key, pos) end
 -------------------------
 function wifiToggle(state)
   cmd = "networksetup -setairportpower en0 "..(state)
-  result = hs.osascript.applescript(string.format('do shell script "%s"', cmd))
+  return hs.osascript.applescript(string.format('do shell script "%s"', cmd))
 end
 function caffeinateCallback(eventType)
   if (eventType == hs.caffeinate.watcher.screensDidLock) then
-    print("Screen locked.")
-    wifiToggle("off")
+    result = wifiToggle("off")
+    print(string.format("Screen locked and Wifi toggle: %s.", result))
   elseif (eventType == hs.caffeinate.watcher.screensDidUnlock) then
-    print("Scren unlocked.")
-    wifiToggle("on")
+    result = wifiToggle("on")
+    print(string.format("Scren unlocked and Wifi toggle: %s.", result))
   end
 end
 hs.caffeinate.watcher.new(caffeinateCallback):start()
