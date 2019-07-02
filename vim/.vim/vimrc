@@ -65,7 +65,7 @@ let g:netrw_banner=0
 let g:netrw_winsize=24
 let g:netrw_liststyle=3
 let g:netrw_browse_split=4
-noremap <silent> <leader>e :Lexplore<cr>
+noremap <silent> <leader>e :Lex<cr>
 
 " Clipboard sharing
 if has("clipboard") | set clipboard=unnamed | set mouse=a | endif
@@ -150,13 +150,12 @@ Plug 'Shougo/neosnippet.vim'
     smap <expr><tab> neosnippet#expandable_or_jumpable()?
          \ "\<plug>(neosnippet_expand_or_jump)":"\<tab>"
     let g:neosnippet#snippets_directory='~/.vim/snippets'
-Plug 'ajmwagar/vim-deus'
-    let g:deus_sign_column='bg0'
+Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
-    let g:lightline={'colorscheme':'deus'}
+    let g:lightline={'colorscheme':'onedark'}
 Plug 'thinca/vim-quickrun'
 Plug 'sheerun/vim-polyglot'
     let g:tex_flavor='latex'
 " ----8<-------------------
 call plug#end()
-silent! colorscheme deus
+silent! colorscheme onedark
