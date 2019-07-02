@@ -26,6 +26,19 @@ local winPos = {
 hs.window.animationDuration = 0
 for key, pos in pairs(winPos) do hs.hotkey.bind(hyper, key, pos) end
 
+--------------------
+--/ App Luancher /--
+--------------------
+local keyApp = {
+  e = "Emacs",
+  f = "Finder",
+  t = "Terminal",
+  s = "Safari"
+}
+for key, app in pairs(keyApp) do
+  hs.hotkey.bind(hyper, key, nil, function() hs.application.launchOrFocus(app) end)
+end
+
 -------------------------
 --/ Auto Wifi Toggle  /--
 -------------------------
