@@ -146,7 +146,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/neosnippet.vim'
     Plug 'Shougo/neosnippet-snippets'
     imap <expr><tab> neosnippet#expandable_or_jumpable()?
-                \ "\<plug>(neosnippet_expand_or_jump)":"\<tab>"
+         \ "\<plug>(neosnippet_expand_or_jump)":"\<tab>"
+    smap <expr><tab> neosnippet#expandable_or_jumpable()?
+         \ "\<plug>(neosnippet_expand_or_jump)":"\<tab>"
     let g:neosnippet#snippets_directory='~/.vim/snippets'
 Plug 'ajmwagar/vim-deus'
     let g:deus_sign_column='bg0'
