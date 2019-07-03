@@ -150,12 +150,12 @@ Plug 'Shougo/neosnippet.vim'
     smap <expr><tab> neosnippet#expandable_or_jumpable()?
          \ "\<plug>(neosnippet_expand_or_jump)":"\<tab>"
     let g:neosnippet#snippets_directory='~/.vim/snippets'
-Plug 'joshdick/onedark.vim'
+Plug 'srcery-colors/srcery-vim'
 Plug 'itchyny/lightline.vim'
-    let g:lightline={'colorscheme':'onedark'}
+    let g:lightline={'colorscheme':'srcery'}
 Plug 'thinca/vim-quickrun'
 Plug 'sheerun/vim-polyglot'
     let g:tex_flavor='latex'
 " ----8<-------------------
 call plug#end()
-silent! colorscheme onedark
+silent! colorscheme srcery
