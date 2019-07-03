@@ -33,8 +33,8 @@ local keyApp = {
   e = "Emacs",
   f = "Finder",
   m = "Mail",
-  s = "Safari"
-  t = "Terminal",
+  s = "Safari",
+  t = "Terminal"
 }
 for key, app in pairs(keyApp) do
   hs.hotkey.bind(hyper, key, nil, function() hs.application.launchOrFocus(app) end)
@@ -56,4 +56,5 @@ function caffeinateCallback(eventType)
     print(string.format("Scren unlocked and Wifi toggle: %s.", result))
   end
 end
-hs.caffeinate.watcher.new(caffeinateCallback):start()
+caffeinateWatcher = hs.caffeinate.watcher.new(caffeinateCallback)
+caffeinateWatcher:start()
