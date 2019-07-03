@@ -32,8 +32,9 @@ for key, pos in pairs(winPos) do hs.hotkey.bind(hyper, key, pos) end
 local keyApp = {
   e = "Emacs",
   f = "Finder",
-  t = "Terminal",
+  m = "Mail",
   s = "Safari"
+  t = "Terminal",
 }
 for key, app in pairs(keyApp) do
   hs.hotkey.bind(hyper, key, nil, function() hs.application.launchOrFocus(app) end)
