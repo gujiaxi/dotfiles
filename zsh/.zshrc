@@ -53,8 +53,6 @@ typeset -U path
 
 # default editor
 export EDITOR="vim"
-# default shell
-export SHELL="/usr/local/bin/zsh"
 # ! gnupg path and tty
 export GPG_TTY=$(tty)
 # ! homebrew-bottles repo
