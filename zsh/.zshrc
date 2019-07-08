@@ -75,7 +75,6 @@ alias hi="export http_proxy=http://localhost:8888 https_proxy=http://localhost:8
 ###############
 #  Functions  #
 ###############
-
 # Recursively find files by name
 function rf() {
     if hash rg 2> /dev/null; then
@@ -89,3 +88,5 @@ function swap() {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
 }
+# short manual
+function sman() { curl cheat.sh/$1 }
