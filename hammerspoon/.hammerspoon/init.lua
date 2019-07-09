@@ -21,7 +21,7 @@ local winPos = {
   left  = function() push(0.0, 0.0, 0.5, 1.0) end,
   right = function() push(0.5, 0.0, 0.5, 1.0) end,
   up    = function() push(0.0, 0.0, 1.0, 1.0) end,
-  down  = function() push(0.1, 0.1, 0.5, 0.6) end
+  down  = function() push(0.1, 0.1, 0.5, 0.5) end
 }
 hs.window.animationDuration = 0
 for key, pos in pairs(winPos) do hs.hotkey.bind(hyper, key, pos) end
