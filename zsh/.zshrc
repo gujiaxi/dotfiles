@@ -1,29 +1,34 @@
-##############################
-#  plugins managed by zplug  #
-##############################
+#############################
+#  plugins managed by zgen  #
+#############################
+zmodload zsh/zprof
 
-export ZPLUG_HOME=$HOME/.zplug
-if ! [[ -d $ZPLUG_HOME ]]; then
-    print "Installing zplug ..."
-    command -v git >/dev/null 2>&1 && \
-        env git clone https://github.com/zplug/zplug $ZPLUG_HOME >/dev/null 2>&1
+# set zgen env
+export ZGEN_DIR="$HOME/.zsh_zgen"
+# bootstrap zgen
+if ! [[ -d $ZGEN_DIR ]]; then
+    print "Installing zgen ..."
+    command -v git >/dev/null && \
+        git clone https://github.com/tarjoilija/zgen $ZGEN_DIR >/dev/null
 fi
-source $ZPLUG_HOME/init.zsh
-zplug "zplug/zplug",               hook-build:"zplug --self-manage"
-zplug "robbyrussell/oh-my-zsh",    as:plugin, use:"lib/*.zsh"
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/common-aliases",    from:oh-my-zsh
-zplug "plugins/extract",           from:oh-my-zsh
-zplug "plugins/git",               from:oh-my-zsh
-zplug "plugins/sudo",              from:oh-my-zsh
-zplug "plugins/z",                 from:oh-my-zsh
-zplug "nksoff/muslim",             as:theme
-zplug "djui/alias-tips"
-zplug "supercrabtree/k"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-if ! zplug check; then; zplug install; fi
-zplug load
+# source zgen
+source $ZGEN_DIR/zgen.zsh
+# START of Plug
+if ! zgen saved; then
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/colored-man-pages
+    zgen oh-my-zsh plugins/common-aliases
+    zgen oh-my-zsh plugins/extract
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/z
+    zgen load      djui/alias-tips
+    zgen load      nksoff/muslim muslim
+    zgen load      supercrabtree/k
+    zgen load      zsh-users/zsh-autosuggestions
+    zgen load      zsh-users/zsh-syntax-highlighting
+    zgen save
+fi
 
 ###################
 #  PATH settings  #
