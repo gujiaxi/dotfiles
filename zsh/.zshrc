@@ -59,7 +59,7 @@ if [[ $OSTYPE == darwin* ]]; then
     # TextEdit.app
     alias te='open -a TextEdit'
     # Delete .DS_Store
-    alias clds="find . -name '*.DS_Store' -type f -delete"
+    alias clds="find . -type f -name .DS_Store -delete"
     # enable proxy
     alias hi="export http_proxy=http://localhost:8888 https_proxy=http://localhost:8888;"
 fi
