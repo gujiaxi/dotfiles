@@ -31,11 +31,13 @@ fi
 # >>>> PATH settings <<<<
 
 # homebrew path
-PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/bin/:$PATH"
+# ! python path
+PATH="$HOME/Library/Python/3.7/bin/:$PATH"
 # ! basicTeX path
-PATH="/Library/TeX/texbin:$PATH"
+PATH="/Library/TeX/texbin/:$PATH"
 # ! my own scripts
-PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.local/bin/:$PATH"
 # [ZSH ONLY] prevent duplicate path
 typeset -U path
 
