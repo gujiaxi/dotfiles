@@ -61,5 +61,5 @@ if [[ $OSTYPE == darwin* ]]; then
     # Delete .DS_Store
     alias clds="find . -type f -name .DS_Store -delete"
     # enable proxy
-    alias hi="export http_proxy=http://localhost:8888 https_proxy=http://localhost:8888;"
+    alias hi="export http_proxy=http://localhost:7890 https_proxy=http://localhost:7890;"
 fi
