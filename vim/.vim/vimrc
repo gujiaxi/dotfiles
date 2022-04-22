@@ -123,7 +123,7 @@ Plug 'w0rp/ale'
     let g:ale_completion_enabled=1
     let g:ale_set_highlights=0
     let g:ale_sign_column_always=1
-    let g:ale_linters={'python':['pyls']}
+    let g:ale_linters={'python':['pylsp']}
     nnoremap <leader>lj :ALENextWrap<cr>
     nnoremap <leader>lk :ALEPreviousWrap<cr>
     nnoremap <leader>lf :ALEFix<cr>
