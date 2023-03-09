@@ -33,7 +33,7 @@ fi
 # homebrew path
 PATH="/usr/local/bin/:$PATH"
 # ! python path
-PATH="$HOME/Library/Python/3.7/bin/:$PATH"
+PATH="$HOME/Library/Python/3.11/bin/:$PATH"
 # ! basicTeX path
 PATH="/Library/TeX/texbin/:$PATH"
 # ! my own scripts
